@@ -29,3 +29,13 @@
 .release-title{
     margin: 1%;
 }
+
+.btn-orange{
+    background-color: #e67700 !important; 
+    border-color: #e67700 !important;
+}
+
+.btn-orange:hover{
+    background-color: #8d8c8c !important;
+    border-color: #8d8c8c !important;
+}

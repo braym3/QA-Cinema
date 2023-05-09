@@ -95,9 +95,9 @@ const Home = () => {
                 <Row>
                     <div className='link-buttons'>
                         <ButtonGroup className='w-100'>
-                            <Button size='lg' className='mx-3 rounded orange' href='#' style={{backgroundColor: '#E67700', borderColor: '#E67700'}}>All Listings</Button>
-                            <Button size='lg' className='mx-3 rounded orange' href='#' style={{backgroundColor: '#E67700', borderColor: '#E67700'}}>Discussion</Button>
-                            <Button size='lg' className='mx-3 rounded orange' href='#' style={{backgroundColor: '#E67700', borderColor: '#E67700'}}>Screens</Button>
+                            <Button size='lg' className='mx-3 rounded btn-orange' href='#'>All Listings</Button>
+                            <Button size='lg' className='mx-3 rounded btn-orange' href='#'>Discussion</Button>
+                            <Button size='lg' className='mx-3 rounded btn-orange' href='#'>Screens</Button>
                         </ButtonGroup>
                     </div>
                 </Row>
