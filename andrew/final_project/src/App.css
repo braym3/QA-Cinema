@@ -1,0 +1,17 @@
+#nav{
+  all: unset;
+  color: rgba(255, 255, 255, 0.442);
+  margin: 15px;
+  color: white;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+#nav:hover{
+  color: #e67700;
+}
+
+*{
+  background-color: black;
+  color: white;
+}
