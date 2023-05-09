@@ -20,8 +20,11 @@ const Navi = () => {
           <Link id='nav' to='/discussion'>
             Discussion
           </Link>
-          <Link id='nav' to='/info'>
-            Info
+          <Link id='nav' to='/findus'>
+            Find us
+          </Link>
+          <Link id='nav' to='/about'>
+            About
           </Link>
         </Nav>
       </Container>
