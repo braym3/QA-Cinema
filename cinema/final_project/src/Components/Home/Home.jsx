@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import { Button, Row, Col, Container, Carousel, ButtonGroup } from "react-bootstrap"
 import './Home.css';
 
 const Home = () => {
@@ -33,14 +33,14 @@ const Home = () => {
 
     const displayCarousel = () => {
         return (
-            <div className='home'>
-                <div className='row'>
+            <div>
+                <Row>
                     <div className='new-releases d-flex justify-content-center'>
-                        <h1>New Releases</h1>
+                        <h1 className='release-title'>New Releases</h1>
                     </div>
-                </div>
+                </Row>
                 
-                <div className='row'>
+                <Row>
                     <div className='carousel d-flex justify-content-center'>
                         <Carousel activeIndex={index} onSelect={handleSelect}>
                             <Carousel.Item>
@@ -80,14 +80,29 @@ const Home = () => {
                             </Carousel.Item>
                         </Carousel>
                     </div>
-                </div>
+                </Row>
             </div>
         );
     }
 
     return (
         <div>
-            {displayCarousel()}
+            <Container className='home border border-warning border-2 rounded'>
+                {displayCarousel()}
+            </Container>
+            
+            <Container>
+                <Row>
+                    <div className='link-buttons'>
+                        <ButtonGroup className='w-100'>
+                            <Button variant="warning" size='lg' className='mx-3 rounded' href='#'>All Listings</Button>
+                            <Button variant="warning" size='lg' className='mx-3 rounded' href='#'>Discussion</Button>
+                            <Button variant="warning" size='lg' className='mx-3 rounded' href='#'>Screens</Button>
+                        </ButtonGroup>
+                    </div>
+                </Row>
+            </Container>
+            
         </div>
     );
 }

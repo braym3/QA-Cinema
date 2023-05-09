@@ -1,16 +1,25 @@
 .home{
     margin-top: 50px;
     position: relative;
-
 }
 
 .carousel {
-    width:640px;
-    height:360px;
+    width:680px;
+    
 }
 
 .carousel .carousel-caption {
     position: relative;
     left: auto;
     right: auto;
-  }
+}
+
+.link-buttons{
+    margin-top: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.release-title{
+    margin: 1%;
+}
