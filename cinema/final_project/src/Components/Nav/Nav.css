@@ -1,0 +1,16 @@
+#nav{
+  all: unset;
+  color: rgba(255, 255, 255, 0.442);
+  margin: 15px;
+  color: white;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+#nav:hover{
+  font-weight:bolder;
+}
+
+.color-nav, #color-nav{
+  background-color: #e67700;
+}

@@ -1,17 +1,18 @@
 import Container from "react-bootstrap/Container";
+import './Nav.css'
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 
 const Navi = () => {
   return (
-    <Navbar bg='dark' variant='dark'>
-      <Container>
+    <Navbar className="color-nav" variant='dark' >
+      <Container className="color-nav">
         <Link id='nav' to='/'>
-          <Navbar.Brand href='#home'>QA Cinema</Navbar.Brand>
+          <Navbar.Brand href='#home' id="color-nav">QA Cinema</Navbar.Brand>
         </Link>
-        <Nav className='me-auto'>
-          <Link id='nav' to='/'>
+        <Nav className='me-auto' id="color-nav">
+          <Link id='nav' className="color-nav" to='/'>
             Home
           </Link>
           <Link id='nav' to='/listings'>
