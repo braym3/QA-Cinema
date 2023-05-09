@@ -1,4 +1,4 @@
-#nav{
+#nav {
   all: unset;
   color: rgba(255, 255, 255, 0.442);
   margin: 15px;
@@ -7,11 +7,11 @@
   border-width: 2px;
 }
 
-#nav:hover{
+#nav:hover {
   color: #e67700;
 }
 
-*{
+#root {
   background-color: black;
   color: white;
 }

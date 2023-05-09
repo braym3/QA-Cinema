@@ -1,5 +1,6 @@
+import CommentModal from "./CommentModal";
 import "./Discussion.css";
-import React from "react";
+import React, { useState } from "react";
 
 let initialDiscussion = [
   {
@@ -20,40 +21,7 @@ let initialDiscussion = [
 ];
 
 const Discussion = () => {
-  // function addComment() {
-  //   return (
-  //     <>
-  //       <div id="updateModal" class="modal">
-  //         <div class="modal-content">
-  //           <form id="updatePersonForm">
-  //             <label class="form-label" for="pID">
-  //               ID:
-  //             </label>
-  //             <input
-  //               class="form-control"
-  //               type="text"
-  //               name="pID"
-  //               id="pID"
-  //               required
-  //             />
-  //             <label class="form-label" for="pAge">
-  //               Age:
-  //             </label>
-  //             <input class="form-control" type="number" name="pAge" id="pAge" />
-  //             <label class="form-label" for="pJob">
-  //               Job:
-  //             </label>
-  //             <input class="form-control" type="text" name="pJob" id="pJob" />
-  //             <div class="mt-3" />
-  //             <button class="btn btn-success" type="submit">
-  //               Submit
-  //             </button>
-  //           </form>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
+  const [show, setShow] = useState(false);
   const printData = () =>
     initialDiscussion.map((data, index) => {
       const { email, body } = data;
@@ -72,7 +40,10 @@ const Discussion = () => {
       </div>
       <div class="discussion" id="discussion">
         <h1>This is the subject of the first discussion</h1>
-        <button class="button-4">Reply to this discussion</button>
+        <button class="button-4" onClick={() => setShow()}>
+          Reply to this discussion
+        </button>
+        <CommentModal show={show} />
         <br></br>
         <br></br>
         <div>
