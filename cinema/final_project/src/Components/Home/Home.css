@@ -3,6 +3,12 @@
     position: relative;
 }
 
+.custom-border{
+    border: 3px solid #e67700;
+    border-radius: 20px;
+    padding: 20px;
+}
+
 .carousel {
     width:680px;
     

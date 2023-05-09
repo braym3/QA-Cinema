@@ -87,7 +87,7 @@ const Home = () => {
 
     return (
         <div>
-            <Container className='home border border-warning border-2 rounded'>
+            <Container className='home custom-border'>
                 {displayCarousel()}
             </Container>
             
@@ -95,9 +95,9 @@ const Home = () => {
                 <Row>
                     <div className='link-buttons'>
                         <ButtonGroup className='w-100'>
-                            <Button variant="warning" size='lg' className='mx-3 rounded' href='#'>All Listings</Button>
-                            <Button variant="warning" size='lg' className='mx-3 rounded' href='#'>Discussion</Button>
-                            <Button variant="warning" size='lg' className='mx-3 rounded' href='#'>Screens</Button>
+                            <Button size='lg' className='mx-3 rounded orange' href='#' style={{backgroundColor: '#E67700', borderColor: '#E67700'}}>All Listings</Button>
+                            <Button size='lg' className='mx-3 rounded orange' href='#' style={{backgroundColor: '#E67700', borderColor: '#E67700'}}>Discussion</Button>
+                            <Button size='lg' className='mx-3 rounded orange' href='#' style={{backgroundColor: '#E67700', borderColor: '#E67700'}}>Screens</Button>
                         </ButtonGroup>
                     </div>
                 </Row>
