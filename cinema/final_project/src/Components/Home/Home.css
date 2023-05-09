@@ -1,0 +1,16 @@
+.home{
+    margin-top: 50px;
+    position: relative;
+
+}
+
+.carousel {
+    width:640px;
+    height:360px;
+}
+
+.carousel .carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+  }
