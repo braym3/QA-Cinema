@@ -1,5 +1,9 @@
 const Discussion = () => {
-    return (   <><p>Discussion</p></> );
-}
- 
+  return (
+    <>
+      <h1>Discussion Board</h1>
+    </>
+  );
+};
+
 export default Discussion;
