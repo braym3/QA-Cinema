@@ -6,26 +6,26 @@ import { Link } from "react-router-dom";
 
 const Navi = () => {
   return (
-    <Navbar variant='dark' id="navbar">
-      <Container id="cont">
+    <Navbar className="color-nav" variant='dark' >
+      <Container className="color-nav">
         <Link id='nav' to='/'>
-          <Navbar.Brand href='#home' id="navsect"><strong>QA Cinema</strong></Navbar.Brand>
+          <Navbar.Brand href='#home' id="color-nav">QA Cinema</Navbar.Brand>
         </Link>
-        <Nav className='me-auto' id="navsect">
-          <Link id='nav' to='/'>
-           <strong>Home</strong> 
+        <Nav className='me-auto' id="color-nav">
+          <Link id='nav' className="color-nav" to='/'>
+            Home
           </Link>
           <Link id='nav' to='/listings'>
-           <strong>Listings</strong>
+            Listings
           </Link>
           <Link id='nav' to='/discussion'>
-            <strong>Discussion</strong>
+            Discussion
           </Link>
           <Link id='nav' to='/findus'>
-            <strong>Find us</strong>
+            Find us
           </Link>
           <Link id='nav' to='/about'>
-           <strong>About</strong>
+            About
           </Link>
         </Nav>
       </Container>
