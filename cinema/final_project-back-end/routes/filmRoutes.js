@@ -10,4 +10,13 @@ router.post('/create', async ({ body }, res, next) => {
     }
   });
 
+  router.get('/getAll', async function (req, res, next) {
+    try {
+      const films = await filmModel.find();
+      res.json(films);
+    } catch (err) {
+      return next({ status: 404, msg: 'woopsie' });
+    }
+  });
+
   module.exports = router
