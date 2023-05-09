@@ -1,18 +1,16 @@
 #nav{
-    all: unset;
-    color: rgba(255, 255, 255, 0.442);
-    margin: 15px;
-    font-style: bold;
-    color: white;
-    border-radius: 5px;
-    border-width: 2px;
-    background-color: #e67700;
-  }
+  all: unset;
+  color: rgba(255, 255, 255, 0.442);
+  margin: 15px;
+  color: white;
+  border-radius: 5px;
+  border-width: 2px;
+}
 
-  #navbar, #cont #navsect{
-    background-color: #e67700;
-  }
+#nav:hover{
+  font-weight:bolder;
+}
 
-  #nav:hover{
-    color: white;
-  }
+.color-nav, #color-nav{
+  background-color: #e67700;
+}
