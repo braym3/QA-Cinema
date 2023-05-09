@@ -6,7 +6,7 @@ const filmSchema = new Schema({
   runtime: { type: Number, required: true },
   rating: { type: String, required: true },
   filmPoster: { type: String, required: true },
-  releaseDate: { type: String, required: true },
+  releaseDate: { type: Number, required: true },
   director: { type: String, required: true },
   cast: {type: String, required: true}
 });

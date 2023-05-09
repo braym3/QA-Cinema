@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-const filmRoutes = require('./routes/filmRoutes');
+const filmRoutes = require('./routes/filmRoutes.js');
 
 app.use('/films', filmRoutes);
 

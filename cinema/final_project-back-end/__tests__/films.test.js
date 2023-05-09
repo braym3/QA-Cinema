@@ -21,7 +21,7 @@ describe("API tests", function () {
       runtime: 122,
       rating: "PG",
       filmPoster: "hsdsisucbi",
-      releaseDate: "11/12/1222",
+      releaseDate: 2013,
       director: "russo et russo",
       cast: "duhiadhi",
     });
@@ -47,7 +47,7 @@ describe("API tests", function () {
         runtime: 122,
         rating: "PG",
         filmPoster: "hsdsisucbi",
-        releaseDate: "11/12/1222",
+        releaseDate: 2013,
         director: "russo et russo",
         cast: "duhiadhi",
       })
@@ -59,7 +59,7 @@ describe("API tests", function () {
             runtime: 122,
             rating: "PG",
             filmPoster: "hsdsisucbi",
-            releaseDate: "11/12/1222",
+            releaseDate: 2013,
             director: "russo et russo",
             cast: "duhiadhi",
           });
