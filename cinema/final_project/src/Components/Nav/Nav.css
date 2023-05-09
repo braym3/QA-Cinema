@@ -1,5 +1,7 @@
 #nav{
   all: unset;
+  position: sticky;
+  top: 0;
   color: rgba(255, 255, 255, 0.442);
   margin: 15px;
   color: white;
@@ -12,5 +14,7 @@
 }
 
 .color-nav, #color-nav{
+  position: sticky;
+  top: 0;
   background-color: #e67700;
 }

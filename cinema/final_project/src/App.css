@@ -1,5 +1,6 @@
-*{
+#root, body{
     background-color: black;
-    color: white;
+    color: black;
+    height: 100%;
+    width: 100%;
 }
-
