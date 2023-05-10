@@ -54,24 +54,24 @@ describe("API tests", function () {
       .end((err, res) => {
         chai.expect(err).to.be.null;
         chai.expect(res.body).to.include({
-            title: "Avengers",
-            description: "abcde",
-            runtime: 122,
-            rating: "PG",
-            filmPoster: "hsdsisucbi",
-            releaseDate: 2013,
-            director: "russo et russo",
-            cast: "duhiadhi",
-          });
+          title: "Avengers",
+          description: "abcde",
+          runtime: 122,
+          rating: "PG",
+          filmPoster: "hsdsisucbi",
+          releaseDate: 2013,
+          director: "russo et russo",
+          cast: "duhiadhi",
+        });
         chai.expect(res.status).to.equal(201);
         done();
       });
   });
 
-  it('should return all films', (done) => {
+  it("should return all films", (done) => {
     chai
       .request(server)
-      .get('/films/getAll')
+      .get("/films/getAll")
       .send()
       .end((err, res) => {
         expect(err).to.be.null;
@@ -79,6 +79,24 @@ describe("API tests", function () {
         chai.expect(res.status).to.equal(200);
         done();
       });
+  });
+
+  it("should get film by id", (done) => {
+    filmModel.findOne().then((testFilm) => {
+      chai
+        .request(server)
+        .get(`/films/getFilm/${testFilm._id}`)
+        .send()
+        .end((err, res) => {
+          expect(err).to.be.null;
+          chai.expect(res.status).to.equal(200);
+          expect(res.body.title).to.equal(testFilm.title);
+          // expect(res.body).to.equal(testFilm._id);
+          expect(res.body).has.property("_id");
+
+          done();
+        });
+    });
   });
 
   after(async () => {
