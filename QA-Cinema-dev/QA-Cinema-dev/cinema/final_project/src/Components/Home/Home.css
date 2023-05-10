@@ -1,0 +1,41 @@
+.home{
+    margin-top: 50px;
+    position: relative;
+}
+
+.custom-border{
+    border: 3px solid #e67700;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.carousel {
+    width:680px;
+    
+}
+
+.carousel .carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+}
+
+.link-buttons{
+    margin-top: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.release-title{
+    margin: 1%;
+}
+
+.btn-orange{
+    background-color: #e67700 !important; 
+    border-color: #e67700 !important;
+}
+
+.btn-orange:hover{
+    background-color: #8d8c8c !important;
+    border-color: #8d8c8c !important;
+}
