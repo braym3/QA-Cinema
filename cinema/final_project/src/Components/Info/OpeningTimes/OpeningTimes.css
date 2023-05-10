@@ -1,0 +1,25 @@
+.opening-times h3 {
+    color: rgb(255, 255, 255);
+}
+
+.opening-times p {
+    color: rgb(255, 255, 255);
+}
+
+.opening-times h1 {
+    color: #e67700;
+    margin-bottom: 5%;
+}
+
+.opening-times-content{
+    margin: 5%;
+}
+
+.opening-times{
+    color: white;
+}
+
+.opening-times th td{
+    width: 100%;
+    padding: 20%;
+}

@@ -4,6 +4,7 @@ import Home from "./Components/Home/Home";
 import Discussion from "./Components/Discussion/Discussion";
 import Info from "./Components/Info/FindUs";
 import { Routes, Route } from "react-router";
+import {  Navigate } from "react-router-dom";
 import Navi from "./Components/Nav/Navi";
 import About from "./Components/Info/About";
 import FindUs from "./Components/Info/FindUs";
@@ -20,8 +21,9 @@ const App = () => {
           <Route path='discussion' element={<Discussion />} />
           <Route path='info' element={<Info />} />
           <Route path='about' element={<About />} />
-          <Route path='findus' element={<FindUs />} />
+          <Route path="/findus*" element={<FindUs/>}/>
           <Route path='purchasetickets/:filmID' element={<PurchaseTickets />} />
+          <Route path="*" element={<Navigate to="/"/>} /> 
         </Routes>
       </div>
     </>
