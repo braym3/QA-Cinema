@@ -86,12 +86,12 @@ const Discussion = () => {
     });
 
   const showDiscussion = () =>
-    initialDiscussion.map((data, index) => {
-      console.log(data);
+    discussionData.map((discussion, index) => {
+      console.log(discussion);
       const id = "discussion" + index.toString;
       return (
         <div class="discussion" id={id}>
-          <h1>{data.subject}</h1>
+          <h1>{discussion.subject}</h1>
           <button
             class="button-4"
             id={"comment" + index.toString}
@@ -129,7 +129,7 @@ const Discussion = () => {
                   <th>Comment</th>
                 </tr>
               </thead>
-              <tbody>{printData(data.discussion)}</tbody>
+              <tbody>{printData(discussion.discussion)}</tbody>
             </table>
           </div>
         </div>

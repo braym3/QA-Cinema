@@ -6,7 +6,7 @@ const discussionsAPI = axios.create({
 
 export const getDiscussions = async () => {
   try {
-    const { data } = await discussionsAPI.get("/getAll");
+    const { data } = await discussionsAPI.get("getAll");
     console.log(data);
     return data;
   } catch (err) {

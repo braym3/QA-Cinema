@@ -9,3 +9,5 @@ router.get("/getAll", async function (req, res, next) {
     return next({ status: 404, msg: err.msg });
   }
 });
+
+module.exports = router;
