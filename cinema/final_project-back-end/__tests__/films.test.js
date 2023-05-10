@@ -1,6 +1,7 @@
 const { expect } = require("chai");
 const chai = require("chai");
 const chaiHttp = require("chai-http");
+const { default: mongoose } = require("mongoose");
 
 chai.use(chaiHttp);
 // If there isn't a filepath on the require then it is a node module
@@ -12,6 +13,13 @@ const server = require("../server");
 describe("API tests", function () {
   //   let server;
   this.timeout(3_000);
+
+  before(async () => {
+    await mongoose.connection.close();
+    await mongoose.connect(
+      "mongodb+srv://mwhitham:duSWUr6Fmn7vPVvu@backend-finalproject.b1pfm04.mongodb.net/testFilms"
+    );
+  });
 
   beforeEach(async () => {
     await filmModel.deleteMany({});
