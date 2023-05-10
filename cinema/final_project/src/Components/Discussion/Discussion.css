@@ -85,3 +85,10 @@
   align-items: center;
   justify-content: center;
 }
+
+#comment {
+  overflow: scroll;
+  width: 300px;
+  height: 100px;
+  text-align: start;
+}
