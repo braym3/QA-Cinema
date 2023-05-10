@@ -1,36 +1,43 @@
 import Card from "react-bootstrap/Card";
+import { useState, useEffect } from "react";
+import { getFilmByID } from "../../ApiCalls";
+import { useParams } from "react-router-dom";
+import Spinner from "react-bootstrap/Spinner";
 
 const SingleFilm = () => {
-  const film = {
-    title: "Hot Fuzz",
-    description:
-      "A skilled London police officer, after irritating superiors with his embarrassing effectiveness, is transferred to a village where the easygoing officers object to his fervor for regulations, as a string of grisly murders strikes ...",
-    runtime: 121,
-    rating: "R",
-    filmPoster:
-      "https://m.media-amazon.com/images/M/MV5BMzg4MDJhMDMtYmJiMS00ZDZmLThmZWUtYTMwZDM1YTc5MWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
-    releaseDate: "2007",
-    director: "Edgar Wright",
-    cast: "Simon Pegg, Nick Frost, Martin Freeman",
-    __v: 0,
-  };
+  const { filmID } = useParams();
+  const [filmData, setFilmData] = useState();
 
-  return (
-    <Card id='cards'>
-      <div id='singlecard'>
-        <div id='data'>
-          <Card.Title>{film.title}</Card.Title>
-          <Card.Text>Rating: {film.rating}</Card.Text>
-          <Card.Text>Runtime: {film.runtime}</Card.Text>
-          <Card.Text>Synopsis: {film.description}</Card.Text>
-          <Card.Text>Cast: {film.cast}</Card.Text>
+  useEffect(() => {
+    getFilmByID(filmID).then((film) => {
+      setFilmData(film);
+    });
+  }, [filmID]);
+
+  if (filmData === undefined) {
+    return (
+      <Spinner animation='border' role='status'>
+        <span className='visually-hidden'>Loading...</span>
+      </Spinner>
+    );
+  } else {
+    return (
+      <Card id='cards'>
+        <div id='singlecard'>
+          <div id='data'>
+            <Card.Title>{filmData.title}</Card.Title>
+            <Card.Text>Rating: {filmData.rating}</Card.Text>
+            <Card.Text>Runtime: {filmData.runtime}</Card.Text>
+            <Card.Text>Synopsis: {filmData.description}</Card.Text>
+            <Card.Text>Cast: {filmData.cast}</Card.Text>
+          </div>
+          <div id='poster'>
+            <img src={filmData.filmPoster} alt='film posters' />
+          </div>
         </div>
-        <div id='poster'>
-          <img src={film.filmPoster} alt='film posters' />
-        </div>
-      </div>
-    </Card>
-  );
+      </Card>
+    );
+  }
 };
 
 export default SingleFilm;
