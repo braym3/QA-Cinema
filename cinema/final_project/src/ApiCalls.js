@@ -7,7 +7,6 @@ const filmsAPI = axios.create({
 export const getFilms = async () => {
   try {
     const { data } = await filmsAPI.get("/getAll");
-    console.log(data);
     return data;
   } catch (err) {
     console.error(err);
@@ -17,7 +16,6 @@ export const getFilms = async () => {
 export const getFilmByID = async (filmID) => {
   try {
     const { data } = await filmsAPI.get(`/getFilm/${filmID}`);
-    console.log(data);
     return data;
   } catch (err) {
     console.error(err);

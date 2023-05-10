@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
-const AddTickets = ({ filmData, filmTime }) => {
+const AddTickets = () => {
   const [adultCount, setAdultCount] = useState(0);
   const [childCount, setChildCount] = useState(0);
   const [concessionCount, setConcessionCount] = useState(0);
@@ -9,9 +9,7 @@ const AddTickets = ({ filmData, filmTime }) => {
 
   return (
     <div id='addticks'>
-      <h2 style={{ gridRow: 1 }}>
-        Add Tickets to see {filmData.title} @ {filmTime}
-      </h2>
+      <h2 style={{ gridRow: 1 }}>Add Tickets</h2>
       <div id='add' style={{ gridRow: 2 }}>
         <h3>Adult - (£7)</h3>
         <p>

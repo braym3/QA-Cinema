@@ -5,18 +5,16 @@ import SingleFilm from "./SingleFilm";
 import { useState } from "react";
 
 const PurchaseTickets = () => {
-  const [filmTime, setFilmTime] = useState();
-  const [filmData, setFilmData] = useState();
-
+  const [time, selectTime] = useState();
   return (
     <>
       <h1 style={{ textAlign: "center", marginTop: "10px" }}>
         Purchase Tickets
       </h1>
-      <SingleFilm setFilmData={setFilmData} filmData={filmData} />
-      <SelectTime setFilmTime={setFilmTime} />
+      <SingleFilm />
+      <SelectTime selectTime={selectTime} />
       <div id='screenalign'>
-        <AddTickets filmData={filmData} filmTime={filmTime} />
+        <AddTickets time={time} />
         <StripePayments />
       </div>
     </>
