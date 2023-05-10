@@ -1,0 +1,25 @@
+.cinema-image{
+    margin: 3%;
+}
+
+h3 {
+    color: black;
+}
+
+h1 {
+    color: #e67700;
+    margin: 50px auto;
+    margin-top: 5%;
+    font-size: 40px;
+}
+
+.menu1 {
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.find-us-sidebar {
+    background: #808080;
+    width: 1%;
+}
+
