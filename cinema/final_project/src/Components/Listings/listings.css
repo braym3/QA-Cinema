@@ -7,6 +7,12 @@
     border-style: solid;
 }
 
+img{
+    height: 240px;
+    width: 160px;
+    float: right;
+}
+
 #cards{
     margin: 10px;
     padding: 10px;
