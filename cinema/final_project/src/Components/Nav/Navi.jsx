@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Navi = () => {
   return (
-    <Navbar className="color-nav" variant='dark' >
+    <Navbar className="color-nav" variant='dark' sticky="top" >
       <Container className="color-nav">
         <Link id='nav' to='/'>
           <Navbar.Brand href='#home' id="color-nav">QA Cinema</Navbar.Brand>
