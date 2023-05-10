@@ -1,4 +1,4 @@
-#nav{
+#nav {
   all: unset;
   position: sticky;
   top: 0;
@@ -9,12 +9,20 @@
   border-width: 2px;
 }
 
-#nav:hover{
-  font-weight:bolder;
+#nav:hover {
+  font-weight: bolder;
 }
 
-.color-nav, #color-nav{
-  position: sticky;
-  top: 0;
-  background-color: #e67700;
+#color-nav {
+  background: radial-gradient(
+      circle at center,
+      #e67700,
+      #d36d01,
+      #bb6101,
+      #9c5101,
+      #9f5301
+    ),
+    100%;
+  border-radius: 5px;
+  width: 100%;
 }
