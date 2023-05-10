@@ -1,8 +1,9 @@
 //import CommentModal from "./CommentModal";
 import "./Discussion.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { getDiscussions } from "../../Services/DiscussionService";
 
 const Discussion = () => {
   const [showComment, setShowComment] = useState(false);
@@ -45,6 +46,15 @@ const Discussion = () => {
       ],
     },
   ]);
+  const [discussionData, setDiscussionData] = useState([]);
+
+  useEffect(() => {
+    getDiscussions().then((discussion) => {
+      setDiscussionData(discussion);
+      console.log("Use Effect Called");
+    });
+  }, []);
+
   const handleCloseComment = () => setShowComment(false);
   const handleShowComment = () => setShowComment(true);
   const handleCloseDiscussion = () => setNewDiscussion(false);
