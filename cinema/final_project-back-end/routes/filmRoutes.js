@@ -3,10 +3,11 @@ const { filmModel } = require('../models');
 
 router.post('/create', async ({ body }, res, next) => {
     try {
+      console.log(body)
       const created = await filmModel.create(body);
       res.status(201).json(created);
     } catch (err) {
-      return next({ status: 500, msg: 'oops' });
+      return next({ status: 500, msg: err.msg });
     }
   });
 
@@ -15,7 +16,7 @@ router.post('/create', async ({ body }, res, next) => {
       const films = await filmModel.find();
       res.json(films);
     } catch (err) {
-      return next({ status: 404, msg: 'woopsie' });
+      return next({ status: 404, msg: err.msg });
     }
   });
 

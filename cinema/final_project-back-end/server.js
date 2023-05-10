@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const filmRoutes = require('./routes/filmRoutes');
+const filmRoutes = require('./routes/filmRoutes.js');
 
 app.use('/films', filmRoutes);
 
