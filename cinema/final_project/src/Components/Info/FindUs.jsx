@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FindUs.css';
-import GettingHere from './GettingHere';
-import PlacesToGo from './PlacesToGo';
-import OpeningTimes from './OpeningTimes';
+import GettingHere from './GettingHere/GettingHere';
+import PlacesToGo from './PlacesToGo/PlacesToGo';
+import OpeningTimes from './OpeningTimes/OpeningTimes';
 
-import { ProSidebarProvider } from 'react-pro-sidebar';
-import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import { ProSidebarProvider, Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import {  Link, Navigate } from "react-router-dom";
 import { Routes, Route } from "react-router";
 
@@ -13,8 +12,8 @@ const FindUs = () => {
     return (
         <div>
             <ProSidebarProvider>
-                <div style={{ display: "flex", height: "100vh" }} className='sidebar-container'>
-                    <Sidebar className="find-us-sidebar">
+                <div style={{ display: "flex" }}>
+                    <Sidebar className="find-us-sidebar" width="18%">
                         <Menu>
                             <MenuItem className="menu1" component={<Link to="/findus" className="link" />}>
                                 <h3>FIND US</h3>
@@ -24,14 +23,12 @@ const FindUs = () => {
                             <MenuItem component={<Link to="opening-times" className="link" />}> Opening Times </MenuItem>
                         </Menu>
                     </Sidebar>
-
-                        <Routes>
-                            <Route path="/" element={<GettingHere />} />
-                            <Route path="/places-to-go" element={<PlacesToGo />} />
-                            <Route path="/opening-times" element={<OpeningTimes />} />
-                            <Route path="*" element={<Navigate to="/"/>} /> 
-
-                        </Routes>
+                    <Routes>
+                        <Route path="/" element={<GettingHere />} />
+                        <Route path="/places-to-go" element={<PlacesToGo />} />
+                        <Route path="/opening-times" element={<OpeningTimes />} />
+                        <Route path="*" element={<Navigate to="/"/>} /> 
+                    </Routes>
                 </div>
             </ProSidebarProvider>
         </div>

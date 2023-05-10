@@ -1,12 +1,8 @@
-.cinema-image{
-    margin: 3%;
+.find-us-text h3 {
+    color: rgb(255, 255, 255);
 }
 
-h3 {
-    color: black;
-}
-
-h1 {
+.find-us-text h1 {
     color: #e67700;
     margin: 50px auto;
     margin-top: 5%;
@@ -14,12 +10,10 @@ h1 {
 }
 
 .menu1 {
-    margin-bottom: 40px;
-    margin-top: 20px;
+    margin-bottom: 10%;
+    margin-top: 25%;
 }
 
 .find-us-sidebar {
-    background: #808080;
-    width: 1%;
+    background: #000000;
 }
-
