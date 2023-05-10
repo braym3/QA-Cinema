@@ -1,4 +1,4 @@
-// import CommentModal from "./CommentModal";
+import CommentModal from "./CommentModal";
 import "./Discussion.css";
 import React, { useEffect, useState } from "react";
 //import Button from "react-bootstrap/Button";
