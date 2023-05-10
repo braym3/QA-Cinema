@@ -13,18 +13,18 @@ import PurchaseTickets from "./Components/Listings/PurchaseTickets";
 const App = () => {
   return (
     <>
-    <Navi/>
-    <div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='listings' element={<Listings />} />
-        <Route path='discussion' element={<Discussion />} />
-        <Route path='info' element={<Info />} />
-        <Route path="about" element={<About/>}/>
-        <Route path="/findus*" element={<FindUs/>}/>
-        <Route path='purchasetickets' element={<PurchaseTickets/>}/>
-        <Route path="*" element={<Navigate to="/"/>} /> 
-      </Routes>
+      <Navi />
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='listings' element={<Listings />} />
+          <Route path='discussion' element={<Discussion />} />
+          <Route path='info' element={<Info />} />
+          <Route path='about' element={<About />} />
+          <Route path="/findus*" element={<FindUs/>}/>
+          <Route path='purchasetickets/:filmID' element={<PurchaseTickets />} />
+          <Route path="*" element={<Navigate to="/"/>} /> 
+        </Routes>
       </div>
     </>
   );

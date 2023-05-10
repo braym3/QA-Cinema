@@ -1,53 +1,48 @@
 import "./listings.css";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button"
-import {Link} from "react-router-dom"
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getFilms } from "../../ApiCalls";
 
 const Listings = () => {
-  const dummyData = [
-    {
-      title: "Avengers",
-      rating: 18,
-      runtime: 120,
-      description: "hulk, thor, tony stark",
-      cast: ["mark ruffalo ", "robert downey jr ", "chris hemsworth "],
-    },
-    {
-        title: "Avengers",
-        rating: 18,
-        runtime: 120,
-        description: "hulk, thor, tony stark",
-        cast: ["mark ruffalo", "robert downey jr", "chris hemsworth"],
-      },
-      {
-        title: "Avengers",
-        rating: 18,
-        runtime: 120,
-        description: "hulk, thor, tony stark",
-        cast: ["mark ruffalo", "robert downey jr", "chris hemsworth"],
-      },
-      {
-        title: "Avengers",
-        rating: 18,
-        runtime: 120,
-        description: "hulk, thor, tony stark",
-        cast: ["mark ruffalo", "robert downey jr", "chris hemsworth"],
-      },
-  ];
+  const [filmData, setFilmData] = useState([]);
+
+  useEffect(() => {
+    getFilms().then((films) => {
+      setFilmData(films);
+    });
+  }, []);
 
   return (
-    <div id="container">
-      {dummyData.map((film) => {
+    <div id='container'>
+      {filmData.map((film) => {
         return (
-          <Card id="cards">
-            <Card.Title>{film.title}</Card.Title>
-            <Card.Text>Rating: {film.rating}</Card.Text>
-            <Card.Text>Runtime: {film.runtime}</Card.Text>
-            <Card.Text>Synopsis: {film.description}</Card.Text>
-            <Card.Text>Cast: {film.cast}</Card.Text>
-            <Link to="/purchasetickets">
-            <Button className="button">See all Times and Purchase tickets</Button>
-            </Link>
+          <Card id='cards'>
+            <div id='singlecard'>
+              <div id='data'>
+                <Card.Title>{film.title}</Card.Title>
+                <Card.Text>Synopsis: {film.description}</Card.Text>
+                <Card.Text>Rating: {film.rating}</Card.Text>
+                <Card.Text>Runtime: {film.runtime} minutes</Card.Text>
+                <Card.Text>Cast: {film.cast}</Card.Text>
+              </div>
+              <div id='poster'>
+                <img src={film.filmPoster} alt='film posters' />
+              </div>
+              <Link to={"/purchasetickets/" + film._id}>
+                <Button
+                  className='button'
+                  style={{
+                    float: "right",
+                    marginRight: "-165px",
+                    marginTop: "1%",
+                  }}
+                >
+                  See all Times and Purchase tickets
+                </Button>
+              </Link>
+            </div>
           </Card>
         );
       })}
