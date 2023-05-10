@@ -1,18 +1,17 @@
 import Card from "react-bootstrap/Card";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { getFilmByID } from "../../ApiCalls";
 import { useParams } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 
-const SingleFilm = () => {
+const SingleFilm = ({ setFilmData, filmData }) => {
   const { filmID } = useParams();
-  const [filmData, setFilmData] = useState();
 
   useEffect(() => {
     getFilmByID(filmID).then((film) => {
       setFilmData(film);
     });
-  }, [filmID]);
+  }, [filmID, setFilmData]);
 
   if (filmData === undefined) {
     return (
@@ -26,9 +25,9 @@ const SingleFilm = () => {
         <div id='singlecard'>
           <div id='data'>
             <Card.Title>{filmData.title}</Card.Title>
-            <Card.Text>Rating: {filmData.rating}</Card.Text>
-            <Card.Text>Runtime: {filmData.runtime}</Card.Text>
             <Card.Text>Synopsis: {filmData.description}</Card.Text>
+            <Card.Text>Rating: {filmData.rating}</Card.Text>
+            <Card.Text>Runtime: {filmData.runtime} minutes</Card.Text>
             <Card.Text>Cast: {filmData.cast}</Card.Text>
           </div>
           <div id='poster'>

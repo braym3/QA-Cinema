@@ -14,7 +14,7 @@ img {
 }
 
 #cards {
-  margin: 10px;
+  margin: 15px;
   padding: 10px;
   color: white;
   background-color: black;
@@ -22,11 +22,7 @@ img {
   border-color: #e67700;
   border-width: 2px;
   border-style: solid;
-}
-
-.button {
-  float: right;
-  width: 25%;
+  box-shadow: 5px 5px #e677008f inset;
 }
 
 #addticks {
@@ -92,5 +88,4 @@ img {
 
 #poster {
   grid-column: 2;
-  grid-row: 1;
 }
