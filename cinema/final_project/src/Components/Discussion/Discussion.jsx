@@ -2,51 +2,12 @@ import CommentModal from "./CommentModal";
 import DiscussionModal from "./DiscussionModal";
 import "./Discussion.css";
 import React, { useEffect, useState } from "react";
-//import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { getDiscussions } from "../../Services/DiscussionService";
 
 const Discussion = () => {
   const [showComment, setShowComment] = useState(false);
   const [newDiscussion, setNewDiscussion] = useState(false);
-  const [initialDiscussion, setInitialDiscussion] = useState([
-    {
-      subject: "Lorem Ipsum",
-      discussionId: 1,
-      discussion: [
-        {
-          email: "Eliseo@gardner.biz",
-          body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium",
-        },
-        {
-          email: "Jayne_Kuhic@sydney.com",
-          body: "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
-        },
-        {
-          email: "Nikita@garfield.biz",
-          body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione",
-        },
-      ],
-    },
-    {
-      subject: "Breakfast",
-      discussionId: 2,
-      discussion: [
-        {
-          email: "dave@fullenglish.com",
-          body: "I love bagels",
-        },
-        {
-          email: "administrator@admin.com",
-          body: "Dave this is for films",
-        },
-        {
-          email: "dave@fullenglish.com",
-          body: "Sorry mate",
-        },
-      ],
-    },
-  ]);
+
   const [discussionData, setDiscussionData] = useState([]);
 
   useEffect(() => {
@@ -69,8 +30,6 @@ const Discussion = () => {
       email: e.target[0].value,
       body: e.target[1].value,
     };
-
-    setInitialDiscussion([...initialDiscussion, comment]);
     handleCloseComment();
   };
 
@@ -100,27 +59,11 @@ const Discussion = () => {
           >
             Reply to this discussion
           </button>
-          <CommentModal show={showComment} onHide={handleCloseComment} />
-          {/* <Modal show={showComment} onHide={handleCloseComment}>
-            <Modal.Header closeButton>
-              <Modal.Title>Add comment</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <form onSubmit={addComment}>
-                <label name="email">Email</label>
-                <br />
-                <input name="email" type="email" required />
-                <br />
-                <label>Comment</label>
-                <br />
-                <textarea id="comment" type="text-field" required />
-                <br />
-                <button class="button-4" type="submit">
-                  Add comment
-                </button>
-              </form>
-            </Modal.Body>
-          </Modal> */}
+          <CommentModal
+            show={showComment}
+            onHide={handleCloseComment}
+            addComment={addComment}
+          />
           <br></br>
           <br></br>
           <div>
@@ -146,31 +89,11 @@ const Discussion = () => {
         <button class="button-4" onClick={handleShowDiscussion}>
           + Add New Discussion
         </button>
-        <DiscussionModal show={newDiscussion} onHide={handleCloseDiscussion} />
-        {/* <Modal show={newDiscussion} onHide={handleCloseDiscussion}>
-          <Modal.Header closeButton>
-            <Modal.Title>Add new Discussion</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form>
-              <label name="subject">Subject of new Discussion</label>
-              <br />
-              <input name="subject" type="text" required />
-              <br />
-              <label name="email">Email</label>
-              <br />
-              <input name="email" type="email" required />
-              <br />
-              <label>Comment</label>
-              <br />
-              <textarea id="comment" type="text-field" required />
-              <br />
-              <button class="button-4" type="submit">
-                Start Discussion
-              </button>
-            </form>
-          </Modal.Body>
-        </Modal> */}
+        <DiscussionModal
+          show={newDiscussion}
+          onHide={handleCloseDiscussion}
+          addComment={addComment}
+        />
       </div>
       {showDiscussion()}
       <br />
