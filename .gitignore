@@ -29,7 +29,11 @@ yarn-error.log*
 # sean
 */comments.json
 <<<<<<< HEAD
+<<<<<<< HEAD
 *comments.json
 =======
 *comments.json
 >>>>>>> 399b5973ee14a71f0695c493ff19e9ebdf883387
+=======
+*comments.json
+>>>>>>> e241a926bf3449b3a811e21b09528fbd87a179ba

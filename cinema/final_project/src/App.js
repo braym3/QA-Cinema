@@ -14,6 +14,7 @@ const App = () => {
   return (
     <>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Navi/>
     <div>
       <Routes>
@@ -27,6 +28,8 @@ const App = () => {
         <Route path="*" element={<Navigate to="/"/>} /> 
       </Routes>
 =======
+=======
+>>>>>>> e241a926bf3449b3a811e21b09528fbd87a179ba
       <Navi />
       <div>
         <Routes>
@@ -35,10 +38,17 @@ const App = () => {
           <Route path='discussion' element={<Discussion />} />
           <Route path='info' element={<Info />} />
           <Route path='about' element={<About />} />
+<<<<<<< HEAD
           <Route path='findus' element={<FindUs />} />
           <Route path='purchasetickets/:filmID' element={<PurchaseTickets />} />
         </Routes>
 >>>>>>> 399b5973ee14a71f0695c493ff19e9ebdf883387
+=======
+          <Route path="/findus*" element={<FindUs/>}/>
+          <Route path='purchasetickets/:filmID' element={<PurchaseTickets />} />
+          <Route path="*" element={<Navigate to="/"/>} /> 
+        </Routes>
+>>>>>>> e241a926bf3449b3a811e21b09528fbd87a179ba
       </div>
     </>
   );
