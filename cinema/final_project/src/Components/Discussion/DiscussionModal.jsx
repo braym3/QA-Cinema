@@ -2,14 +2,18 @@ import React from "react";
 import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
 
-const CommentModal = ({ show, onHide }) => {
+const DiscussionModal = ({ show, onHide }) => {
   return (
     <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Add comment</Modal.Title>
+        <Modal.Title>Add new Discussion</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form>
+        <form /*onSubmit={addComment}*/>
+          <label name="subject">Subject of new Discussion</label>
+          <br />
+          <input name="subject" type="text" required />
+          <br />
           <label name="email">Email</label>
           <br />
           <input name="email" type="email" required />
@@ -19,7 +23,7 @@ const CommentModal = ({ show, onHide }) => {
           <textarea id="comment" type="text-field" required />
           <br />
           <button class="button-4" type="submit">
-            Add comment
+            Start Discussion
           </button>
         </form>
       </Modal.Body>
@@ -27,4 +31,4 @@ const CommentModal = ({ show, onHide }) => {
   );
 };
 
-export default CommentModal;
+export default DiscussionModal;

@@ -1,4 +1,5 @@
 import CommentModal from "./CommentModal";
+import DiscussionModal from "./DiscussionModal";
 import "./Discussion.css";
 import React, { useEffect, useState } from "react";
 //import Button from "react-bootstrap/Button";
@@ -99,7 +100,8 @@ const Discussion = () => {
           >
             Reply to this discussion
           </button>
-          <Modal show={showComment} onHide={handleCloseComment}>
+          <CommentModal show={showComment} onHide={handleCloseComment} />
+          {/* <Modal show={showComment} onHide={handleCloseComment}>
             <Modal.Header closeButton>
               <Modal.Title>Add comment</Modal.Title>
             </Modal.Header>
@@ -118,7 +120,7 @@ const Discussion = () => {
                 </button>
               </form>
             </Modal.Body>
-          </Modal>
+          </Modal> */}
           <br></br>
           <br></br>
           <div>
@@ -144,12 +146,13 @@ const Discussion = () => {
         <button class="button-4" onClick={handleShowDiscussion}>
           + Add New Discussion
         </button>
-        <Modal show={newDiscussion} onHide={handleCloseDiscussion}>
+        <DiscussionModal show={newDiscussion} onHide={handleCloseDiscussion} />
+        {/* <Modal show={newDiscussion} onHide={handleCloseDiscussion}>
           <Modal.Header closeButton>
             <Modal.Title>Add new Discussion</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form /*onSubmit={addComment}*/>
+            <form>
               <label name="subject">Subject of new Discussion</label>
               <br />
               <input name="subject" type="text" required />
@@ -167,7 +170,7 @@ const Discussion = () => {
               </button>
             </form>
           </Modal.Body>
-        </Modal>
+        </Modal> */}
       </div>
       {showDiscussion()}
       <br />
