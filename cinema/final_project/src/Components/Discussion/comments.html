@@ -1,0 +1,39 @@
+      <div class="discussion" id="discussion">
+        <h1>This is the subject of the first discussion</h1>
+        <button class="button-4" onClick={handleShowComment}>
+          Reply to this discussion
+        </button>
+        <Modal show={showComment} onHide={handleCloseComment}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add comment</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <form onSubmit={addComment}>
+              <label name="email">Email</label>
+              <br />
+              <input name="email" type="email" required />
+              <br />
+              <label>Comment</label>
+              <br />
+              <textarea id="comment" type="text-field" required />
+              <br />
+              <button class="button-4" type="submit">
+                Add comment
+              </button>
+            </form>
+          </Modal.Body>
+        </Modal>
+        <br></br>
+        <br></br>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>{printData()}</tbody>
+          </table>
+        </div>
+      </div>
