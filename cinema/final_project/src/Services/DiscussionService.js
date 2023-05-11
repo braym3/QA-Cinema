@@ -23,3 +23,13 @@ export const createDiscussion = async (discussion) => {
     console.error(err);
   }
 };
+
+export const addComment = async (disId, comment) => {
+  try {
+    const { data } = await discussionsAPI.patch("addComment/" + disId, comment);
+    // console.log(data);
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};

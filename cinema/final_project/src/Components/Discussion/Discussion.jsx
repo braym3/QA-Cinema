@@ -5,10 +5,9 @@ import React, { useEffect, useState } from "react";
 import { getDiscussions } from "../../Services/DiscussionService";
 
 const Discussion = () => {
-  const [showComment, setShowComment] = useState(false);
+  const [showComment, setShowComment] = useState(-1);
   const [newDiscussion, setNewDiscussion] = useState(false);
   const [discussionData, setDiscussionData] = useState([]);
-  const [body, setBody] = useState();
 
   useEffect(() => {
     getDiscussions().then((discussion) => {
@@ -16,20 +15,10 @@ const Discussion = () => {
     });
   }, []);
 
-  const handleCloseComment = () => setShowComment(false);
-  const handleShowComment = () => setShowComment(true);
+  const handleCloseComment = () => setShowComment(-1);
+  const handleShowComment = (index) => setShowComment(index);
   const handleCloseDiscussion = () => setNewDiscussion(false);
   const handleShowDiscussion = () => setNewDiscussion(true);
-
-  const addComment = (e) => {
-    e.preventDefault();
-    let comment = {
-      discussionId: 1,
-      email: e.target[0].value,
-      body: e.target[1].value,
-    };
-    handleCloseComment();
-  };
 
   const printData = (comments) =>
     comments.map((data, index) => {
@@ -51,14 +40,14 @@ const Discussion = () => {
           <button
             className="button-4"
             id={"comment" + index.toString}
-            onClick={handleShowComment}
+            onClick={() => handleShowComment(index)}
           >
             Reply to this discussion
           </button>
           <CommentModal
-            show={showComment}
+            show={showComment === index}
             onHide={handleCloseComment}
-            addComment={addComment}
+            disID={discussion._id}
           />
           <br></br>
           <br></br>
@@ -87,8 +76,6 @@ const Discussion = () => {
         <DiscussionModal
           show={newDiscussion}
           onHide={handleCloseDiscussion}
-          body={body}
-          setBody={setBody}
           setDiscussionData={setDiscussionData}
           discussionData={discussionData}
         />

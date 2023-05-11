@@ -7,26 +7,13 @@ import { useEffect, useState } from "react";
 const DiscussionModal = ({
   show,
   onHide,
-  body,
-  setBody,
   setDiscussionData,
   discussionData,
 }) => {
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
-
-  const newDiscussion = (e) => {
-    e.preventDefault();
-
-    console.log(subject);
-    console.log(email);
-    console.log(comment);
-
-    console.log("Called");
-    console.log(body);
-    onHide();
-  };
+  const [body, setBody] = useState();
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
@@ -42,7 +29,7 @@ const DiscussionModal = ({
         <Modal.Title>Add new Discussion</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={newDiscussion}>
+        <form onSubmit={onHide}>
           <label name="subject">Subject of new Discussion</label>
           <br />
           <input
