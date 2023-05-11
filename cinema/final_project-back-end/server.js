@@ -1,14 +1,16 @@
-const express = require('express');
-const cors = require('cors')
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-const filmRoutes = require('./routes/filmRoutes.js');
+const filmRoutes = require("./routes/filmRoutes.js");
+const discussionRoutes = require("./routes/discussionRoutes.js");
 
-app.use('/films', filmRoutes);
+app.use("/films", filmRoutes);
+app.use("/discussions", discussionRoutes);
 
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
