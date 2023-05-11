@@ -1,5 +1,7 @@
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import StripePayments from "./StripePayments";
+
 const AddTickets = () => {
   const [adultCount, setAdultCount] = useState(0);
   const [childCount, setChildCount] = useState(0);
