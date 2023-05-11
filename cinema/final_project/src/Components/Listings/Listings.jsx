@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getFilms } from "../../ApiCalls";
+import { getFilms } from "../../Services/filmsCalls";
 
 const Listings = () => {
   const [filmData, setFilmData] = useState([]);
