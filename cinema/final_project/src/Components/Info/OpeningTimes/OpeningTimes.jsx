@@ -6,7 +6,7 @@ const OpeningTimes = () => {
 	
 	const displayTimes = () => {
 		return(
-			<Table striped bordered hover responsive className='opening-times' variant='light'>
+			<Table striped bordered hover responsive className='opening-times' variant='light' style={{border: '1px solid dark-grey'}}>
 				<thead>
 					<tr>
 					<th style={{width:"200px"}}></th>

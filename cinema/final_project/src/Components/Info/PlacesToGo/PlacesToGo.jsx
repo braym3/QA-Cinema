@@ -6,7 +6,7 @@ const PlacesToGo = () => {
   const displayCards = () => {
     return places.map((place) => (
       <Card style={{ width: "18rem", margin: "1%" }} key={place.id}>
-        <Card.Img variant='top' src={place.image} height={"175rem"} />
+        <Card.Img variant='top' src={place.image} style={{height:'190px'}} />
         <Card.Body className='places-card'>
           <Card.Title style={{ color: "black" }}>{place.name}</Card.Title>
           <Card.Subtitle style={{ marginBottom: "15px", color: "black" }}>

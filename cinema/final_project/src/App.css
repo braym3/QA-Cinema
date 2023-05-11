@@ -1,12 +1,5 @@
 
 
-#root,
-body {
-  background-color: black;
-  color: white;
-  height: 100%;
-  width: 100%;
-}
 
 html {
     margin: 0px;
@@ -23,3 +16,11 @@ html {
     background-repeat: no-repeat; 
     background-size: cover; 
  }
+
+#root,
+body {
+  background-color: black;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
