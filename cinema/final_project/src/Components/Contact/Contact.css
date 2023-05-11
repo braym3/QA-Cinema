@@ -16,13 +16,13 @@
     margin-bottom: 50%;
 }
 
-input{
+.contact input{
     padding: 5px;
     margin-top: 50px;
     align-self: center;
 }
 
-input[type=text]{
+.contact input[type=text]{
     width: 100%;
     padding: 10px 20px;
     margin: 10px 0;
@@ -39,12 +39,12 @@ input[type=text]{
     border-radius: 10%;
 }
 
-button:hover{
+.contact button:hover{
     background-color: whitesmoke;
     box-shadow: black;
 }
 
-input#message{
+.contact input#message{
     height: 200px;
     margin-bottom: 50px;
 }
