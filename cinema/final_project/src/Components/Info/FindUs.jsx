@@ -4,7 +4,7 @@ import GettingHere from './GettingHere/GettingHere';
 import PlacesToGo from './PlacesToGo/PlacesToGo';
 import OpeningTimes from './OpeningTimes/OpeningTimes';
 
-import { ProSidebarProvider, Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import { ProSidebarProvider, Sidebar, Menu, MenuItem, sidebarClasses } from 'react-pro-sidebar';
 import {  Link, Navigate } from "react-router-dom";
 import { Routes, Route } from "react-router";
 
@@ -13,8 +13,25 @@ const FindUs = () => {
         <div>
             <ProSidebarProvider>
                 <div style={{ display: "flex" }}>
-                    <Sidebar className="find-us-sidebar" width="18%">
-                        <Menu>
+                    <Sidebar className="find-us-sidebar" width="18%" rootStyles={{
+                        [`.${sidebarClasses.container}`]: {
+                        backgroundColor: '#636363'
+                        },
+                    }}>
+                        <Menu menuItemStyles={{
+                            button: ({ active }) => {
+                                return {
+                                color: "white-smoke",
+                                backgroundColor: active ? "#e67700" : undefined,
+                                "&:hover": {
+                                    backgroundColor: "#9D5101 !important",
+                                    color: "white !important",
+                                    borderRadius: "8px !important",
+                                    fontWeight: "bold !important"
+                                },
+                                };
+                            },
+                        }}>
                             <MenuItem className="menu1" component={<Link to="/findus" className="link" />}>
                                 <h3>FIND US</h3>
                             </MenuItem>

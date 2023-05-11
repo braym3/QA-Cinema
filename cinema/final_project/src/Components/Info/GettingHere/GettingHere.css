@@ -1,10 +1,10 @@
-.cinema-image{
-    margin: 3%;
-}
-
 .getting-here-content{
     color: rgb(0, 0, 0);
     margin: 5%;
+}
+
+.getting-here-header p{
+    color: white;
 }
 
 .getting-here-text h3 {
