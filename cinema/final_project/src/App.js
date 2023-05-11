@@ -7,9 +7,10 @@ import { Routes, Route } from "react-router";
 import {  Navigate } from "react-router-dom";
 import Navi from "./Components/Nav/Navi";
 import About from "./Components/About/About";
-import Contact from "./Components/Contact/Contact";
+//import Contact from "./Components/Contact/Contact";
 import FindUs from "./Components/Info/FindUs";
 import PurchaseTickets from "./Components/Listings/PurchaseTickets";
+import Screens from "./Components/Screens/Screens";
 
 const App = () => {
   return (
@@ -22,9 +23,10 @@ const App = () => {
           <Route path='discussion' element={<Discussion />} />
           <Route path='info' element={<Info />} />
           <Route path='about' element={<About />} />
-          <Route path="contact" element={<Contact/>}/>
+          
           <Route path="/findus*" element={<FindUs/>}/>
           <Route path='purchasetickets/:filmID' element={<PurchaseTickets />} />
+          <Route path='screens' element={<Screens/>}/>
           <Route path="*" element={<Navigate to="/"/>} /> 
         </Routes>
       </div>
