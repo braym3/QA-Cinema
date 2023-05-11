@@ -13,7 +13,7 @@ const FindUs = () => {
         <div>
             <ProSidebarProvider>
                 <div style={{ display: "flex" }}>
-                    <Sidebar className="find-us-sidebar" width="18%" rootStyles={{
+                    <Sidebar className="find-us-sidebar" width="15%" rootStyles={{
                         [`.${sidebarClasses.container}`]: {
                         backgroundColor: '#636363'
                         },
@@ -32,12 +32,9 @@ const FindUs = () => {
                                 };
                             },
                         }}>
-                            <MenuItem className="menu1" component={<Link to="/findus" className="link" />}>
-                                <h3>FIND US</h3>
-                            </MenuItem>
-                            <MenuItem component={<Link to="/findus" className="link" />}> Getting Here </MenuItem>
-                            <MenuItem component={<Link to="places-to-go" className="link" />}> Places To Go </MenuItem>
-                            <MenuItem component={<Link to="opening-times" className="link" />}> Opening Times </MenuItem>
+                            <MenuItem component={<Link to="/findus" className="link" />} style={{marginTop: '40%'}}> Getting Here </MenuItem>
+                            <MenuItem component={<Link to="places-to-go" className="link" />} style={{marginTop: '10%'}}> Places To Go </MenuItem>
+                            <MenuItem component={<Link to="opening-times" className="link" />} style={{marginTop: '10%'}}> Opening Times </MenuItem>
                         </Menu>
                     </Sidebar>
                     <Routes>
