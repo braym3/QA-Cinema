@@ -10,6 +10,7 @@ import About from "./Components/About/About";
 // import Contact from "./Components/Contact/Contact";
 import FindUs from "./Components/Info/FindUs";
 import PurchaseTickets from "./Components/Listings/PurchaseTickets";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/"/>} /> 
         </Routes>
       </div>
+      <Footer/>
     </>
   );
 };
