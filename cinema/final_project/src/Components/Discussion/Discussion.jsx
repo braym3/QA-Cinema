@@ -46,7 +46,7 @@ const Discussion = () => {
     discussionData.map((discussion, index) => {
       const id = "discussion" + index.toString;
       return (
-        <div className="discussion" id={id} key={id}>
+        <div className="discussion" id={id} key={discussion._id}>
           <h1>{discussion.subject}</h1>
           <button
             className="button-4"

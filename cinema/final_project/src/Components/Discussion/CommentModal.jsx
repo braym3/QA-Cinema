@@ -18,7 +18,7 @@ const CommentModal = ({ show, onHide }) => {
           <br />
           <textarea id="comment" type="text-field" required />
           <br />
-          <button class="button-4" type="submit">
+          <button className="button-4" type="submit">
             Add comment
           </button>
         </form>
