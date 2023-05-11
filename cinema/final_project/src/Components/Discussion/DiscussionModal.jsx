@@ -1,28 +1,90 @@
 import React from "react";
 import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
+import { createDiscussion } from "../../Services/DiscussionService";
+import { useEffect, useState } from "react";
 
-const DiscussionModal = ({ show, onHide }) => {
+const DiscussionModal = ({
+  show,
+  onHide,
+  body,
+  setBody,
+  setDiscussionData,
+  discussionData,
+}) => {
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [comment, setComment] = useState("");
+
+  const newDiscussion = (e) => {
+    e.preventDefault();
+
+    console.log(subject);
+    console.log(email);
+    console.log(comment);
+
+    console.log("Called");
+    console.log(body);
+    onHide();
+  };
+
+  useEffect(() => {
+    // These are in an if statement so the methods don't call when the body is empty
+    if (body) {
+      createDiscussion(body).then((discussion) => {});
+      setDiscussionData([...discussionData, body]);
+    }
+  }, [body]);
+
   return (
     <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
         <Modal.Title>Add new Discussion</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form /*onSubmit={addComment}*/>
+        <form onSubmit={newDiscussion}>
           <label name="subject">Subject of new Discussion</label>
           <br />
-          <input name="subject" type="text" required />
+          <input
+            onChange={(e) => setSubject(e.target.value)}
+            name="subject"
+            type="text"
+            required
+          />
           <br />
           <label name="email">Email</label>
           <br />
-          <input name="email" type="email" required />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            type="email"
+            required
+          />
           <br />
           <label>Comment</label>
           <br />
-          <textarea id="comment" type="text-field" required />
+          <textarea
+            onChange={(e) => setComment(e.target.value)}
+            id="comment"
+            type="text-field"
+            required
+          />
           <br />
-          <button class="button-4" type="submit">
+          <button
+            onClick={() =>
+              setBody({
+                subject: subject,
+                discussion: [
+                  {
+                    email: email,
+                    comment: comment,
+                  },
+                ],
+              })
+            }
+            className="button-4"
+            type="submit"
+          >
             Start Discussion
           </button>
         </form>

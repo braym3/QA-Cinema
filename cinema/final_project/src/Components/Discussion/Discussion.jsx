@@ -7,13 +7,12 @@ import { getDiscussions } from "../../Services/DiscussionService";
 const Discussion = () => {
   const [showComment, setShowComment] = useState(false);
   const [newDiscussion, setNewDiscussion] = useState(false);
-
   const [discussionData, setDiscussionData] = useState([]);
+  const [body, setBody] = useState();
 
   useEffect(() => {
     getDiscussions().then((discussion) => {
-      setDiscussionData(discussion);
-      console.log("Use Effect Called");
+      if (discussion != null) setDiscussionData(discussion);
     });
   }, []);
 
@@ -22,7 +21,6 @@ const Discussion = () => {
   const handleCloseDiscussion = () => setNewDiscussion(false);
   const handleShowDiscussion = () => setNewDiscussion(true);
 
-  // Adding a  comment to an array of data
   const addComment = (e) => {
     e.preventDefault();
     let comment = {
@@ -33,27 +31,25 @@ const Discussion = () => {
     handleCloseComment();
   };
 
-  // Showing all the comments for a given discussion
   const printData = (comments) =>
     comments.map((data, index) => {
-      const { email, body } = data;
+      const { email, comment } = data;
       return (
         <tr key={index}>
           <td>{email}</td>
-          <td>{body}</td>
+          <td>{comment}</td>
         </tr>
       );
     });
 
   const showDiscussion = () =>
     discussionData.map((discussion, index) => {
-      console.log(discussion);
       const id = "discussion" + index.toString;
       return (
-        <div class="discussion" id={id}>
+        <div className="discussion" id={id} key={id}>
           <h1>{discussion.subject}</h1>
           <button
-            class="button-4"
+            className="button-4"
             id={"comment" + index.toString}
             onClick={handleShowComment}
           >
@@ -81,27 +77,23 @@ const Discussion = () => {
       );
     });
 
-  // To render
   return (
     <>
       <div id="discussion">
         <h1>Discussion Board</h1>
-        <button class="button-4" onClick={handleShowDiscussion}>
+        <button className="button-4" onClick={handleShowDiscussion}>
           + Add New Discussion
         </button>
         <DiscussionModal
           show={newDiscussion}
           onHide={handleCloseDiscussion}
-          addComment={addComment}
+          body={body}
+          setBody={setBody}
+          setDiscussionData={setDiscussionData}
+          discussionData={discussionData}
         />
       </div>
       {showDiscussion()}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   );
 };

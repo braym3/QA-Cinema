@@ -10,4 +10,13 @@ router.get("/getAll", async function (req, res, next) {
   }
 });
 
+router.post("/createDiscussion", async ({ body }, res, next) => {
+  try {
+    const created = await discussionModel.create(body);
+    res.status(201).json(created);
+  } catch (err) {
+    return next({ status: 500, msg: "yeehaw" });
+  }
+});
+
 module.exports = router;
