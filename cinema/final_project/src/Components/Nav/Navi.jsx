@@ -26,6 +26,9 @@ const Navi = () => {
         <Link id='nav' to='/about'>
           About
         </Link>
+        <Link id='nav' to='/contact'>
+          Contact
+        </Link>
       </Nav>
     </Navbar>
   );
