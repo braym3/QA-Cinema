@@ -9,7 +9,7 @@ import Navi from "./Components/Nav/Navi";
 import About from "./Components/About/About";
 import FindUs from "./Components/Info/FindUs";
 import PurchaseTickets from "./Components/Listings/PurchaseTickets";
-// const Contact = require("./Components/Contact/Contact");
+import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact/Contact.jsx";
 
 const App = () => {
@@ -29,6 +29,7 @@ const App = () => {
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </div>
+      <Footer/>
     </>
   );
 };

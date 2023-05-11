@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Row, Col, Container, Carousel, ButtonGroup } from "react-bootstrap"
+import { Button, Row, Container, Carousel, ButtonGroup } from "react-bootstrap"
 import './Home.css';
 import images from './images.json';
 
