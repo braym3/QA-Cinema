@@ -10,14 +10,14 @@ const { filmModel } = require("../models");
 
 const server = require("../server");
 
-describe("API tests", function () {
+describe("Film API tests", function () {
   //   let server;
   this.timeout(3_000);
 
   before(async () => {
     await mongoose.connection.close();
     await mongoose.connect(
-      "mongodb+srv://mwhitham:duSWUr6Fmn7vPVvu@backend-finalproject.b1pfm04.mongodb.net/testFilms"
+      "mongodb+srv://mwhitham:duSWUr6Fmn7vPVvu@backend-finalproject.b1pfm04.mongodb.net/test"
     );
   });
 
@@ -99,9 +99,7 @@ describe("API tests", function () {
           expect(err).to.be.null;
           chai.expect(res.status).to.equal(200);
           expect(res.body.title).to.equal(testFilm.title);
-          // expect(res.body).to.equal(testFilm._id);
           expect(res.body).has.property("_id");
-
           done();
         });
     });
