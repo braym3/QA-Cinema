@@ -1,0 +1,19 @@
+.places-to-go h3 {
+    color: rgb(255, 255, 255);
+}
+
+.places-to-go p {
+    color: rgb(255, 255, 255);
+}
+
+.places-to-go h1 {
+    color: #e67700;
+}
+
+.places-to-go-content{
+    margin: 5%;
+}
+
+.places-card p{
+    color: black;
+}
