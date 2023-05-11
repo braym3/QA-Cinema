@@ -1,9 +1,8 @@
 #nav {
   all: unset;
   position: sticky;
-  top: 0;
   color: rgba(255, 255, 255, 0.442);
-  margin: 15px;
+  margin: 24px;
   color: white;
   border-radius: 5px;
   border-width: 2px;
@@ -25,4 +24,19 @@
     100%;
   border-radius: 5px;
   width: 100%;
+  height: 12vh;
+}
+
+.search-bar{
+  float: right !important;
+  height: 15px !important;
+  margin: 15px !important;
+}
+
+.search-bar:hover{
+  font-weight: normal !important;
+}
+
+#brand{
+  margin: 15px;
 }
