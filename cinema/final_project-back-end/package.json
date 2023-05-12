@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha __tests__/",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "coverage": "nyc npm test"
   },
   "repository": {
     "type": "git",
