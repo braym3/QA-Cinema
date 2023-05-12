@@ -93,12 +93,11 @@
   text-align: start;
 }
 
-table {
+/* table {
   border-collapse: separate;
   border-spacing: 500px 500px;
-}
+} */
 
-td,
-th {
-  padding: 10px 10px;
+#comm {
+  padding: 0px 20px;
 }
