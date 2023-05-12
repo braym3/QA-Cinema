@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
-import { getFilmByID } from "../../ApiCalls";
+import { getFilmByID } from "../../Services/filmsCalls";
 import { useParams } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 

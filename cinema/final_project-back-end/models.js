@@ -21,11 +21,18 @@ const discussionSchema = new Schema({
   ],
 });
 
-// This model is similar to a DAO
+const emailFormSchema = new Schema({
+  email: { type: String, required: true },
+  subject: { type: String, required: true },
+  message: { type: String, required: true },
+});
+
 const filmModel = model("films", filmSchema);
 const discussionModel = model("discussions", discussionSchema);
+const emailFormModel = model("emailform", emailFormSchema);
 
 module.exports = {
   filmModel,
   discussionModel,
+  emailFormModel,
 };

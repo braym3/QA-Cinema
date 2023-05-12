@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Row, Col, Container, Carousel, ButtonGroup } from "react-bootstrap"
+import { Button, Row, Container, Carousel, ButtonGroup } from "react-bootstrap"
 import './Home.css';
 import images from './images.json';
 
@@ -27,9 +27,10 @@ const Home = () => {
                                 images.map(image => 
                                     <Carousel.Item key={image.id}>
                                         <img
-                                        className="d-block w-100"
+                                        // className="d-block w-100"
                                         src={image.src}
                                         alt={image.altText}
+                                        style={{width:"700px", height:'380px'}}
                                         />
                                         <Carousel.Caption>
                                             <h3>{image.title}</h3>
@@ -55,9 +56,9 @@ const Home = () => {
                 <Row>
                     <div className='link-buttons'>
                         <ButtonGroup className='w-100'>
-                            <Button size='lg' className='mx-3 rounded btn-orange' href='#'>All Listings</Button>
-                            <Button size='lg' className='mx-3 rounded btn-orange' href='#'>Discussion</Button>
-                            <Button size='lg' className='mx-3 rounded btn-orange' href='#'>Screens</Button>
+                            <Button size='lg' className='mx-3 rounded btn-orange' href='/listings'>All Listings</Button>
+                            <Button size='lg' className='mx-3 rounded btn-orange' href='/discussion'>Discussion</Button>
+                            <Button size='lg' className='mx-3 rounded btn-orange' href='/screens'>Screens</Button>
                         </ButtonGroup>
                     </div>
                 </Row>
