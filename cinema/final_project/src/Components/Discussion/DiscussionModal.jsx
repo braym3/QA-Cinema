@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
-import { addComment } from "../../Services/DiscussionService";
+import { createDiscussion } from "../../Services/DiscussionService";
+import { useEffect, useState } from "react";
 
-const CommentModal = ({ show, onHide, disID }) => {
+const DiscussionModal = ({
+  show,
+  onHide,
+  setDiscussionData,
+  discussionData,
+}) => {
+  const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
@@ -11,23 +18,28 @@ const CommentModal = ({ show, onHide, disID }) => {
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
     if (body) {
-      // get disid from disdata
-      // comment is just new comment
-      console.log(disID);
-      addComment(disID, body);
+      createDiscussion(body).then((discussion) => {});
+      setDiscussionData([...discussionData, body]);
     }
   }, [body]);
-
-  console.log(disID);
 
   return (
     <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Add comment</Modal.Title>
+        <Modal.Title>Add new Discussion</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form>
-          <label name="email">{disID}</label>
+        <form onSubmit={onHide}>
+          <label name="subject">Subject of new Discussion</label>
+          <br />
+          <input
+            onChange={(e) => setSubject(e.target.value)}
+            name="subject"
+            type="text"
+            required
+          />
+          <br />
+          <label name="email">Email</label>
           <br />
           <input
             onChange={(e) => setEmail(e.target.value)}
@@ -48,14 +60,19 @@ const CommentModal = ({ show, onHide, disID }) => {
           <button
             onClick={() =>
               setBody({
-                email: email,
-                comment: comment,
+                subject: subject,
+                discussion: [
+                  {
+                    email: email,
+                    comment: comment,
+                  },
+                ],
               })
             }
             className="button-4"
             type="submit"
           >
-            Add comment
+            Start Discussion
           </button>
         </form>
       </Modal.Body>
@@ -63,4 +80,4 @@ const CommentModal = ({ show, onHide, disID }) => {
   );
 };
 
-export default CommentModal;
+export default DiscussionModal;

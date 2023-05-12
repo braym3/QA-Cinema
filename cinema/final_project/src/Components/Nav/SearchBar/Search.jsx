@@ -28,7 +28,7 @@ const Search = () => {
             key={i}
             action
             href={"/purchasetickets/" + film._id}
-            className='result-item'
+            className="result-item"
           >
             {film.title}
           </ListGroup.Item>
@@ -39,10 +39,10 @@ const Search = () => {
   return (
     <div>
       <Form.Control
-        type='search'
-        placeholder='Search for a film'
-        className='me-2'
-        aria-label='Search'
+        type="search"
+        placeholder="Search for a film"
+        className="me-2"
+        aria-label="Search"
         onChange={handleChange}
         value={searchInput}
       />

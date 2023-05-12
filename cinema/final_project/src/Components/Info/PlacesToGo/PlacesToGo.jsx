@@ -1,12 +1,22 @@
 import { Card, Row, Button } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import "./PlacesToGo.css";
-import places from "./places.json";
+import { getPlaces } from '../../../Services/placesService';
 
 const PlacesToGo = () => {
+
+  const [placeData, setPlaceData] = useState([]);
+
+  useEffect(() => {
+    getPlaces().then((places) => {
+      setPlaceData(places);
+    });
+  }, []);
+
   const displayCards = () => {
-    return places.map((place) => (
+    return placeData.map((place) => (
       <Card style={{ width: "18rem", margin: "1%" }} key={place.id}>
-        <Card.Img variant='top' src={place.image} style={{height:'190px'}} />
+        <Card.Img variant='top' src={place.image} style={{height:'180px'}} />
         <Card.Body className='places-card'>
           <Card.Title style={{ color: "black" }}>{place.name}</Card.Title>
           <Card.Subtitle style={{ marginBottom: "15px", color: "black" }}>
@@ -22,7 +32,7 @@ const PlacesToGo = () => {
           <Card.Text>
             <small>Contact: {place.phone}</small>
           </Card.Text>
-          <Button className='btn-orange'>Check it out</Button>
+          <Button className='btn-orange' href={place.website}>Check it out</Button>
         </Card.Body>
       </Card>
     ));

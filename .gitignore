@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+**/.nyc_output**
 
 # production
 /build
@@ -29,5 +30,5 @@ yarn-error.log*
 # sean
 */comments.json
 *comments.json
-
+**comments.html
 
