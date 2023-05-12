@@ -12,15 +12,11 @@ const filmSchema = new Schema({
 });
 
 const discussionSchema = new Schema({
-  allDiscussions: [
+  subject: { type: String, required: true },
+  discussion: [
     {
-      subject: { type: String, required: true },
-      discussion: [
-        {
-          email: { type: String, required: true },
-          comment: { type: String, required: true },
-        },
-      ],
+      email: { type: String, required: true },
+      comment: { type: String, required: true },
     },
   ],
 });
