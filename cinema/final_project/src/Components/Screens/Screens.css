@@ -1,6 +1,3 @@
-.Screens .image1{
-    height: 400px;
-    width: 400px;
-    
-    background-image: "cinema\final_project\src\Components\Screens\Resources\standard1.jpg"
+.Screens .images{
+    column-count: 3;
 }
