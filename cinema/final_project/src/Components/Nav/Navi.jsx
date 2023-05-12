@@ -36,20 +36,20 @@ const Navi = () => {
 
 		<Navbar id='color-nav' expand="lg" variant='dark' sticky='top'>
 		<Container>
-			<Navbar.Brand href="/" id="brand">QA Cinema</Navbar.Brand>
+			<Navbar.Brand href="/" id="">QA Cinema</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="me-auto" id='color-nav'>
-					<Nav.Link href="/" id='nav'>Home</Nav.Link>
-					<Nav.Link href="/listings" id='nav'>Listings</Nav.Link>
-					<Nav.Link href="/listings" id='nav'>Discussion</Nav.Link>
-					<NavDropdown title="Info" id="basic-nav-dropdown nav">
+				<Nav className="me-auto" id=''>
+					<Nav.Link href="/" id=''>Home</Nav.Link>
+					<Nav.Link href="/listings" id=''>Listings</Nav.Link>
+					<Nav.Link href="/listings" id=''>Discussion</Nav.Link>
+					<NavDropdown title="Info" id="basic-nav-dropdown">
 						<NavDropdown.Item href="/findus">Getting Here</NavDropdown.Item>
 						<NavDropdown.Item href="/findus/places-to-go">Places To Go</NavDropdown.Item>
 						<NavDropdown.Item href="/findus/opening-times">Opening Times</NavDropdown.Item>
 					</NavDropdown>
-					<Nav.Link href="/about" id='nav'>About Us</Nav.Link>
-					<Form id='nav' className="d-flex search-bar" style={{float: "right"}}>
+					<Nav.Link href="/about" id=''>About Us</Nav.Link>
+					<Form id='' className="d-flex ml-auto">
 						<Search/>
 					</Form>
 				</Nav>
