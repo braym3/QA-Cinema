@@ -17,7 +17,9 @@ const CommentModal = ({ show, onHide, disID }) => {
       addComment(disID, body);
     }
   }, [body]);
+
   console.log(disID);
+
   return (
     <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
