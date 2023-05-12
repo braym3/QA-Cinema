@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { ListGroup, Form } from 'react-bootstrap';
-import { getFilms } from '../../../ApiCalls';
+import { getFilms } from '../../../Services/filmsCalls';
 
 const Search = () => {
     const [searchInput, setSearchInput] = useState("");
