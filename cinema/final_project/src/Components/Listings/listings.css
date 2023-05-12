@@ -19,10 +19,16 @@ img {
   padding: 10px;
   color: white;
   background-color: black;
-  border-radius: 5px;
-  border-color: #e67700;
-  border-width: 4px;
-  border-style: solid;
+  border-top: 5px solid #e67700;
+}
+
+#card {
+  margin: 15px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-bottom: 5px solid #e67700;
+  border-top: 5px solid #e67700;
 }
 
 #addticks {
@@ -69,7 +75,7 @@ img {
   grid-row: 1;
 }
 
-#times {
+.times {
   margin: 10px;
   border-style: solid;
   border-color: #e67700;
