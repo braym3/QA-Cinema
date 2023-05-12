@@ -35,30 +35,25 @@ const Listings = () => {
         <div id='container'>
           {filmData.map((film) => {
             return (
-              <Card id='cards'>
+              <Card id='cards' key={film._id}>
                 <div id='singlecard'>
+                  <Card.Title style={{ textAlign: "center", fontSize: "25px" }}>
+                    {film.title}
+                  </Card.Title>
                   <div id='data'>
-                    <Card.Title>{film.title}</Card.Title>
-                    <Card.Text>Synopsis: {film.description}</Card.Text>
+                    <Card.Text>{film.description}</Card.Text>
                     <Card.Text>Rating: {film.rating}</Card.Text>
                     <Card.Text>Runtime: {film.runtime} minutes</Card.Text>
                     <Card.Text>Cast: {film.cast}</Card.Text>
+                    <Link to={"/purchasetickets/" + film._id}>
+                      <Button className='button'>
+                        See all Times and Purchase tickets
+                      </Button>
+                    </Link>
                   </div>
                   <div id='poster'>
                     <img src={film.filmPoster} alt='film posters' />
                   </div>
-                  <Link to={"/purchasetickets/" + film._id}>
-                    <Button
-                      className='button'
-                      style={{
-                        float: "right",
-                        marginRight: "-165px",
-                        marginTop: "1%",
-                      }}
-                    >
-                      See all Times and Purchase tickets
-                    </Button>
-                  </Link>
                 </div>
               </Card>
             );
