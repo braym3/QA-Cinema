@@ -2,7 +2,7 @@
   all: unset;
   position: sticky;
   color: rgba(255, 255, 255, 0.442);
-  margin: 24px;
+  margin: 24px !important;
   color: white;
   border-radius: 5px;
   border-width: 2px;
@@ -45,3 +45,4 @@
   background-color: #e67700;
   color: #e67700;
 }
+
