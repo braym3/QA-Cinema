@@ -26,7 +26,7 @@ const Discussion = () => {
       return (
         <tr key={index}>
           <td>{email}</td>
-          <td>{comment}</td>
+          <td id="comm">{comment}</td>
         </tr>
       );
     });
@@ -56,7 +56,7 @@ const Discussion = () => {
               <thead>
                 <tr>
                   <th>User</th>
-                  <th>Comment</th>
+                  <th id="comm">Comment</th>
                 </tr>
               </thead>
               <tbody>{printData(discussion.discussion)}</tbody>
