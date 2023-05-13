@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
 import { addComment } from "../../Services/DiscussionService";
+import profanity from "./profantity.json";
 
 const CommentModal = ({ show, onHide, disID }) => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ const CommentModal = ({ show, onHide, disID }) => {
       // get disid from disdata
       // comment is just new comment
       console.log(disID);
+      for (let i = 0; i < profanity.length; i++) {}
       addComment(disID, body);
     }
   }, [body]);
