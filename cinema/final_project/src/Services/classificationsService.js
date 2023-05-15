@@ -15,7 +15,7 @@ export const getClassifications = async () => {
 
 export const getClassificationByID = async (classificationID) => {
   try {
-    const { data } = await classificationsAPI.get(`/getPlace/${classificationID}`);
+    const { data } = await classificationsAPI.get(`/getClassification/${classificationID}`);
     return data;
   } catch (err) {
     console.error(err);

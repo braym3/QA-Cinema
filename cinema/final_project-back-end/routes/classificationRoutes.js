@@ -13,8 +13,8 @@ router.post("/create", async ({ body }, res, next) => {
 
 router.get("/getAll", async function (req, res, next) {
   try {
-    const places = await classificationModel.find();
-    res.json(places);
+    const classifications = await classificationModel.find();
+    res.json(classifications);
   } catch (err) {
     return next({ status: 404, msg: err.msg });
   }

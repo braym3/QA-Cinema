@@ -19,7 +19,8 @@ const Classifications = () => {
                     <Alert variant='secondary'>
                         <Row>
                             <Col>
-                            <img src={classification.image} alt={`${classification.name} icon`} className='classification-icon'/>
+                            <a href={classification.link}><img src={classification.image} alt={`${classification.name} icon`} className='classification-icon'/></a>
+                            
                             </Col>
                             <Col xs={9}>
                             <h4 className='classification-name'><b>{classification.name}</b> - <i>{classification.fullName}</i></h4>
@@ -42,6 +43,7 @@ const Classifications = () => {
                 <Row className='classifications-header'>
                     <h1 style={{marginBottom: '3%'}}>Film Classifications</h1>
                     <p>Classification is the process of giving age ratings and content advice to films and other audiovisual content to help children and families choose what’s right for them and avoid what’s not.</p>
+                    <p>Click a rating icon to learn more.</p>
                 </Row>
                 <Row className='classifications-info'>
                     <h4 className='class-info-subheading'>What are the standard film classifications?</h4>
