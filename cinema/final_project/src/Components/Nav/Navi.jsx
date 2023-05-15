@@ -19,6 +19,7 @@ const Navi = () => {
 						<NavDropdown.Item href="/findus/places-to-go">Places To Go</NavDropdown.Item>
 						<NavDropdown.Item href="/findus/opening-times">Opening Times</NavDropdown.Item>
 						<NavDropdown.Item href="/findus/screens">Screens</NavDropdown.Item>
+						<NavDropdown.Item href="/findus/classifications">Classifications</NavDropdown.Item>
 					</NavDropdown>
 					<Nav.Link href="/about" id='n-link'>About Us</Nav.Link>
 					<Form id='n-link' className="d-flex ml-auto">

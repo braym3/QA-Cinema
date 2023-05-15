@@ -7,6 +7,7 @@ import OpeningTimes from './OpeningTimes/OpeningTimes';
 import { ProSidebarProvider, Sidebar, Menu, MenuItem, sidebarClasses } from 'react-pro-sidebar';
 import {  Link, Navigate } from "react-router-dom";
 import { Routes, Route } from "react-router";
+import Classifications from './Classifications/Classifications';
 
 const FindUs = () => {
     return (
@@ -36,6 +37,7 @@ const FindUs = () => {
                             <MenuItem component={<Link to="places-to-go" className="link" />} style={{marginTop: '10%'}}> Places To Go </MenuItem>
                             <MenuItem component={<Link to="opening-times" className="link" />} style={{marginTop: '10%'}}> Opening Times </MenuItem>
                             <MenuItem component={<Link to="screens" className="link" />} style={{marginTop: '10%'}}> Screens </MenuItem>
+                            <MenuItem component={<Link to="classifications" className="link" />} style={{marginTop: '10%'}}> Classifications </MenuItem>
                         </Menu>
                     </Sidebar>
                     <Routes>
@@ -43,6 +45,7 @@ const FindUs = () => {
                         <Route path="/places-to-go" element={<PlacesToGo />} />
                         <Route path="/opening-times" element={<OpeningTimes />} />
                         <Route path="/screens" element={<GettingHere />} />
+                        <Route path="/classifications" element={<Classifications />} />
                         <Route path="*" element={<Navigate to="/"/>} /> 
                     </Routes>
                 </div>
