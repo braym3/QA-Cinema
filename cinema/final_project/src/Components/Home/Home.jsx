@@ -41,7 +41,7 @@ const Home = () => {
                                             />
                                         </div>
                                         <div className='new-release-text'>
-                                            <Carousel.Caption style={{paddingTop: '10%'}}>
+                                            <Carousel.Caption style={{paddingTop: '5%'}}>
                                                 <h3>{image.title}</h3>
                                                 <p>{image.caption}</p>
                                             </Carousel.Caption>
