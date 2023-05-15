@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "title": "Directions from bus/train stations",
+        "text": ["The Harbour City tram stop is a seven minute walk away and buses stop outside the shopping centre."]
+        
+    },
+    {
+        "id": 1,
+        "title": "Parking",
+        "text": [ "QACinema is located on the first floor of the Manchester Quayside MCUK on Salford Quarys, with lift and escalators from the ground floor and car park.", 
+        "The venue has a large multi story car park with four hours of free parking on receipt of a validated ticket.",
+        "There's accessible parking in the centre for blue badge holders, and a drop-off area available at the front."
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Accessibility",
+        "text": [ "QACinema is dedicated to giving each and every one of our guests and exceptional big screen experience.", 
+        "We provide accessible and autism-friendly screenings.", 
+        "We welcome assistance dogs into our venue" ]
+    }
+]

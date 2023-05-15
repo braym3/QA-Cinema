@@ -1,52 +1,94 @@
-import React from 'react';
-import {useState, useEffect} from 'react';
-import postEmailForm from '../../Services/Contact';
-import Modal from "react-bootstrap/Modal";
-import { getDiscussions } from "../../Services/DiscussionService";
-import './Contact.css';
-
+import React from "react";
+import { useState } from "react";
+import { postEmailForm } from "../../Services/Contact";
+import "./Contact.css";
+import { Container, Form } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 const Contact = () => {
-    const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({});
 
-    const updateState = (e) => {
-        const newData = formData;
-        newData[e.target.id] = e.target.value;
-        setFormData(newData);
-    }
+  const updateState = (e) => {
+    const newData = formData;
+    newData[e.target.id] = e.target.value;
+    setFormData(newData);
+  };
 
-    const submitForm = (e) => {
-        e.preventDefault();
-        console.log(formData);
-        
-    }
+  const submitForm = () => {
+    postEmailForm(formData);
+    setFormData("");
+  };
 
+  return (
+    <>
+      <Container id='contact'>
+        <h2>Got a question?</h2>
+        <Form
+          id='email-form'
+          action='https://formspree.io/f/mnqyrplg'
+          method='POST'
+        >
+          <Form.Group className='mb-3'>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              id='email'
+              name='email'
+              type='email'
+              placeholder='Enter email'
+              onChange={updateState}
+              required
+            />
+            <Form.Text style={{ color: "white" }}>
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
 
-// <form id="email-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-    // save all of the data from each of the inputs into an object
-    // call the post function from your api file, use useEffect and pass in the object to the post function
-    // 
-    return (
-        <>
-            <div class="contact">
-                <div class = "contact-main">
-                    <h2>Got a question?</h2>
-                    <form id="email-form">
-                        <div emailForm="email-form">
-                            <label for="subject" id="subject">Subject</label>
-                            <input type="text" id="subject" onChange={updateState}></input>
-                            <label for="email-address" id="email-address">Email Address</label>
-                            <input type="email" id="email-address" onChange={updateState}></input>
-                            <label for="message" id="message">Message</label>
-                            <textarea  rows="5" cols="40" type="text" id="message" onChange={updateState}></textarea>
-                            <button type="submit" onClick={submitForm}>Submit</button>
-                        </div>
-                    </form>
-                    <p>Contact address:</p>
-                    <p>53 Portland St, Manchester, M1 3LD</p>
-                </div>
-            </div>
-        </>
-    );
-}
+          <Form.Group className='mb-3'>
+            <Form.Label>Subject</Form.Label>
+            <Form.Control
+              id='subject'
+              name='subject'
+              type='text'
+              placeholder='Subject'
+              onChange={updateState}
+              required
+            />
+          </Form.Group>
+          <Form.Group className='mb-3'>
+            <Form.Label>Message</Form.Label>
+            <Form.Control
+              id='message'
+              name='message'
+              type='text'
+              placeholder='Message'
+              onChange={updateState}
+              required
+            />
+          </Form.Group>
+          <Button type='submit' onClick={() => submitForm}>
+            Submit
+          </Button>
+        </Form>
+      </Container>
+      <Container id='reachus'>
+        <h3>Contact</h3>
+        <div id='grid'>
+          <div style={{ gridCol: 1 }}>
+            <h4>Address:</h4>
+            <p>53 Portland St, Manchester, M1 3LD</p>
+          </div>
+          <div style={{ gridCol: 2 }}>
+            <h4>Tel:</h4>
+            <p>0161 6161 161</p>
+          </div>
+          <div style={{ gridColumn: 3 }}>
+            <h4>Email:</h4>
+            <p>info@qacinema.com</p>
+          </div>
+        </div>
+      </Container>
+    </>
+  );
+};
+
 export default Contact;

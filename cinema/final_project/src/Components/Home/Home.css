@@ -10,8 +10,7 @@
 }
 
 .carousel {
-    width:680px;
-    
+    width:700px;
 }
 
 .carousel .carousel-caption {
@@ -38,4 +37,16 @@
 .btn-orange:hover{
     background-color: #8d8c8c !important;
     border-color: #8d8c8c !important;
+}
+
+img.nr-img{
+    width: 700px !important;
+    height: 380px !important;
+}
+
+@media screen and (max-width: 767.5px){
+    img.nr-img{
+        width: 100% !important;
+        height: 60% !important;
+    }
 }

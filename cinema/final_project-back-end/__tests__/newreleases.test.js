@@ -4,14 +4,12 @@ const chaiHttp = require("chai-http");
 const { default: mongoose } = require("mongoose");
 
 chai.use(chaiHttp);
-// If there isn't a filepath on the require then it is a node module
 const { connectToDb, disconnect } = require("../db");
-const { filmModel } = require("../models");
+const { newReleaseModel } = require("../models");
 
 const server = require("../server");
 
-describe("Film API tests", function () {
-  //   let server;
+describe("New release API tests", function () {
   this.timeout(3_000);
 
   before(async () => {
@@ -22,83 +20,70 @@ describe("Film API tests", function () {
   });
 
   beforeEach(async () => {
-    await filmModel.deleteMany({});
-    testFilm = await filmModel.create({
-      title: "Avengers",
-      description: "abcde",
-      runtime: 122,
-      rating: "PG",
-      filmPoster: "hsdsisucbi",
-      releaseDate: 2013,
-      director: "russo et russo",
-      cast: "duhiadhi",
+    await newReleaseModel.deleteMany({});
+    testNewRelease = await newReleaseModel.create({
+      src: "https:test-website.com",
+      altText: "Movie poster",
+      title: "Test Movie",
+      caption: "This movie has this person and this happens to this character.",
     });
-    testFilm = JSON.parse(JSON.stringify(testFilm));
+    testNewRelease = JSON.parse(JSON.stringify(testNewRelease));
   });
 
   before(async () => {
     try {
       await connectToDb();
-      //   server = require('../server');
     } catch (err) {
       console.error(err);
     }
   });
 
-  it("should create a film", (done) => {
+  it("should create a new release", (done) => {
     chai
       .request(server)
-      .post("/films/create")
+      .post("/newreleases/create")
       .send({
-        title: "Avengers",
-        description: "abcde",
-        runtime: 122,
-        rating: "PG",
-        filmPoster: "hsdsisucbi",
-        releaseDate: 2013,
-        director: "russo et russo",
-        cast: "duhiadhi",
+        src: "https:test-website.com",
+        altText: "Movie poster",
+        title: "Test Movie",
+        caption: "This movie has this person and this happens to this character.",
       })
       .end((err, res) => {
         chai.expect(err).to.be.null;
         chai.expect(res.body).to.include({
-          title: "Avengers",
-          description: "abcde",
-          runtime: 122,
-          rating: "PG",
-          filmPoster: "hsdsisucbi",
-          releaseDate: 2013,
-          director: "russo et russo",
-          cast: "duhiadhi",
+            src: "https:test-website.com",
+            altText: "Movie poster",
+            title: "Test Movie",
+            caption: "This movie has this person and this happens to this character.",
         });
         chai.expect(res.status).to.equal(201);
         done();
       });
   });
 
-  it("should return all films", (done) => {
+  it("should return all new releases", (done) => {
     chai
       .request(server)
-      .get("/films/getAll")
+      .get("/newreleases/getAll")
       .send()
       .end((err, res) => {
         expect(err).to.be.null;
-        expect(res.body).to.deep.include(testFilm);
+        expect(res.body).to.deep.include(testNewRelease);
         chai.expect(res.status).to.equal(200);
         done();
       });
   });
 
-  it("should get film by id", (done) => {
-    filmModel.findOne().then((testFilm) => {
+  it("should get new release by id", (done) => {
+    newReleaseModel.findOne().then((testNewRelease) => {
       chai
         .request(server)
-        .get(`/films/getFilm/${testFilm._id}`)
+        .get(`/newreleases/getNewRelease/${testNewRelease._id}`)
         .send()
         .end((err, res) => {
           expect(err).to.be.null;
           chai.expect(res.status).to.equal(200);
-          expect(res.body.title).to.equal(testFilm.title);
+          expect(res.body.name).to.equal(testNewRelease.name);
           expect(res.body).has.property("_id");
           done();
         });

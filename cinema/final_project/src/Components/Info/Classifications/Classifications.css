@@ -1,0 +1,27 @@
+.classifications-content{
+    color: rgb(0, 0, 0);
+    margin: 5%;
+}
+
+.classifications-header, .classifications-header.p{
+    color: white;
+}
+
+.classifications-info{
+    color: white;
+}
+
+.class-info-subheading{
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.classification-name{
+    margin-top: 5%;
+}
+
+.classification-icon{
+    height: 75px;
+    width: 75px;
+    margin-left: 5%;
+}

@@ -8,17 +8,23 @@ app.use(cors());
 
 const filmRoutes = require("./routes/filmRoutes.js");
 const discussionRoutes = require("./routes/discussionRoutes.js");
+const emailFormRoutes = require("./routes/emailFormRoutes.js");
+const placeRoutes = require("./routes/placeRoutes.js");
+const newReleaseRoutes = require("./routes/newReleaseRoutes.js");
+const classificationRoutes = require("./routes/classificationRoutes.js");
 
 app.use("/films", filmRoutes);
 app.use("/discussions", discussionRoutes);
+app.use("/emailform", emailFormRoutes);
+app.use("/places", placeRoutes);
+app.use("/newReleases", newReleaseRoutes);
+app.use("/classifications", classificationRoutes);
 
-// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(err.status).send(err.message);
 });
 
-// End of express code
 const server = app.listen(4494, () => {
   console.log(`server started on ${server.address().port}`);
 });

@@ -8,7 +8,7 @@
   margin-bottom: 20px;
 }
 
-.Listings img {
+#poster-image {
   height: 240px;
   width: 160px;
   float: right;
@@ -19,10 +19,16 @@
   padding: 10px;
   color: white;
   background-color: black;
-  border-radius: 5px;
-  border-color: #e67700;
-  border-width: 4px;
-  border-style: solid;
+  border-top: 5px solid #e67700;
+}
+
+#card {
+  margin: 15px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-bottom: 5px solid #e67700;
+  border-top: 5px solid #e67700;
 }
 
 #addticks {
@@ -39,17 +45,17 @@
 
 #payments {
   margin: 20px;
+  color: black;
   padding: 10px;
   border-color: #e67700;
   border-radius: 5px;
   border-style: solid;
   border-width: 2px;
-  width: auto;
 }
 
-#screenalign {
-  display: grid;
-  grid-template-columns: auto auto;
+#stripe {
+  height: 100%;
+  width: 100%;
 }
 
 #add {
@@ -69,7 +75,7 @@
   grid-row: 1;
 }
 
-#times {
+.times {
   margin: 10px;
   border-style: solid;
   border-color: #e67700;
