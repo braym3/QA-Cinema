@@ -33,7 +33,7 @@ const Discussion = () => {
 
   const showDiscussion = () =>
     discussionData.map((discussion, index) => {
-      const id = "discussion" + index.toString;
+      const id = "discussion" + index;
       return (
         <div className="discussion" id={id} key={discussion._id}>
           <h1>{discussion.subject}</h1>
