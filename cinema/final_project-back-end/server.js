@@ -11,12 +11,14 @@ const discussionRoutes = require("./routes/discussionRoutes.js");
 const emailFormRoutes = require("./routes/emailFormRoutes.js");
 const placeRoutes = require("./routes/placeRoutes.js");
 const newReleaseRoutes = require("./routes/newReleaseRoutes.js");
+const classificationRoutes = require("./routes/classificationRoutes.js");
 
 app.use("/films", filmRoutes);
 app.use("/discussions", discussionRoutes);
 app.use("/emailform", emailFormRoutes);
 app.use("/places", placeRoutes);
 app.use("/newReleases", newReleaseRoutes);
+app.use("/classifications", classificationRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);
