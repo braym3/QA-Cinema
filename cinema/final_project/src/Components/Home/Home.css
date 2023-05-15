@@ -10,8 +10,7 @@
 }
 
 .carousel {
-    width:680px;
-    
+    width:700px;
 }
 
 .carousel .carousel-caption {
@@ -40,6 +39,14 @@
     border-color: #8d8c8c !important;
 }
 
-.new-release-image{
-    margin-bottom: 50%;
+img.nr-img{
+    width: 700px !important;
+    height: 380px !important;
+}
+
+@media screen and (max-width: 767.5px){
+    img.nr-img{
+        width: 100% !important;
+        height: 60% !important;
+    }
 }

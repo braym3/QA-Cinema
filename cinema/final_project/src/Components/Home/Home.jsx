@@ -37,7 +37,7 @@ const Home = () => {
                                             <img
                                             src={image.src}
                                             alt={image.altText}
-                                            style={{width:"700px", height:'380px'}}
+                                            className='nr-img'
                                             />
                                         </div>
                                         <div className='new-release-text'>
