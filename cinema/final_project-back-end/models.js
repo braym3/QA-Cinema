@@ -51,6 +51,7 @@ const classificationSchema = new Schema({
   rules: { type: String, required: true },
   image: { type: String, required: true },
   fullName: { type: String, required: true },
+  link: { type: String, required: true },
 });
 
 const filmModel = model("films", filmSchema);

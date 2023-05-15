@@ -27,6 +27,7 @@ describe("Classification API tests", function () {
       rules: "R Rating Rules here",
       image: "https://r-icon.jpg",
       fullName: "R Rating Full Name",
+      link: "https:r-rating-info.com",
     });
     testClassification = JSON.parse(JSON.stringify(testClassification));
   });
@@ -49,6 +50,7 @@ describe("Classification API tests", function () {
         rules: "R Rating Rules here",
         image: "https://r-icon.jpg",
         fullName: "R Rating Full Name",
+        link: "https:r-rating-info.com",
       })
       .end((err, res) => {
         chai.expect(err).to.be.null;
@@ -58,6 +60,7 @@ describe("Classification API tests", function () {
             rules: "R Rating Rules here",
             image: "https://r-icon.jpg",
             fullName: "R Rating Full Name",
+            link: "https:r-rating-info.com",
         });
         chai.expect(res.status).to.equal(201);
         done();
