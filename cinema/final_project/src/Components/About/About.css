@@ -1,5 +1,5 @@
 .about{
-    color: white;
+    color: black;
     column-count: 2;
     column-gap: 2%;
     height: 800px;
@@ -8,14 +8,6 @@
 .about h2{
     color: black;
     font-size: 20px;
-}
-
-.about p{
-    color: black;
-}
-
-.about h3{
-    color: black;
 }
 
 .about .Contact a, .about .Scrum a{
