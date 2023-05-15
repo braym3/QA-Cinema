@@ -27,12 +27,6 @@
   height: 10vh;
 }
 
-.search-bar{
-  float: right !important;
-  height: 15px !important;
-  margin: 15px !important;
-}
-
 .search-bar:hover{
   font-weight: normal !important;
 }
@@ -46,3 +40,34 @@
   color: #e67700;
 }
 
+.form-control{
+  margin-left: 100%;
+}
+
+/* @media screen and (min-width: 991.5px){
+  
+} */
+
+@media screen and (max-width: 991.5px){
+  .navbar-nav{
+    background-color: #636363;
+    color: black;
+    padding-bottom: 3%;
+    border-radius: 2%;
+  }
+  #n-link{
+    padding-left: 5%;
+  }
+  .dropdown{
+    padding-left: 5%;
+  }
+  .dropdown-menu.show{
+    margin-right: 5%;
+  }
+  .form-control{
+    margin-top: 5%;
+  }
+  .form-control{
+    margin-left: 0%;
+  }
+}

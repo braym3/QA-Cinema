@@ -35,12 +35,14 @@ const FindUs = () => {
                             <MenuItem component={<Link to="/findus" className="link" />} style={{marginTop: '40%'}}> Getting Here </MenuItem>
                             <MenuItem component={<Link to="places-to-go" className="link" />} style={{marginTop: '10%'}}> Places To Go </MenuItem>
                             <MenuItem component={<Link to="opening-times" className="link" />} style={{marginTop: '10%'}}> Opening Times </MenuItem>
+                            <MenuItem component={<Link to="screens" className="link" />} style={{marginTop: '10%'}}> Screens </MenuItem>
                         </Menu>
                     </Sidebar>
                     <Routes>
                         <Route path="/" element={<GettingHere />} />
                         <Route path="/places-to-go" element={<PlacesToGo />} />
                         <Route path="/opening-times" element={<OpeningTimes />} />
+                        <Route path="/screens" element={<GettingHere />} />
                         <Route path="*" element={<Navigate to="/"/>} /> 
                     </Routes>
                 </div>
