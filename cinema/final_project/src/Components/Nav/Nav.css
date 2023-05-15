@@ -44,10 +44,6 @@
   margin-left: 100%;
 }
 
-/* @media screen and (min-width: 991.5px){
-  
-} */
-
 @media screen and (max-width: 991.5px){
   .navbar-nav{
     background-color: #636363;
