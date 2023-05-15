@@ -22,10 +22,12 @@ const SingleFilm = () => {
     );
   } else {
     return (
-      <Card id='cards'>
+      <Card id='card'>
+        <Card.Title style={{ textAlign: "center", fontSize: "25px" }}>
+          {filmData.title}
+        </Card.Title>
         <div id='singlecard'>
           <div id='data'>
-            <Card.Title>{filmData.title}</Card.Title>
             <Card.Text>Synopsis: {filmData.description}</Card.Text>
             <Card.Text>Rating: {filmData.rating}</Card.Text>
             <Card.Text>Runtime: {filmData.runtime}</Card.Text>
