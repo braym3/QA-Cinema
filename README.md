@@ -12,13 +12,11 @@ git clone git@github.com:<your_github_username>/QA-Cinema.git
 ```
 3. Once you have cloned the repository, you will need to open up a terminal in both the ```final_project``` and ```final_project-back-end folders``` and run ```npm i``` to install the required node modules. You should see the following message:
 
-![image](https://github.com/braym3/QA-Cinema/assets/126670640/745b611a-eaf6-40da-95dd-ffd045aea116 | width=100 )
-
-<img src="https://github.com/braym3/QA-Cinema/assets/126670640/745b611a-eaf6-40da-95dd-ffd045aea116" width="300">
+<img src="https://github.com/braym3/QA-Cinema/assets/126670640/745b611a-eaf6-40da-95dd-ffd045aea116" width="500">
 
 4. Once the node modules have been installed, you can run the website by executing ```npm start``` in both the folders mentioned above. This will start the back end running at port 4494 and the front end at port 3000. You should see the following message to confirm the back end is running:
 
-![image](https://github.com/braym3/QA-Cinema/assets/126670640/173151e0-9837-4392-af83-e61f8262efa8)
+<img src="https://github.com/braym3/QA-Cinema/assets/126670640/173151e0-9837-4392-af83-e61f8262efa8" width="500">
 
 And the website should open in your preferred browser:
 
@@ -27,7 +25,7 @@ And the website should open in your preferred browser:
   
 With the following message in the terminal:
   
-![image](https://github.com/braym3/QA-Cinema/assets/126670640/fdda68cc-61fc-489d-8c3f-7dd0ca2561f7)
+<img src="https://github.com/braym3/QA-Cinema/assets/126670640/fdda68cc-61fc-489d-8c3f-7dd0ca2561f7" width="500">
 
 You can now use navigate through the website and interact with the various pages.
 
@@ -41,7 +39,7 @@ Our goal was to acheive the industry standard of 80% coverage for both parts of 
   
 To run the tests for the back end execute ```npm run coverage``` in the final_project-back-end terminal. You will see the test diagram displayed above.
   
-To run the front end tests run ``` <WHATEVER-THE-COMMAND-IS>``` in the final_project terminal.
+To run the front end tests run ```<WHATEVER-THE-COMMAND-IS>``` in the final_project terminal.
   
 ## Authors
   
