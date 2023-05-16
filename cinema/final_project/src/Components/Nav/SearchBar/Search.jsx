@@ -37,7 +37,7 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className="searchbar-form">
       <Form.Control
         type="search"
         placeholder="Search for a film"
@@ -46,7 +46,7 @@ const Search = () => {
         onChange={handleChange}
         value={searchInput}
       />
-      <ListGroup>{displayResults()}</ListGroup>
+      <ListGroup className="film-results">{displayResults()}</ListGroup>
     </div>
   );
 };
