@@ -21,7 +21,8 @@ git clone git@github.com:<your_github_username>/QA-Cinema.git
 And the website should open in your preferred browser:
 
 <REPLACE-THIS-IMAGE>
-![image](https://github.com/braym3/QA-Cinema/assets/126670640/f6f2a994-8f4a-4592-baf8-f21c19109007)
+  
+<img src="https://github.com/braym3/QA-Cinema/assets/126670640/f6f2a994-8f4a-4592-baf8-f21c19109007">
   
 With the following message in the terminal:
   
