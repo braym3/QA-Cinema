@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
 import Moderation from "./Moderation";
+import ModerationII from "./ModerationII";
 import { addComment } from "../../Services/DiscussionService";
 
 const CommentModal = ({ show, onHide, disID }) => {
@@ -14,7 +15,8 @@ const CommentModal = ({ show, onHide, disID }) => {
     if (body) {
       // get disid from disdata
       // comment is just new comment
-      const inappropriate = Moderation(body.comment);
+      // const inappropriate = Moderation(body.comment);
+      const inappropriate = ModerationII(body.comment);
       if (inappropriate) {
         return alert("This post has been flagged for profanity as it contains the term: " + inappropriate.flagged);
       }
