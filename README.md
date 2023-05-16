@@ -3,9 +3,11 @@
 ## Importing and running the QACinemas website
 
 1. Start by forking the repository to your own github account by selecting the button below:
-<br/>
+
+
 <img src="https://github.com/braym3/QA-Cinema/assets/126670640/d10a360c-1611-485d-ab1c-8421d1f0fbbd">
-<br/>
+
+
 2. You can then clone the repository to your local machine by running the following command:
 ```
 git clone git@github.com:<your_github_username>/QA-Cinema.git
