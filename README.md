@@ -14,6 +14,8 @@ git clone git@github.com:<your_github_username>/QA-Cinema.git
 
 ![image](https://github.com/braym3/QA-Cinema/assets/126670640/745b611a-eaf6-40da-95dd-ffd045aea116 | width=100 )
 
+<img src="https://github.com/braym3/QA-Cinema/assets/126670640/745b611a-eaf6-40da-95dd-ffd045aea116" width="100" height="100">
+
 4. Once the node modules have been installed, you can run the website by executing ```npm start``` in both the folders mentioned above. This will start the back end running at port 4494 and the front end at port 3000. You should see the following message to confirm the back end is running:
 
 ![image](https://github.com/braym3/QA-Cinema/assets/126670640/173151e0-9837-4392-af83-e61f8262efa8)
