@@ -28,7 +28,11 @@ To run the front end tests run ``` <WHATEVER-THE-COMMAND-IS>``` in the final_pro
 # Authors
   
 Liv Kelly - [okelly54](https://github.com/okelly54)
+  
 Michael Whitham - [michael011299](https://github.com/michael011299)
+  
 Millie Bray - [braym3](https://github.com/braym3)
+  
 Sean Harris - [SeanHarrisQA](https://github.com/SeanHarrisQA)
+  
   
