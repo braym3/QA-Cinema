@@ -14,29 +14,29 @@ const Contact = () => {
     setFormData(newData);
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    if (
-      !formData.subject === null &&
-      !formData.email === null &&
-      !formData.message === null
-    ) {
-      console.log(postEmailForm(formData));
-    }
+  const submitForm = () => {
+    postEmailForm(formData);
+    setFormData("");
   };
 
   return (
     <>
       <Container id='contact'>
         <h2>Got a question?</h2>
-        <Form id='email-form'>
+        <Form
+          id='email-form'
+          action='https://formspree.io/f/mnqyrplg'
+          method='POST'
+        >
           <Form.Group className='mb-3'>
             <Form.Label>Email address</Form.Label>
             <Form.Control
               id='email'
+              name='email'
               type='email'
               placeholder='Enter email'
               onChange={updateState}
+              required
             />
             <Form.Text style={{ color: "white" }}>
               We'll never share your email with anyone else.
@@ -47,21 +47,25 @@ const Contact = () => {
             <Form.Label>Subject</Form.Label>
             <Form.Control
               id='subject'
+              name='subject'
               type='text'
               placeholder='Subject'
               onChange={updateState}
+              required
             />
           </Form.Group>
           <Form.Group className='mb-3'>
             <Form.Label>Message</Form.Label>
             <Form.Control
               id='message'
+              name='message'
               type='text'
               placeholder='Message'
               onChange={updateState}
+              required
             />
           </Form.Group>
-          <Button type='submit' onClick={submitForm}>
+          <Button type='submit' onClick={() => submitForm}>
             Submit
           </Button>
         </Form>
