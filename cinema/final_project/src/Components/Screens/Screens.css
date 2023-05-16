@@ -8,16 +8,19 @@
 
 #s-i{
     height: auto;
-    width: 60vh;
+    width: 20vh;
     margin: 25px;
     padding-top: 100px;
 }
 
-#d-i{
+#images img{
     height: auto;
-    width: 60vh;
-    margin: 25px;
-    padding-top: 100px;
+    width: 40vh;
+}
+
+#images > div:nth-child(1) > img, #images > div:nth-child(3) > img{
+    padding-top: 5%;
+    height: auto;
 }
 
 #main-standard, #main-deluxe{
@@ -26,6 +29,11 @@
     margin-left: 25%;
     object-fit: cover;
     object-position: 35%;
+}
+
+#images > div:nth-child(2) > img{
+    height: 36vh;
+    width: auto;
 }
 
 h2#s-t, h2#d-t{
