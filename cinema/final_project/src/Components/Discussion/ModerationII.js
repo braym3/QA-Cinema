@@ -1,7 +1,7 @@
 const ModerationII = (comment) => {
   const Filter = require("badwords-filter");
   const config = {
-    list: ["test", "hello", "arse"],
+    list: ["crap", "arse", "vaffanculo"],
     cleanWith: "$",
     useRegex: false,
   };
