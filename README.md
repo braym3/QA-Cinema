@@ -4,7 +4,7 @@
 
 1. Start by forking the repository to your own github account by selecting the button below:
 
-![image](https://github.com/braym3/QA-Cinema/assets/126670640/d10a360c-1611-485d-ab1c-8421d1f0fbbd)
+<img src="https://github.com/braym3/QA-Cinema/assets/126670640/d10a360c-1611-485d-ab1c-8421d1f0fbbd">
 
 2. You can then clone the repository to your local machine by running the following command:
 ```
