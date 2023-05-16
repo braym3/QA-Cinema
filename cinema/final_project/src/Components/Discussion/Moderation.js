@@ -32,10 +32,7 @@ const Moderation = (comment) => {
               //console.log("FLfe");
               const split = exception.split("*");
               const word = split[0] + sstc + split[1];
-              const context = comment.substring(
-                k - split[0].length,
-                k + matches[j].length + split[1].length
-              );
+              const context = comment.substring(k - split[0].length, k + matches[j].length + split[1].length);
               if (context.toLowerCase() === word.toLowerCase()) {
                 rude = false;
               }

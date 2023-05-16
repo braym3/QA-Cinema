@@ -16,10 +16,7 @@ const CommentModal = ({ show, onHide, disID }) => {
       // comment is just new comment
       const inappropriate = Moderation(body.comment);
       if (inappropriate) {
-        return alert(
-          "This post has been flagged for profanity as it contains the term: " +
-            inappropriate.flagged
-        );
+        return alert("This post has been flagged for profanity as it contains the term: " + inappropriate.flagged);
       }
       addComment(disID, body);
     }
@@ -34,21 +31,11 @@ const CommentModal = ({ show, onHide, disID }) => {
         <form>
           <label name="email">Email</label>
           <br />
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-            type="email"
-            required
-          />
+          <input onChange={(e) => setEmail(e.target.value)} name="email" type="email" required />
           <br />
           <label>Comment</label>
           <br />
-          <textarea
-            onChange={(e) => setComment(e.target.value)}
-            id="comment"
-            type="text-field"
-            required
-          />
+          <textarea onChange={(e) => setComment(e.target.value)} id="comment" type="text-field" required />
           <br />
           <button
             onClick={() =>
