@@ -2,7 +2,7 @@
   all: unset;
   position: sticky;
   color: rgba(255, 255, 255, 0.442);
-  margin: 24px;
+  margin: 24px !important;
   color: white;
   border-radius: 5px;
   border-width: 2px;
@@ -22,15 +22,9 @@
       #9f5301
     ),
     100%;
-  border-radius: 5px;
-  width: 100%;
-  height: 12vh;
-}
-
-.search-bar{
-  float: right !important;
-  height: 15px !important;
-  margin: 15px !important;
+  /* border-radius: 5px; */
+  /* width: 100%; */
+  height: 10vh;
 }
 
 .search-bar:hover{
@@ -44,4 +38,32 @@
 .result-item.active{
   background-color: #e67700;
   color: #e67700;
+}
+
+.form-control{
+  margin-left: 100%;
+}
+
+@media screen and (max-width: 991.5px){
+  .navbar-nav{
+    background-color: #636363;
+    color: black;
+    padding-bottom: 3%;
+    border-radius: 2%;
+  }
+  #n-link{
+    padding-left: 5%;
+  }
+  .dropdown{
+    padding-left: 5%;
+  }
+  .dropdown-menu.show{
+    margin-right: 5%;
+  }
+  .form-control{
+    margin-top: 5%;
+  }
+  .form-control{
+    margin-left: 0%;
+  }
 }

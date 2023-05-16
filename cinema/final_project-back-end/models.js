@@ -38,14 +38,34 @@ const placeSchema = new Schema({
   website: { type: String, required: true },
 });
 
+const newReleaseSchema = new Schema({
+  src: { type: String, required: true },
+  altText: { type: String, required: true },
+  title: { type: String, required: true },
+  caption: { type: String, required: true },
+});
+
+const classificationSchema = new Schema({
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  rules: { type: String, required: true },
+  image: { type: String, required: true },
+  fullName: { type: String, required: true },
+  link: { type: String, required: true },
+});
+
 const filmModel = model("films", filmSchema);
 const discussionModel = model("discussions", discussionSchema);
 const emailFormModel = model("emailform", emailFormSchema);
 const placeModel = model("places", placeSchema);
+const newReleaseModel = model("newReleases", newReleaseSchema);
+const classificationModel = model("classifications", classificationSchema);
 
 module.exports = {
   filmModel,
   discussionModel,
   emailFormModel,
-  placeModel
+  placeModel,
+  newReleaseModel,
+  classificationModel
 };
