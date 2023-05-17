@@ -13,6 +13,7 @@ const filmSchema = new Schema({
 
 const discussionSchema = new Schema({
   subject: { type: String, required: true },
+  film: { type: String, required: true },
   discussion: [
     {
       email: { type: String, required: true },
@@ -67,5 +68,5 @@ module.exports = {
   emailFormModel,
   placeModel,
   newReleaseModel,
-  classificationModel
+  classificationModel,
 };

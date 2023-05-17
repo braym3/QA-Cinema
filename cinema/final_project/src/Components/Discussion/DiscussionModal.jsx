@@ -9,6 +9,7 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
+  const [film, setFilm] = useState("");
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
@@ -26,7 +27,7 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
       <Modal.Body>
         <form onSubmit={onHide}>
           <label name="film">Please give the name of the film:</label>
-          <select>
+          <select onChange={(e) => setFilm(e.target.value)} required>
             {films.map((data, index) => {
               const { title, _id } = data;
               return <option value={title}>{title}</option>;
@@ -49,6 +50,7 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
             onClick={() =>
               setBody({
                 subject: subject,
+                film: film,
                 discussion: [
                   {
                     email: email,
