@@ -25,6 +25,7 @@ describe("Discussion API tests", function () {
         {
           email: "test@test.com",
           comment: "This is a test subject",
+          rating: 4,
         },
       ],
     });
@@ -36,10 +37,12 @@ describe("Discussion API tests", function () {
         {
           email: "test@test.com",
           comment: "This is a test subject",
+          rating: 4,
         },
         {
           email: "new@comment",
           comment: "Comment to be added",
+          rating: 3,
         },
       ],
     });
@@ -65,6 +68,7 @@ describe("Discussion API tests", function () {
           {
             email: "test@test.com",
             comment: "This is a test subject",
+            rating: 4,
           },
         ],
       })
@@ -79,6 +83,7 @@ describe("Discussion API tests", function () {
         expect(res.body.film).to.equal(testDiscussion.film);
         expect(res.body.discussion[0].email).to.equal(testDiscussion.discussion[0].email);
         expect(res.body.discussion[0].comment).to.equal(testDiscussion.discussion[0].comment);
+        expect(res.body.discussion[0].rating).to.equal(testDiscussion.discussion[0].rating);
         done();
       });
   });
@@ -101,7 +106,7 @@ describe("Discussion API tests", function () {
     chai
       .request(server)
       .patch(`/discussions/addComment/${_id}`)
-      .send({ email: "new@comment", comment: "Comment to be added" })
+      .send({ email: "new@comment", comment: "Comment to be added", rating: 3 })
       .end((err, res) => {
         chai.expect(err).to.be.null;
         chai.expect(res.status).to.equal(200);
@@ -110,9 +115,11 @@ describe("Discussion API tests", function () {
         expect(res.body.discussion[0]).has.property("_id");
         expect(res.body.discussion[0].email).to.equal(testAddComment.discussion[0].email);
         expect(res.body.discussion[0].comment).to.equal(testAddComment.discussion[0].comment);
+        expect(res.body.discussion[0].rating).to.equal(testAddComment.discussion[0].rating);
         expect(res.body.discussion[1]).has.property("_id");
         expect(res.body.discussion[1].email).to.equal(testAddComment.discussion[1].email);
         expect(res.body.discussion[1].comment).to.equal(testAddComment.discussion[1].comment);
+        expect(res.body.discussion[1].rating).to.equal(testAddComment.discussion[1].rating);
         done();
       });
   });
