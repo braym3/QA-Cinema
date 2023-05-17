@@ -20,6 +20,7 @@ describe("Discussion API tests", function () {
     await discussionModel.deleteMany({});
     testDiscussion = await discussionModel.create({
       subject: "This is a test",
+      film: "Testfilm",
       discussion: [
         {
           email: "test@test.com",
@@ -30,6 +31,7 @@ describe("Discussion API tests", function () {
     testDiscussion = JSON.parse(JSON.stringify(testDiscussion));
     testAddComment = await discussionModel.create({
       subject: "This is a test",
+      film: "Testfilm",
       discussion: [
         {
           email: "test@test.com",
@@ -58,6 +60,7 @@ describe("Discussion API tests", function () {
       .post("/discussions/createDiscussion")
       .send({
         subject: "This is a test",
+        film: "Testfilm",
         discussion: [
           {
             email: "test@test.com",
@@ -73,6 +76,7 @@ describe("Discussion API tests", function () {
         chai.expect(res.status).to.equal(201);
         expect(res.body.discussion[0]).has.property("_id");
         expect(res.body.subject).to.equal(testDiscussion.subject);
+        expect(res.body.film).to.equal(testDiscussion.film);
         expect(res.body.discussion[0].email).to.equal(testDiscussion.discussion[0].email);
         expect(res.body.discussion[0].comment).to.equal(testDiscussion.discussion[0].comment);
         done();
@@ -102,6 +106,7 @@ describe("Discussion API tests", function () {
         chai.expect(err).to.be.null;
         chai.expect(res.status).to.equal(200);
         expect(res.body.subject).to.equal(testAddComment.subject);
+        expect(res.body.film).to.equal(testAddComment.film);
         expect(res.body.discussion[0]).has.property("_id");
         expect(res.body.discussion[0].email).to.equal(testAddComment.discussion[0].email);
         expect(res.body.discussion[0].comment).to.equal(testAddComment.discussion[0].comment);
