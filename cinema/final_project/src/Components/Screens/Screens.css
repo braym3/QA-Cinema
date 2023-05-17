@@ -18,6 +18,15 @@
     width: 40vh;
 }
 
+h2#desc, h2#desc2{
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+    width: 900px;
+    text-align: center;
+    margin-left: 10%;
+}
+
 #images > div:nth-child(1) > img, #images > div:nth-child(3) > img{
     padding-top: 5%;
     height: auto;
