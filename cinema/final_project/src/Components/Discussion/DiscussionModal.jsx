@@ -4,12 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { createDiscussion } from "../../Services/DiscussionService";
 import { useEffect, useState } from "react";
 
-const DiscussionModal = ({
-  show,
-  onHide,
-  setDiscussionData,
-  discussionData,
-}) => {
+const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData }) => {
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
@@ -32,30 +27,15 @@ const DiscussionModal = ({
         <form onSubmit={onHide}>
           <label name="subject">Subject of new Discussion</label>
           <br />
-          <input
-            onChange={(e) => setSubject(e.target.value)}
-            name="subject"
-            type="text"
-            required
-          />
+          <input onChange={(e) => setSubject(e.target.value)} name="subject" type="text" required />
           <br />
           <label name="email">Email</label>
           <br />
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-            type="email"
-            required
-          />
+          <input onChange={(e) => setEmail(e.target.value)} name="email" type="email" required />
           <br />
           <label>Comment</label>
           <br />
-          <textarea
-            onChange={(e) => setComment(e.target.value)}
-            id="comment"
-            type="text-field"
-            required
-          />
+          <textarea onChange={(e) => setComment(e.target.value)} id="comment" type="text-field" required />
           <br />
           <button
             onClick={() =>
