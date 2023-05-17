@@ -28,7 +28,7 @@ const GettingHere = () => {
         <>
             <div className='getting-here-content'>
                 <Row className='getting-here-header'>
-                    <h1 style={{marginBottom: '3%'}}>Getting Here</h1>
+                    <h1 style={{marginBottom: '3%'}} id='getting-here-title'>Getting Here</h1>
                     <p>Located in Manchester Quayside MCUK on Salford Quays,
                     QACinema is easily accessible from the M60 J12 for the M602
                     – simply follow the signs for the outlet mall.</p>

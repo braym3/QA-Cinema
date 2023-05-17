@@ -61,7 +61,7 @@ const Discussion = () => {
   return (
     <>
       <div id="discussion">
-        <h1>Discussion Board</h1>
+        <h1 id="st">Discussion Board</h1>
         <button className="button-4" onClick={handleShowDiscussion}>
           + Add New Discussion
         </button>
