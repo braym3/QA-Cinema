@@ -1,76 +1,53 @@
 const assert = require("assert").strict;
+const { title } = require("process");
 const webdriver = require("selenium-webdriver");
 
-// Application Server
-const serverUri = "http://localhost:3000/discussion";
-const appTitle = "React App";
+
+const serverUri = "http://localhost:3000/discussion"; // App Server
 
 /**
  * Config for Chrome browser
  * @type {webdriver}
  */
-var browser = new webdriver.Builder().usingServer().withCapabilities({ browserName: "chrome" }).build();
+let browser = new webdriver.Builder()
+ 	.usingServer()
+ 	.withCapabilities({ browserName: "chrome" })
+ 	.build();
 
-/**
- * Function to get the title and resolve it it promise.
- * @return {[type]} [description]
- */
-function logTitle() {
-  return new Promise((resolve, reject) => {
-    browser.getTitle().then(function (title) {
-      resolve(title);
-    });
-  });
-}
-function logHeading() {
-  return new Promise((resolve, reject) => {
-    // setTimeout(function () {
-    const heading = browser.findElement({ id: "st" });
-    const text = heading.getText();
-    text.then(function (discussionHeading) {
-      resolve(discussionHeading);
-    });
-    // }, 5000);
 
-    // browser.wait(webdriver.until.elementLocated({ id: "st" })).then((el) => el.getText().then((x) => resolve(x)));
-    // const heading = browser.wait(webdriver.until.elementLocated(webdriver.By.xpath("//div[text() = 'Save']")), 5000);
-    // browser.wait(until.elementIsVisible(heading), 5000).click();
-  });
+
+// gets the discussion page heading
+function getDiscussionHeading() {
+	return new Promise((resolve, reject) => {
+		let headerElem = browser.findElement({id: 'st'});
+		let headerText = headerElem.getText();
+		headerText.then(function(discussionHeading) {
+			resolve(discussionHeading);
+		})
+	})
 }
 
-describe("Home Page", function () {
-  /**
-   * Test case - load the application & check the title.
-   */
-  this.timeout(10000);
-  it("Should load the discussion page and get title", function () {
-    return new Promise((resolve, reject) => {
-      browser
-        .get(serverUri)
-        .then(logTitle)
-        .then((title) => {
-          assert.strictEqual(title, appTitle);
-          resolve();
-        })
-        .catch((err) => reject(err));
-    });
-  });
+describe("Discussion Page", function() {
+	this.timeout(5000);
 
-  it("Should load the discussion page and get the heading", function () {
-    return new Promise((resolve, reject) => {
-      browser
-        .get(serverUri)
-        .then(logHeading)
-        .then((discussionHeading) => {
-          assert.strictEqual(discussionHeading, "Discussion Board");
-        })
-        .catch((err) => reject(err));
-    });
-  });
+	// check the discussion page heading
+	it("Should check that the heading on the discussion page is correct", function() {
+		return new Promise((resolve, reject) => {
+		browser
+		.get(serverUri)
+		.then(getDiscussionHeading)
+		.then(heading => {
+		assert.strictEqual(heading, "Discussion Board");
+		resolve();
+		})
+		.catch(err => reject(err));
+		});
+	});
 
-  // eslint-disable-next-line no-undef
-  after(function () {
-    // End of test - close browser
-    browser.quit();
-  });
+
+	// eslint-disable-next-line no-undef
+	after(function() {
+		// End of test - close browser
+		browser.quit();
+	});
 });
