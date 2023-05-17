@@ -31,4 +31,6 @@ yarn-error.log*
 */comments.json
 *comments.json
 **comments.html
+
+**chromedriver**
 **profanity.json
