@@ -8,10 +8,11 @@ import { Navigate } from "react-router-dom";
 import Navi from "./Components/Nav/Navi";
 import About from "./Components/About/About";
 import FindUs from "./Components/Info/FindUs";
-import PurchaseTickets from "./Components/Listings/PurchaseTickets";
+import PurchaseTickets from "./Components/Listings/SIngleListingDetail/PurchaseTickets";
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact/Contact.jsx";
-
+import PaymentSuccess from "./Components/Listings/PaymentSuccess";
+import PaymentFailure from "./Components/Listings/PaymentFailure";
 const App = () => {
   return (
     <>
@@ -26,10 +27,12 @@ const App = () => {
           <Route path='contact' element={<Contact />} />
           <Route path='/findus*' element={<FindUs />} />
           <Route path='purchasetickets/:filmID' element={<PurchaseTickets />} />
+          <Route path='/purchasetickets/success' element={<PaymentSuccess />} />
+          <Route path='/purchasetickets/failure' element={<PaymentFailure />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

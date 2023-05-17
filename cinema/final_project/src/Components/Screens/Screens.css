@@ -1,0 +1,44 @@
+#images{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+#s-i{
+    height: auto;
+    width: 60vh;
+    margin: 25px;
+    padding-top: 100px;
+}
+
+#d-i{
+    height: auto;
+    width: 60vh;
+    margin: 25px;
+    padding-top: 100px;
+}
+
+#main-standard, #main-deluxe{
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    object-fit: cover;
+    object-position: 35%;
+}
+
+h2#s-t, h2#d-t{
+    left: 400px;
+    width: 413px;
+    margin: 50px;
+}
+
+.separator{
+    position: absolute;
+    left: 15%;
+    height: 5px;
+    width: 75%;
+    background-color: #e67700;
+    margin-bottom: 30px;
+}
