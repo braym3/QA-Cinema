@@ -54,12 +54,29 @@ const classificationSchema = new Schema({
   link: { type: String, required: true },
 });
 
+const screenSchema = new Schema({
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  mainImage: { type: String, required: true },
+  mainImageAlt: { type: String, required: true },
+  mainImageDescription: { type: String, required: true },
+  subImages: [
+    {
+      image: { type: String, required: true },
+      alt: { type: String, required: true },
+    },
+  ],
+  capacity: { type: Number, required: true },
+  price: { type: Number, required: true },
+});
+
 const filmModel = model("films", filmSchema);
 const discussionModel = model("discussions", discussionSchema);
 const emailFormModel = model("emailform", emailFormSchema);
 const placeModel = model("places", placeSchema);
 const newReleaseModel = model("newReleases", newReleaseSchema);
 const classificationModel = model("classifications", classificationSchema);
+const screenModel = model("screens", screenSchema);
 
 module.exports = {
   filmModel,
@@ -67,5 +84,6 @@ module.exports = {
   emailFormModel,
   placeModel,
   newReleaseModel,
-  classificationModel
+  classificationModel,
+  screenModel
 };
