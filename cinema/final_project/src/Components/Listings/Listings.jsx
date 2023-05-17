@@ -29,8 +29,8 @@ const Listings = () => {
   } else {
     return (
       <>
-        <h1 style={{ textAlign: "center", marginTop: "10px" }}>
-          All Cinema Listings
+        <h1 style={{ textAlign: "center", marginTop: "10px" }} className="listings-title">
+        All Cinema Listings
         </h1>
         <div id='container'>
           {filmData.map((film) => {
