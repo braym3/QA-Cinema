@@ -42,11 +42,11 @@ const Discussion = () => {
       return (
         <div className="discussion" id={id} key={discussion._id}>
           <h1>{discussion.subject}</h1>
+          <h4>{discussion.film}</h4>
           <button className="button-4" id={"comment" + index.toString} onClick={() => handleShowComment(index)}>
             Reply to this discussion
           </button>
           <CommentModal show={showComment === index} onHide={handleCloseComment} disID={discussion._id} />
-          <br></br>
           <br></br>
           <div>
             <table>
