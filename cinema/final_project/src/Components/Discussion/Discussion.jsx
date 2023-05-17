@@ -75,6 +75,7 @@ const Discussion = () => {
           onHide={handleCloseDiscussion}
           setDiscussionData={setDiscussionData}
           discussionData={discussionData}
+          films={filmData}
         />
       </div>
       {showDiscussion()}

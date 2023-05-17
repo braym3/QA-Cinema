@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { createDiscussion } from "../../Services/DiscussionService";
 import { useEffect, useState } from "react";
 
-const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData }) => {
+const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, films }) => {
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
@@ -25,6 +25,14 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData }) =>
       </Modal.Header>
       <Modal.Body>
         <form onSubmit={onHide}>
+          <label name="film">Please give the name of the film:</label>
+          <select>
+            {films.map((data, index) => {
+              const { title, _id } = data;
+              return <option value={title}>{title}</option>;
+            })}
+          </select>
+          <br />
           <label name="subject">Subject of new Discussion</label>
           <br />
           <input onChange={(e) => setSubject(e.target.value)} name="subject" type="text" required />
