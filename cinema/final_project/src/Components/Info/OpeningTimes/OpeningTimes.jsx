@@ -34,7 +34,7 @@ const OpeningTimes = () => {
 		<div className='opening-times-content opening-times'>
 		<Row>
 			<Col>
-				<h1>Opening Times</h1>
+				<h1 id='opening-times-title'>Opening Times</h1>
 				{displayTimes()}
 			</Col>
 		</Row>
