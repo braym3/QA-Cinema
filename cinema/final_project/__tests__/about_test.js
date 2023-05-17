@@ -37,7 +37,7 @@ describe("About Page", function() {
 		.get(serverUri)
 		.then(getAboutTitle)
 		.then(title => {
-		assert.strictEqual(title, "About QACinemas");
+		assert.strictEqual(title, "About QA Cinemas");
 		resolve();
 		})
 		.catch(err => reject(err));

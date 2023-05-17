@@ -6,7 +6,7 @@ const About = () => {
         <div class="about">
             <div class="left">
                 <div class="About-Us">
-                    <h2>About QACinemas</h2>
+                    <h2 id='about-title'>About QA Cinemas</h2>
                     <p>We are a popular cinema chain hosting films in our 7-screen cinema.
                         This website has been developed by Millie, Sean, Michael and Olivia.
                     </p>
