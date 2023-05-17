@@ -35,8 +35,6 @@ const Screens = () => {
             </Container>
             )
 
-            
-
         );
     }
     return (
@@ -47,4 +45,5 @@ const Screens = () => {
         </>
     );
 }
+
 export default Screens;
