@@ -66,6 +66,7 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
                     {
                       email: email,
                       comment: comment,
+                      rating: rating,
                     },
                   ],
                 });

@@ -27,11 +27,12 @@ const Discussion = () => {
 
   const printData = (comments) =>
     comments.map((data, index) => {
-      const { email, comment } = data;
+      const { email, comment, rating } = data;
       return (
         <tr key={index}>
           <td>{email}</td>
           <td id="comm">{comment}</td>
+          <td>{rating}</td>
         </tr>
       );
     });
@@ -54,6 +55,7 @@ const Discussion = () => {
                 <tr>
                   <th>User</th>
                   <th id="comm">Comment</th>
+                  <th>Rating</th>
                 </tr>
               </thead>
               <tbody>{printData(discussion.discussion)}</tbody>

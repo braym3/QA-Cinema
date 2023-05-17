@@ -10,16 +10,22 @@ const CommentModal = ({ show, onHide, disID }) => {
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
   const [rating, setRating] = useState(0);
-  const [newRating, setNewRating] = useState();
+  // const [newRating, setNewRating] = useState();
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
+    console.log(body, "in use effect");
     if (body) {
       const inappropriate = ModerationII(body.comment);
+      console.log(body.rating);
       if (inappropriate) {
         return alert("This post has been flagged for profanity as it contains the term: " + inappropriate.flagged);
       }
-      addComment(disID, body);
+      addComment(disID, body)
+        .then((res) => {
+          console.log(res, "in add comment res");
+        })
+        .catch((err) => console.error(err));
     }
   }, [body]);
 
@@ -41,12 +47,14 @@ const CommentModal = ({ show, onHide, disID }) => {
           <label>Rating</label>
           <StarRating rating={rating} setRating={setRating} />
           <button
-            onClick={() =>
+            onClick={() => {
               setBody({
                 email: email,
                 comment: comment,
-              })
-            }
+                rating: rating,
+              });
+              console.log(rating);
+            }}
             className="button-4"
             type="submit"
           >

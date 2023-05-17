@@ -24,8 +24,8 @@ router.patch("/addComment/:id", async (req, res, next) => {
     const { id } = req.params;
     const original = await discussionModel.findById(id);
     if (!original) throw new Error("no discussion with that id");
-    if (!req.body.email || !req.body.comment)
-      throw new Error("invalid comment");
+    if (!req.body.email || !req.body.comment) throw new Error("invalid comment");
+    // console.log(req.body, "<<<<");
     original.discussion.push(req.body);
     await original.save();
     res.json(original);

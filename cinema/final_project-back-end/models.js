@@ -18,6 +18,7 @@ const discussionSchema = new Schema({
     {
       email: { type: String, required: true },
       comment: { type: String, required: true },
+      rating: { type: Number, required: false },
     },
   ],
 });
