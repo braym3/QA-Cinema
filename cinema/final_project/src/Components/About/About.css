@@ -1,8 +1,6 @@
 .about{
-    color: white;
-    column-count: 2;
-    column-gap: 2%;
-    height: 800px;
+    color: black;
+    height: 2350px;
 }
 
 .about h2{
@@ -10,12 +8,55 @@
     font-size: 20px;
 }
 
-.about p{
-    color: black;
-}
-
 .about h3{
     color: black;
+    font-size: 18px;
+}
+
+.about .left{
+    display: flex;
+}
+
+.about .Scrum{
+    background-color: white;
+    height: auto;
+    width: auto;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.About-Us, .Contact{
+    background-color: white;
+    height: 35vh;
+    width: 90vh;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.whatisscrum, .standards, .completion-standards {
+    column-count: 2;
+}
+
+.read-more{
+    padding-top: 10px;
+}
+
+.divider{
+    height: 2px;
+    width: 100%;
+    background-color: #0000003b;
+    margin-bottom: 40px;
+}
+
+.standards{
+    padding-bottom: 40px;
+}
+
+.Scrum h2, .Scrum h3{
+    padding-bottom: 20px;
+    width: 100%;
 }
 
 .about .Contact a, .about .Scrum a{
@@ -30,15 +71,4 @@
 
 .about .Contact a:hover{
     background-color: #b86003;
-}
-
-.About-Us, .Scrum, .Contact{
-    display: inline-block;
-    padding: 3%;
-    margin: 5%;
-    
-    height: auto;
-    width: 600px;
-    border-radius: 5px;
-    background-color: snow;
 }

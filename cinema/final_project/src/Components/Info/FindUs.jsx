@@ -8,6 +8,7 @@ import { ProSidebarProvider, Sidebar, Menu, MenuItem, sidebarClasses } from 'rea
 import {  Link, Navigate } from "react-router-dom";
 import { Routes, Route } from "react-router";
 import Classifications from './Classifications/Classifications';
+import Screens from '../Screens/Screens';
 
 const FindUs = () => {
     return (
@@ -44,7 +45,7 @@ const FindUs = () => {
                         <Route path="/" element={<GettingHere />} />
                         <Route path="/places-to-go" element={<PlacesToGo />} />
                         <Route path="/opening-times" element={<OpeningTimes />} />
-                        <Route path="/screens" element={<GettingHere />} />
+                        <Route path="/screens" element={<Screens />} />
                         <Route path="/classifications" element={<Classifications />} />
                         <Route path="*" element={<Navigate to="/"/>} /> 
                     </Routes>

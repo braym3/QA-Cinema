@@ -39,18 +39,21 @@
   border-style: solid;
   border-width: 2px;
   width: auto;
-  display: grid;
-  grid-template-columns: auto auto;
 }
 
-#payments {
+#buytickets {
   margin: 20px;
-  color: black;
   padding: 10px;
   border-color: #e67700;
   border-radius: 5px;
   border-style: solid;
   border-width: 2px;
+  width: auto;
+}
+
+#payments {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 #stripe {
