@@ -1,13 +1,14 @@
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
-const SelectTime = () => {
+const SelectTime = ({ selectTime }) => {
   const [color, setColor] = useState();
 
   const handleClick = (e) => {
     e.preventDefault();
     console.log(e.target.id);
     setColor(e.target.id);
+    selectTime(e.target.innerText);
   };
 
   return (
