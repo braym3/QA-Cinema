@@ -4,6 +4,7 @@ import "./Discussion.css";
 import React, { useEffect, useState } from "react";
 import { getDiscussions } from "../../Services/DiscussionService";
 import { getFilms } from "../../Services/filmsCalls";
+import StaticStarRating from "./StaticStarRating";
 
 const Discussion = () => {
   const [showComment, setShowComment] = useState(-1);
@@ -32,7 +33,9 @@ const Discussion = () => {
         <tr key={index}>
           <td>{email}</td>
           <td id="comm">{comment}</td>
-          <td>{rating}</td>
+          <td id="rating">
+            <StaticStarRating rating={rating} />
+          </td>
         </tr>
       );
     });
@@ -55,7 +58,7 @@ const Discussion = () => {
                 <tr>
                   <th>User</th>
                   <th id="comm">Comment</th>
-                  <th>Rating</th>
+                  <th id="rating">Rating</th>
                 </tr>
               </thead>
               <tbody>{printData(discussion.discussion)}</tbody>

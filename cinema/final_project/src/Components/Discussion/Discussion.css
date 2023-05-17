@@ -93,10 +93,9 @@
   text-align: start;
 }
 
-/* table {
-  border-collapse: separate;
-  border-spacing: 500px 500px;
-} */
+table {
+  width: 100%;
+}
 
 #comm {
   padding: 0px 20px;
@@ -115,4 +114,8 @@
 }
 .off {
   color: #ccc;
+}
+
+#rating {
+  right: 2000px;
 }
