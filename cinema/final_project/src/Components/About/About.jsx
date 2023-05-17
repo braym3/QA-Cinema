@@ -118,9 +118,9 @@ const About = () => {
 
                 <br></br>
 
+                <h3>Backlog and Sprints</h3>
                 <div class="backlog">
-
-                    <h3>Backlog and Sprints</h3>
+                    
 
                     <div class="project-backlog">
 
