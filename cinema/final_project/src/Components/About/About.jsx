@@ -21,12 +21,15 @@ const About = () => {
 
                 <div class="Contact">
                     <h3>Contact</h3>
-                    <p>Millie - @</p>
-                    <p>Sean - @</p>
-                    <p>Michael - @</p>
-                    <p>Olivia - @</p>
+                    <div class="c-l">
+                        <p>Millie - emelia.bray@qa.com</p>
+                        <p>Sean - sean.harris@qa.com</p>
+                        <p>Michael - michael.whitham@qa.com</p>
+                        <p>Olivia - olivia.kelly@qa.com</p>
 
-                    <a href="/contact">Contact QACinemas</a>
+                        <a href="/contact">Contact QACinemas</a>
+                    </div>
+
                 </div>
             </div>
             <div class="Scrum">
@@ -115,12 +118,9 @@ const About = () => {
 
                 <br></br>
 
-                <div class="divider"></div>
-
-
+                <h3>Backlog and Sprints</h3>
                 <div class="backlog">
-
-                    <h3>Backlog and Sprints</h3>
+                    
 
                     <div class="project-backlog">
 
@@ -173,131 +173,125 @@ const About = () => {
                         </ul>
 
                     </div>
+                </div>
+
+                <br></br>
+
+                <h3>Standards</h3>
+                <div class="standards">
 
 
-                    <br></br>
-                    <div class="divider"></div>
+                        <div class="acceptance-criteria">
 
-                    <h3>Standards</h3>
-                    <div class="standards">
+                            <p>
+                                <b>Acceptance criteria</b> is criteria that show the product is done.
+                                They're attached to the user stories, not individual tasks, as
+                                previously mentioned. User stories are very high level and have
+                                very high level requirements. Examples include:
+                            </p>
 
+                            <ul>
+                                <li>"Given _"</li>
+                                <li>"When _"</li>
+                                <li>"Then _"</li>
+                            </ul>
 
-                            <div class="acceptance-criteria">
-
-                                <p>
-                                    <b>Acceptance criteria</b> is criteria that show the product is done.
-                                    They're attached to the user stories, not individual tasks, as
-                                    previously mentioned. User stories are very high level and have
-                                    very high level requirements. Examples include:
-                                </p>
-
-                                <ul>
-                                    <li>"Given _"</li>
-                                    <li>"When _"</li>
-                                    <li>"Then _"</li>
-                                </ul>
-
-                                <p>
-                                    For example, "Given I am logged in, when I view the account page,
-                                    then I should see options to change my account details". This standard
-                                    is helpful in ensuring that developers work to achieve goals based on
-                                    end user requirements.
-                                </p>
-
-                            </div>
-
-
-                            <div class="moscow">
-
-                                <p>
-                                    <b>MoSCoW</b> is a commonly used standard for the prioritisation of
-                                    tasks. One of the most important parts of managing a backlog is
-                                    prioritising items.
-                                </p>
-
-                                <ul>
-                                    <li>Mo - Must have, is necessary or required</li>
-                                    <li>S - Should have, is important but not necessary</li>
-                                    <li>Co - Could have, is nice but not important</li>
-                                    <li>W - Would like to have or won't have because of time constraints, out of scope or unable to do</li>
-                                </ul>
-
-                            </div>
-
-
-                            <div class="user-stories">
-
-                                <p>
-                                    <b>User stories</b> are a standard commonly used within Scrum
-                                    to help construct tasks with end user requirements in mind. It
-                                    follows a structure of "As a _ I want _ so that _". It enforces
-                                    developers to consider who wants what, what do they want, why
-                                    do they want. User stories are designed to be simple, easy to 
-                                    write and read, which is why they are so light on detail. An
-                                    example of a user story could be "As a customer visiting the
-                                    website, I would like to see the navigation bar at the top of
-                                    the page across all pages so that I can easily navigate to other
-                                    pages". Developers mightn't have considered this as something a
-                                    user would be interested in or may even need, which is why user
-                                    stories are vital to developing a product that pertains to the
-                                    end user requirements discussed. It is highly valuable to
-                                    consider the needs of a user or to attempt to view the product
-                                    from the perspective of a user, rather than a developer, something
-                                    which is often dismissed.
-                                </p>
-
-                            </div>
-
-
-                            <br></br>
-
-
-                            <div class="story-points">
-
-                                <p>
-                                    <b>Story points</b> is another scrum standard. Two different
-                                    developers may disagree on how long it will take to complete a task
-                                    as people have different skill sets and tend to work at different
-                                    paces. To resolve this, instead of measuring in time, we measure
-                                    in how much effort a task will take. For example, a logo may take a
-                                    certain amount of effort, say 1 story point, and making an about us
-                                    page could take more effort, say 2 story points. If you make two logos,
-                                    you'd have the same amount of effort as the about us page. We count
-                                    how many story points we have in total to make an estimate on how long
-                                    something will take. The equation for this is <i>points / sprint = velocity</i>.
-                                </p>
-                                
-                            </div>
-
-
-                            <div class="story-points-2">
-
-                                <p>
-                                    For the first sprint, this isn't commonly used and developers tend to dive
-                                    in without this standard. This provides a point of reference and, by
-                                    the end of the first sprint, everyone will have a better idea of how
-                                    long things take and how much effort things take, too. A lot of
-                                    development teams use a sprint 0 to see how things go and judge how
-                                    long things will take. A sprint 0 refers to the first sprint in which
-                                    developers don't use story points to estimate how long a task will
-                                    take. They spend this first sprint diving in blindly to have a better
-                                    idea of how much work they can get done in what amount of time.
-                                </p>
-
-                            </div>
-
-
-                            <br></br>
-
+                            <p>
+                                For example, "Given I am logged in, when I view the account page,
+                                then I should see options to change my account details". This standard
+                                is helpful in ensuring that developers work to achieve goals based on
+                                end user requirements.
+                            </p>
 
                         </div>
 
-                    </div>
 
-                <div class="divider"></div>
+                        <div class="moscow">
+
+                            <p>
+                                <b>MoSCoW</b> is a commonly used standard for the prioritisation of
+                                tasks. One of the most important parts of managing a backlog is
+                                prioritising items.
+                            </p>
+
+                            <ul>
+                                <li>Mo - Must have, is necessary or required</li>
+                                <li>S - Should have, is important but not necessary</li>
+                                <li>Co - Could have, is nice but not important</li>
+                                <li>W - Would like to have or won't have because of time constraints, out of scope or unable to do</li>
+                            </ul>
+
+                        </div>
+
+
+                        <div class="user-stories">
+
+                            <p>
+                                <b>User stories</b> are a standard commonly used within Scrum
+                                to help construct tasks with end user requirements in mind. It
+                                follows a structure of "As a _ I want _ so that _". It enforces
+                                developers to consider who wants what, what do they want, why
+                                do they want. User stories are designed to be simple, easy to 
+                                write and read, which is why they are so light on detail. An
+                                example of a user story could be "As a customer visiting the
+                                website, I would like to see the navigation bar at the top of
+                                the page across all pages so that I can easily navigate to other
+                                pages". Developers mightn't have considered this as something a
+                                user would be interested in or may even need, which is why user
+                                stories are vital to developing a product that pertains to the
+                                end user requirements discussed. It is highly valuable to
+                                consider the needs of a user or to attempt to view the product
+                                from the perspective of a user, rather than a developer, something
+                                which is often dismissed.
+                            </p>
+
+                        </div>
+
+
+                        <br></br>
+
+
+                        <div class="story-points">
+
+                            <p>
+                                <b>Story points</b> is another scrum standard. Two different
+                                developers may disagree on how long it will take to complete a task
+                                as people have different skill sets and tend to work at different
+                                paces. To resolve this, instead of measuring in time, we measure
+                                in how much effort a task will take. For example, a logo may take a
+                                certain amount of effort, say 1 story point, and making an about us
+                                page could take more effort, say 2 story points. If you make two logos,
+                                you'd have the same amount of effort as the about us page. We count
+                                how many story points we have in total to make an estimate on how long
+                                something will take. The equation for this is <i>points / sprint = velocity</i>.
+                            </p>
+                            
+                        </div>
+
+
+                        <div class="story-points-2">
+
+                            <p>
+                                For the first sprint, this isn't commonly used and developers tend to dive
+                                in without this standard. This provides a point of reference and, by
+                                the end of the first sprint, everyone will have a better idea of how
+                                long things take and how much effort things take, too. A lot of
+                                development teams use a sprint 0 to see how things go and judge how
+                                long things will take. A sprint 0 refers to the first sprint in which
+                                developers don't use story points to estimate how long a task will
+                                take. They spend this first sprint diving in blindly to have a better
+                                idea of how much work they can get done in what amount of time.
+                            </p>
+
+                        </div>
+
+                        <br></br>
+
+                </div>
+
 
                 <h3>Project Completion Standards</h3>
-                <div class="completion-standards">
+                <div class="completion">
 
                     <div class="minimum-viable-product">
 
