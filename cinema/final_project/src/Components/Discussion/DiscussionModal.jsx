@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { createDiscussion } from "../../Services/DiscussionService";
 import { useEffect, useState } from "react";
 import StarRating from "./StarRating";
+import ModerationII from "./ModerationII";
 
 const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, films }) => {
   const [subject, setSubject] = useState("");
@@ -16,6 +17,10 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
     if (body) {
+      const inappropriate = ModerationII(body.discussion[0].comment);
+      if (inappropriate) {
+        return alert("This post has been flagged for profanity as it contains the term: " + inappropriate.flagged);
+      }
       createDiscussion(body).then((discussion) => {});
       setDiscussionData([...discussionData, body]);
     }

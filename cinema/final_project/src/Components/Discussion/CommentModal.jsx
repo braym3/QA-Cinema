@@ -10,6 +10,7 @@ const CommentModal = ({ show, onHide, disID }) => {
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
   const [rating, setRating] = useState(0);
+  const [newRating, setNewRating] = useState();
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
