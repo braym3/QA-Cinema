@@ -3,11 +3,13 @@ import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
 import ModerationII from "./ModerationII";
 import { addComment } from "../../Services/DiscussionService";
+import StarRating from "./StarRating";
 
 const CommentModal = ({ show, onHide, disID }) => {
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
+  const [rating, setRating] = useState(0);
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
@@ -35,6 +37,8 @@ const CommentModal = ({ show, onHide, disID }) => {
           <br />
           <textarea onChange={(e) => setComment(e.target.value)} id="comment" type="text-field" required />
           <br />
+          <label>Rating</label>
+          <StarRating rating={rating} setRating={setRating} />
           <button
             onClick={() =>
               setBody({

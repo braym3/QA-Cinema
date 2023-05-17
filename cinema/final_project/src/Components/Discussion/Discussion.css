@@ -101,3 +101,18 @@
 #comm {
   padding: 0px 20px;
 }
+
+/* Star Rating */
+
+#star {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #f0ca0c;
+}
+.off {
+  color: #ccc;
+}

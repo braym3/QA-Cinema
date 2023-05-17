@@ -3,6 +3,7 @@ import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
 import { createDiscussion } from "../../Services/DiscussionService";
 import { useEffect, useState } from "react";
+import StarRating from "./StarRating";
 
 const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, films }) => {
   const [subject, setSubject] = useState("");
@@ -10,6 +11,7 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
   const [film, setFilm] = useState("");
+  const [rating, setRating] = useState(0);
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
@@ -28,6 +30,7 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
         <form onSubmit={onHide}>
           <label name="film">Please give the name of the film:</label>
           <select onChange={(e) => setFilm(e.target.value)} required>
+            <option value={null}>-- Please select a film --</option>
             {films.map((data, index) => {
               const { title, _id } = data;
               return <option value={title}>{title}</option>;
@@ -46,19 +49,25 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
           <br />
           <textarea onChange={(e) => setComment(e.target.value)} id="comment" type="text-field" required />
           <br />
+          <label>Rating</label>
+          <StarRating rating={rating} setRating={setRating} />
           <button
-            onClick={() =>
-              setBody({
-                subject: subject,
-                film: film,
-                discussion: [
-                  {
-                    email: email,
-                    comment: comment,
-                  },
-                ],
-              })
-            }
+            onClick={() => {
+              if (film !== "-- Please select a film --") {
+                setBody({
+                  subject: subject,
+                  film: film,
+                  discussion: [
+                    {
+                      email: email,
+                      comment: comment,
+                    },
+                  ],
+                });
+              } else {
+                // do something
+              }
+            }}
             className="button-4"
             type="submit"
           >
