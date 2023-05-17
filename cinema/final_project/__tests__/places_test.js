@@ -3,7 +3,7 @@ const { title } = require("process");
 const webdriver = require("selenium-webdriver");
 
 
-const serverUri = "http://localhost:3000/findus"; // App Server
+const serverUri = "http://localhost:3000/findus/places-to-go"; // App Server
 
 /**
  * Config for Chrome browser
@@ -17,17 +17,17 @@ let browser = new webdriver.Builder()
 
 
 // gets the about page subtitle
-function getGettingHereTitle() {
+function getPlacesToGoTitle() {
 	return new Promise((resolve, reject) => {
-		let titleElem = browser.findElement({id: 'getting-here-title'});
+		let titleElem = browser.findElement({id: 'places-title'});
 		let titleText = titleElem.getText();
-		titleText.then(function(gettingHereTitle) {
-			resolve(gettingHereTitle);
+		titleText.then(function(placesTitle) {
+			resolve(placesTitle);
 		})
 	})
 }
 
-describe("Getting Here Page", function() {
+describe("Places To Go Page", function() {
 	this.timeout(5000);
 
 	// check the getting here page title
@@ -35,7 +35,7 @@ describe("Getting Here Page", function() {
 		return new Promise((resolve, reject) => {
 		browser
 		.get(serverUri)
-		.then(getGettingHereTitle)
+		.then(getPlacesToGoTitle)
 		.then(title => {
 		assert.strictEqual(title, "Getting Here");
 		resolve();
