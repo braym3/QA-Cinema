@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Row, Container, Carousel, ButtonGroup } from "react-bootstrap"
 import './Home.css';
-import images from './images.json';
+import { getNewReleases } from '../../Services/newReleasesService';
 
 const Home = () => {
     const [index, setIndex] = useState(0);
+    const [newReleaseData, setNewReleaseData] = useState([]);
+
+    useEffect(() => {
+        getNewReleases().then((newReleases) => {
+            setNewReleaseData(newReleases);
+        });
+    }, []);
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
@@ -24,18 +31,22 @@ const Home = () => {
                         <Carousel activeIndex={index} onSelect={handleSelect}>
 
                             {
-                                images.map(image => 
-                                    <Carousel.Item key={image.id}>
-                                        <img
-                                        // className="d-block w-100"
-                                        src={image.src}
-                                        alt={image.altText}
-                                        style={{width:"700px", height:'380px'}}
-                                        />
-                                        <Carousel.Caption>
-                                            <h3>{image.title}</h3>
-                                            <p>{image.caption}</p>
-                                        </Carousel.Caption>
+                                newReleaseData.map(image => 
+                                    <Carousel.Item key={image._id}>
+                                        <div className='new-release-image'>
+                                            <img
+                                            src={image.src}
+                                            alt={image.altText}
+                                            className='nr-img'
+                                            />
+                                        </div>
+                                        <div className='new-release-text'>
+                                            <Carousel.Caption style={{paddingTop: '5%'}}>
+                                                <h3>{image.title}</h3>
+                                                <p>{image.caption}</p>
+                                            </Carousel.Caption>
+                                        </div>
+                                        
                                     </Carousel.Item>
                                 )
                             }

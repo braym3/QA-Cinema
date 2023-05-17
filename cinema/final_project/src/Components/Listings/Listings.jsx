@@ -52,7 +52,7 @@ const Listings = () => {
                     </Link>
                   </div>
                   <div id='poster'>
-                    <img src={film.filmPoster} alt='film posters' />
+                    <img src={film.filmPoster} alt='film posters' id="poster-image"/>
                   </div>
                 </div>
               </Card>
