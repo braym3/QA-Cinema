@@ -3,15 +3,20 @@ import DiscussionModal from "./DiscussionModal";
 import "./Discussion.css";
 import React, { useEffect, useState } from "react";
 import { getDiscussions } from "../../Services/DiscussionService";
+import { getFilms } from "../../Services/filmsCalls";
 
 const Discussion = () => {
   const [showComment, setShowComment] = useState(-1);
   const [newDiscussion, setNewDiscussion] = useState(false);
   const [discussionData, setDiscussionData] = useState([]);
+  const [filmData, setFilmData] = useState([]);
 
   useEffect(() => {
     getDiscussions().then((discussion) => {
       if (discussion != null) setDiscussionData(discussion);
+    });
+    getFilms().then((films) => {
+      /*if (films != null) */ setFilmData(films);
     });
   }, []);
 
