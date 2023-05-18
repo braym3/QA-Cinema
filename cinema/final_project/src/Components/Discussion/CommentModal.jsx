@@ -20,7 +20,7 @@ const CommentModal = ({ show, onHide, disID, filmId }) => {
       const inappropriate = ModerationII(body.comment);
       console.log(body.rating);
       if (inappropriate) {
-        return alert("This post has been flagged for profanity as it contains the term: " + inappropriate.flagged);
+        return alert("This post has been flagged for profanity");
       }
       addComment(disID, body)
         .then((res) => {
