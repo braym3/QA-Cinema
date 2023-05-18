@@ -42,7 +42,7 @@ const Listings = () => {
                   </Card.Title>
                   <div id='data'>
                     <Card.Text>{film.description}</Card.Text>
-                    <Card.Text>Rating: {film.rating}</Card.Text>
+                    <Card.Text>Rating: <img src={film.classificationURL} alt={`${film.classification} rating icon`} height={'30px'}/></Card.Text>
                     <Card.Text>Runtime: {film.runtime} minutes</Card.Text>
                     <Card.Text>Cast: {film.cast}</Card.Text>
                     <Link to={"/purchasetickets/" + film._id}>
