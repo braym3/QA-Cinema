@@ -1,23 +1,36 @@
 .about{
     color: black;
-    height: 2350px;
+    height: 2390px;
 }
 
 .about h2{
     color: black;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .about h3{
     color: black;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .about .left{
     display: flex;
 }
 
-.about .Scrum{
+.about .Scrum .whatisscrum{
+    padding-top: 10px;
+}
+
+.about .Scrum .whatisscrum, .about .Scrum .backlog, .about .Scrum .standards{
+    background-color: white;
+    height: auto;
+    width: auto;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about .Scrum .completion{
     background-color: white;
     height: auto;
     width: auto;
@@ -28,14 +41,13 @@
 
 .About-Us, .Contact{
     background-color: white;
-    height: 35vh;
     width: 90vh;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
 }
 
-.whatisscrum, .standards, .completion-standards {
+.whatisscrum, .standards, .completion{
     column-count: 2;
 }
 
@@ -43,19 +55,14 @@
     padding-top: 10px;
 }
 
-.divider{
-    height: 2px;
-    width: 100%;
-    background-color: #0000003b;
-    margin-bottom: 40px;
-}
-
 .standards{
     padding-bottom: 40px;
 }
 
 .Scrum h2, .Scrum h3{
-    padding-bottom: 20px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 30px;
     width: 100%;
 }
 

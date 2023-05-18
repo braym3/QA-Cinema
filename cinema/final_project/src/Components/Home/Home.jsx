@@ -59,6 +59,19 @@ const Home = () => {
 
     return (
         <div>
+            <Container className='home-welcome '>
+                <div className='text-center'>
+                    <Row>
+                        <h1 className='welcome-title '>Welcome to QA Cinemas</h1>
+                    </Row>
+                    <Row>
+                        <h5><i>Experience cinema redefined with QA Cinemas - big screens, deluxe options</i></h5>
+                        <p>See the latest films, listings, times, at QA Cinemas. Browse cinema listings, book tickets, and discuss your favourites.</p>
+                    </Row>
+                </div>
+                
+            </Container>
+
             <Container className='home custom-border'>
                 {displayCarousel()}
             </Container>

@@ -17,7 +17,7 @@ const Footer = () => {
                             <a href='/contact' className='nav-link px-2 text-muted'>Contact</a>
                         </li>
                     </ul>
-                    <p className='text-center text-muted'>QACinema 2023</p>
+                    <p className='text-center text-muted'>QA Cinemas 2023</p>
                 </footer>
             </Container>
         </>

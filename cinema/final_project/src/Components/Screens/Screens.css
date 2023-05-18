@@ -53,7 +53,7 @@ h2#s-t, h2#d-t{
 
 .separator{
     position: absolute;
-    left: 15%;
+    left: 20%;
     height: 5px;
     width: 75%;
     background-color: #e67700;

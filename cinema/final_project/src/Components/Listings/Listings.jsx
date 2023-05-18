@@ -27,7 +27,11 @@ const Listings = () => {
   } else {
     return (
       <>
-        <h1 style={{ textAlign: "center", marginTop: "10px" }}>All Cinema Listings</h1>
+
+        <h1 style={{ textAlign: "center", marginTop: "10px" }} className="listings-title">
+        All Cinema Listings
+        </h1>
+
         <div id='container'>
           {filmData.map((film) => {
             return (
@@ -36,7 +40,7 @@ const Listings = () => {
                   <Card.Title style={{ textAlign: "center", fontSize: "25px" }}>{film.title}</Card.Title>
                   <div id='data'>
                     <Card.Text>{film.description}</Card.Text>
-                    <Card.Text>Rating: {film.rating}</Card.Text>
+                    <Card.Text>Rating: <img src={film.classificationURL} alt={`${film.classification} rating icon`} height={'30px'}/></Card.Text>
                     <Card.Text>Runtime: {film.runtime} minutes</Card.Text>
                     <Card.Text>Cast: {film.cast}</Card.Text>
                     <Card.Text>Director: {film.director}</Card.Text>

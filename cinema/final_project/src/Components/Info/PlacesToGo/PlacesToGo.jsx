@@ -41,7 +41,7 @@ const PlacesToGo = () => {
   return (
     <div className='places-to-go-content places-to-go'>
       <Row className=''>
-        <h1 className='places-to-go'>Places To Go</h1>
+        <h1 className='places-to-go' id="places-title">Places To Go</h1>
         <p>
           Below are a selection of places nearby the venue that you can visit.
         </p>
