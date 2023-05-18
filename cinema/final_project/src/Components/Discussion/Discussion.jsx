@@ -11,16 +11,16 @@ const Discussion = () => {
   const [newDiscussion, setNewDiscussion] = useState(false);
   const [discussionData, setDiscussionData] = useState([]);
   const [filmData, setFilmData] = useState([]);
-  // console.log(discussionData);
+
   useEffect(() => {
-    getDiscussions()
-      .then((discussion) => {
-        if (discussion != null) setDiscussionData(discussion);
-      })
-      .catch((err) => console.error(err));
     getFilms()
       .then((films) => {
         /*if (films != null) */ setFilmData(films);
+      })
+      .catch((err) => console.error(err));
+    getDiscussions()
+      .then((discussion) => {
+        if (discussion != null) setDiscussionData(discussion);
       })
       .catch((err) => console.error(err));
   }, []);

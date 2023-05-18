@@ -49,8 +49,8 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
           <label name="film">Please give the name of the film:</label>
           <select onChange={(e) => setFilm(e.target.value)} required>
             <option value={null}>-- Please select a film --</option>
-            {films.map((data, index) => {
-              const { title, _id } = data;
+            {films.map((data) => {
+              const { title } = data;
               return <option value={title}>{title}</option>;
             })}
           </select>
