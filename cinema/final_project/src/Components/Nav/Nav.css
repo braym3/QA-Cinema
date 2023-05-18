@@ -3,54 +3,46 @@
 }
 
 #color-nav {
-  background: radial-gradient(
-      circle at center,
-      #e67700,
-      #d36d01,
-      #bb6101,
-      #9c5101,
-      #9f5301
-    ),
-    100%;
+  background: radial-gradient(circle at center, #e67700, #d36d01, #bb6101, #9c5101, #9f5301), 100%;
   height: 10vh;
 }
 
-.search-bar:hover{
+.search-bar:hover {
   font-weight: normal !important;
 }
 
-#brand{
+#brand {
   margin: 15px;
 }
 
-.result-item.active{
+.result-item.active {
   background-color: #e67700;
   color: #e67700;
 }
 
-.searchbar-form{
+.searchbar-form {
   position: fixed;
   float: right;
   margin-left: 25%;
 }
 
-@media screen and (max-width: 991.5px){
-  .navbar-nav{
+@media screen and (max-width: 991.5px) {
+  .navbar-nav {
     background-color: #636363;
-    color: black;
+    color: white;
     padding-bottom: 3%;
     border-radius: 2%;
   }
-  #n-link{
+  #n-link {
     padding-left: 5%;
   }
-  .dropdown{
+  .dropdown {
     padding-left: 5%;
   }
-  .dropdown-menu.show{
+  .dropdown-menu.show {
     margin-right: 5%;
   }
-  .form-control{
+  .form-control {
     margin-top: 5%;
     margin-left: 0%;
   }
@@ -58,3 +50,4 @@
     position: relative;
   }
 }
+

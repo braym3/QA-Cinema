@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getBooking, updateBooking } from "../../Services/bookingService";
 import { Spinner } from "react-bootstrap";
+
 const PaymentSuccess = () => {
   const [bookingData, setBookingData] = useState();
   const [id, setId] = useState();
@@ -33,20 +34,24 @@ const PaymentSuccess = () => {
     );
   } else {
     return (
-      <div style={{ textAlign: "center" }}>
-        <h1>Payment Success</h1>
-        <p>Congrats {bookingData.bookerName}!!</p>
-        <p>
-          You're going to see {bookingData.title} @ {bookingData.time} on {bookingData.date}
-        </p>
-        <p>
-          Total: £{bookingData.price} for {bookingData.numOfTickets} tickets
-        </p>
-        <p>
-          If you need any assistance here is your booking id {bookingData._id}, please reach out to us via the contact
-          page.
-        </p>
-      </div>
+      <>
+        <h1 style={{ textAlign: "center" }}>Payment Success</h1>
+        <div id='successpage'>
+          <div id='success'>
+            <h2 style={{ textAlign: "center" }}>Congrats {bookingData.bookerName}!</h2>
+            <p>
+              You're going to see {bookingData.title} @ {bookingData.time} on {bookingData.date}
+            </p>
+            <p>Total: £{bookingData.price}</p>
+            <p>Number of Tickets: {bookingData.numOfTickets}</p>
+            <p>If you need any assistance, please reach out to us via the contact page.</p>
+            <p>Here is your Booking ID:{bookingData._id}</p>
+          </div>
+          <div id='postsuccess'>
+            <img src={bookingData.filmPoster} alt='film poster' />
+          </div>
+        </div>
+      </>
     );
   }
 };
