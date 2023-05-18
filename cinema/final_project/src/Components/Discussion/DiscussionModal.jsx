@@ -2,6 +2,7 @@ import React from "react";
 import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
 import { createDiscussion } from "../../Services/DiscussionService";
+import { addRating } from "../../Services/filmsCalls";
 import { useEffect, useState } from "react";
 import StarRating from "./StarRating";
 import ModerationII from "./ModerationII";
@@ -11,20 +12,36 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
-  const [film, setFilm] = useState("");
+  const [film, setFilm] = useState();
   const [rating, setRating] = useState(0);
+  // const [filmId, setFilmId] = useState();
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
+    // debugger;
     if (body) {
       const inappropriate = ModerationII(body.discussion[0].comment);
       if (inappropriate) {
-        return alert("This post has been flagged for profanity as it contains the term: " + inappropriate.flagged);
+        return alert("This post has been flagged for profanity");
       }
       createDiscussion(body).then((discussion) => {});
       setDiscussionData([...discussionData, body]);
     }
+    if (rating) {
+      addRating(body.filmId, { rating: rating });
+    }
   }, [body]);
+
+  const matchFilmId = (film) => {
+    // debugger;
+    for (let i = 0; i < films.length; i++) {
+      if (films[i].title === film) {
+        //debugger;
+        // setFilmId
+        return films[i]._id;
+      }
+    }
+  };
 
   return (
     <Modal show={show} onHide={onHide}>
@@ -59,9 +76,12 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
           <button
             onClick={() => {
               if (film !== "-- Please select a film --") {
+                // debugger;
+                //console.log(filmId);
                 setBody({
                   subject: subject,
                   film: film,
+                  filmId: matchFilmId(film),
                   discussion: [
                     {
                       email: email,

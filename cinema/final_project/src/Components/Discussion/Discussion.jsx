@@ -11,14 +11,18 @@ const Discussion = () => {
   const [newDiscussion, setNewDiscussion] = useState(false);
   const [discussionData, setDiscussionData] = useState([]);
   const [filmData, setFilmData] = useState([]);
-
+  // console.log(discussionData);
   useEffect(() => {
-    getDiscussions().then((discussion) => {
-      if (discussion != null) setDiscussionData(discussion);
-    });
-    getFilms().then((films) => {
-      /*if (films != null) */ setFilmData(films);
-    });
+    getDiscussions()
+      .then((discussion) => {
+        if (discussion != null) setDiscussionData(discussion);
+      })
+      .catch((err) => console.error(err));
+    getFilms()
+      .then((films) => {
+        /*if (films != null) */ setFilmData(films);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   const handleCloseComment = () => setShowComment(-1);
@@ -40,34 +44,41 @@ const Discussion = () => {
       );
     });
 
-  const showDiscussion = () =>
-    discussionData.map((discussion, index) => {
-      const id = "discussion" + index;
-      return (
-        <div className="discussion" id={id} key={discussion._id}>
-          <h1>{discussion.subject}</h1>
-          <h4>{discussion.film}</h4>
-          <button className="button-4" id={"comment" + index.toString} onClick={() => handleShowComment(index)}>
-            Reply to this discussion
-          </button>
-          <CommentModal show={showComment === index} onHide={handleCloseComment} disID={discussion._id} />
-          <br></br>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>User</th>
-                  <th id="comm">Comment</th>
-                  <th id="rating">Rating</th>
-                </tr>
-              </thead>
-              <tbody>{printData(discussion.discussion)}</tbody>
-            </table>
+  const showDiscussion = () => {
+    if (!filmData.length) return false;
+    else
+      return discussionData.map((discussion, index) => {
+        const id = "discussion" + index;
+        const [film] = filmData.filter(({ title }) => title === discussion.film);
+        const avgRating = Math.round(film.userRating.aggregate / film.userRating.quantity);
+        return (
+          <div className="discussion" id={id} key={discussion._id}>
+            <h1>{discussion.subject}</h1>
+            <h4>
+              {discussion.film}
+              {<StaticStarRating rating={avgRating} />}
+            </h4>
+            <button className="button-4" id={"comment" + index.toString()} onClick={() => handleShowComment(index)}>
+              Reply to this discussion
+            </button>
+            <CommentModal show={showComment === index} onHide={handleCloseComment} disID={discussion._id} />
+            <br></br>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th id="comm">Comment</th>
+                    <th id="rating">Rating</th>
+                  </tr>
+                </thead>
+                <tbody>{printData(discussion.discussion)}</tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      );
-    });
-
+        );
+      });
+  };
   return (
     <>
       <div id="discussion">

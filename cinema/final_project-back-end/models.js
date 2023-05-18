@@ -4,16 +4,21 @@ const filmSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   runtime: { type: Number, required: true },
-  rating: { type: String, required: true },
+  classification: { type: String, required: true },
   filmPoster: { type: String, required: true },
   releaseDate: { type: Number, required: true },
   director: { type: String, required: true },
   cast: { type: String, required: true },
+  userRating: {
+    aggregate: { type: Number, required: true },
+    quantity: { type: Number, required: true },
+  },
 });
 
 const discussionSchema = new Schema({
   subject: { type: String, required: true },
   film: { type: String, required: true },
+  filmId: { type: String, required: true },
   discussion: [
     {
       email: { type: String, required: true },
