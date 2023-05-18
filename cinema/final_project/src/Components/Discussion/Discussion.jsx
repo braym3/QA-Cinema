@@ -66,7 +66,7 @@ const Discussion = () => {
               show={showComment === index}
               onHide={handleCloseComment}
               disID={discussion._id}
-              filmId={discussion.filmId}
+              filmID={discussion.filmId}
             />
             <br></br>
             <div>
