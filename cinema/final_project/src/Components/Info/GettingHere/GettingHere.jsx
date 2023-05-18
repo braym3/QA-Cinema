@@ -36,19 +36,16 @@ const GettingHere = () => {
                     <p style={{marginTop: '2%', color:'#e67700'}}><i>Address: 53 Portland St, Manchester M1 3LD</i></p>
                 </Row>
                 <Row className='info-row'>
-                    <Col>
-                        <Row>
+                    <Col>       
                             {displayAccordion()}
-                        </Row>
                     </Col>
-                    <Col xs={5}>
-                        <div className='cinema-image'>
-                            <img 
-                            src='https://images.squarespace-cdn.com/content/v1/5f7f29171881a026d6b17bd4/1612349670884-GM80HTIKDKDGUHHYGIO4/outside+exterior+theatre+art+deco.jpg' 
-                            style={{width: '350px', height: '250px'}}
-                            alt='Cinema Exterior'
-                            />
-                        </div>
+                    <Col xs={5} className='cinema-image'>
+                        <img 
+                        src='https://images.squarespace-cdn.com/content/v1/5f7f29171881a026d6b17bd4/1612349670884-GM80HTIKDKDGUHHYGIO4/outside+exterior+theatre+art+deco.jpg' 
+                        style={{width: '100%'}}
+                        alt='Cinema Exterior'
+                        className='accordion'
+                        />
                     </Col>
                 </Row>
                 <Row>
