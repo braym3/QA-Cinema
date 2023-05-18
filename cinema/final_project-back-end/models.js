@@ -70,6 +70,17 @@ const screenSchema = new Schema({
   price: { type: Number, required: true },
 });
 
+const bookingSchema = new Schema({
+  bookerName: { type: String, required: true },
+  email: { type: String, required: true },
+  numOfTickets: { type: Number, required: true },
+  time: { type: String, required: true },
+  date: { type: String, required: true },
+  price: { type: Number, required: true },
+  title: { type: String, required: true },
+  status: { type: String, required: true },
+});
+
 const filmModel = model("films", filmSchema);
 const discussionModel = model("discussions", discussionSchema);
 const emailFormModel = model("emailform", emailFormSchema);
@@ -77,6 +88,7 @@ const placeModel = model("places", placeSchema);
 const newReleaseModel = model("newReleases", newReleaseSchema);
 const classificationModel = model("classifications", classificationSchema);
 const screenModel = model("screens", screenSchema);
+const bookingModel = model("bookings", bookingSchema);
 
 module.exports = {
   filmModel,
@@ -85,5 +97,6 @@ module.exports = {
   placeModel,
   newReleaseModel,
   classificationModel,
-  screenModel
+  screenModel,
+  bookingModel,
 };
