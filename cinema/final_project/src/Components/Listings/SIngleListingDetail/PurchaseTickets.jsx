@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 
 const PurchaseTickets = () => {
   const [time, selectTime] = useState();
+  const [date, setDate] = useState();
   const [tickets, setTickets] = useState(0);
   const [ticketTotal, setTicketTotal] = useState(0);
   const [ticketCount, setTicketCount] = useState({});
@@ -34,15 +35,21 @@ const PurchaseTickets = () => {
         <div>
           <SingleFilm singleFilmData={singleFilmData} />
         </div>
-        <h2 style={{ textAlign: "center", marginTop: "10px" }}>Select Time</h2>
+        <h2 style={{ textAlign: "center", marginTop: "10px" }}>Time &amp; Date</h2>
         <div>
-          <SelectTime selectTime={selectTime} />
+          <SelectTime selectTime={selectTime} setDate={setDate} date={date} />
         </div>
         <h2 style={{ textAlign: "center", marginTop: "10px" }}>Purchase Tickets</h2>
         <div id='payments'>
-          <AddTickets setTicketCount={setTicketCount} setTickets={setTickets} setTicketTotal={setTicketTotal} />
+          <AddTickets
+            setTicketCount={setTicketCount}
+            ticketCount={ticketCount}
+            setTickets={setTickets}
+            setTicketTotal={setTicketTotal}
+          />
           <BuyTickets
             time={time}
+            date={date}
             singleFilmData={singleFilmData}
             ticketTotal={ticketTotal}
             ticketCount={ticketCount}

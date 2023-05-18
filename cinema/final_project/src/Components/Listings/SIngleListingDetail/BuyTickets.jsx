@@ -1,18 +1,18 @@
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import Stripe from "./Stripe";
 import { useState } from "react";
 import { createBooking } from "../../../Services/bookingService";
 
-const BuyTickets = ({ time, singleFilmData, ticketTotal, ticketCount, tickets }) => {
-  const [email, setEmail] = useState();
-  const [bookerName, setBookerName] = useState();
+const BuyTickets = ({ time, date, singleFilmData, ticketTotal, ticketCount, tickets }) => {
+  const [email, setEmail] = useState("");
+  const [bookerName, setBookerName] = useState("");
 
   const booking = {
     bookerName: bookerName,
     email: email,
     numOfTickets: tickets,
     time: time,
-    date: "20/05/23",
+    date: date,
     price: ticketTotal,
     title: singleFilmData.title,
     status: "pending",
@@ -28,7 +28,7 @@ const BuyTickets = ({ time, singleFilmData, ticketTotal, ticketCount, tickets })
     <div id='buytickets'>
       <h3 style={{ color: "white", textAlign: "center" }}>Basket</h3>
       <p style={{ color: "white" }}>
-        Purchase Tickets for {singleFilmData.title} @ {time}{" "}
+        Purchase Tickets for {singleFilmData.title} @ {time} on {date}
       </p>
       <p>Adult: {ticketCount.adult > 0 ? ticketCount.adult : 0}</p>
       <p>Concession: {ticketCount.concession > 0 ? ticketCount.concession : 0}</p>
@@ -55,25 +55,11 @@ const BuyTickets = ({ time, singleFilmData, ticketTotal, ticketCount, tickets })
             }}
           />
         </Form.Group>
-        <Button
-          onClick={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-        >
-          Complete
-        </Button>
       </Form>
-
-      {!time || ticketCount > 0 ? (
-        <>
-          <p>Please select a time</p>
-          <Button variant='danger' disabled>
-            Checkout
-          </Button>
-        </>
+      {!time || email.length === 0 || bookerName.length === 0 || !ticketCount || !ticketTotal || !date ? (
+        <p>Please ensure you have completed all neccesary fields.</p>
       ) : (
-        <Stripe ticketCount={ticketCount} ticketTotal={ticketTotal} />
+        <Stripe ticketCount={ticketCount} ticketTotal={ticketTotal} handleSubmit={handleSubmit} />
       )}
     </div>
   );
