@@ -44,8 +44,10 @@
   }
   .form-control {
     margin-top: 5%;
-  }
-  .form-control {
     margin-left: 0%;
   }
+  .searchbar-form{
+    position: relative;
+  }
 }
+
