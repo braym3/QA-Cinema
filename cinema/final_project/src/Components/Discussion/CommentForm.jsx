@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { addComment } from "../../Services/DiscussionService";
 import { addRating } from "../../Services/filmsCalls";
 import ModerationII from "./ModerationII";
+import "./Discussion.css";
 
 const CommentForm = ({ disID, filmID }) => {
   const [email, setEmail] = useState("");
