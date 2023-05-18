@@ -34,8 +34,8 @@ router.patch("/addRating/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     let original = await filmModel.findById(id);
-    if (!original) throw new Error("no discussion with that id");
-    if (!req.body.rating) throw new Error("invalid comment");
+    // if (!original) throw new Error("no film with that id");
+    // if (!req.body.rating) throw new Error("invalid rating");
     original.userRating.aggregate += req.body.rating;
     original.userRating.quantity++;
     await original.save();

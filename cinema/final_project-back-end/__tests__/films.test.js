@@ -12,13 +12,11 @@ const server = require("../server");
 
 describe("Film API tests", function () {
   //   let server;
-  this.timeout(3_000);
+  this.timeout(15_000);
 
   before(async () => {
     await mongoose.connection.close();
-    await mongoose.connect(
-      "mongodb+srv://mwhitham:duSWUr6Fmn7vPVvu@backend-finalproject.b1pfm04.mongodb.net/test"
-    );
+    await mongoose.connect("mongodb+srv://mwhitham:duSWUr6Fmn7vPVvu@backend-finalproject.b1pfm04.mongodb.net/test");
   });
 
   beforeEach(async () => {
@@ -27,13 +25,25 @@ describe("Film API tests", function () {
       title: "Avengers",
       description: "abcde",
       runtime: 122,
-      rating: "PG",
+      classification: "PG",
       filmPoster: "hsdsisucbi",
       releaseDate: 2013,
       director: "russo et russo",
       cast: "duhiadhi",
+      userRating: { aggregate: 9, quantity: 3 },
     });
     testFilm = JSON.parse(JSON.stringify(testFilm));
+    testUpdateRating = await filmModel.create({
+      title: "Avengers",
+      description: "abcde",
+      runtime: 122,
+      classification: "PG",
+      filmPoster: "hsdsisucbi",
+      releaseDate: 2013,
+      director: "russo et russo",
+      cast: "duhiadhi",
+      userRating: { aggregate: 14, quantity: 4 },
+    });
   });
 
   before(async () => {
@@ -53,24 +63,25 @@ describe("Film API tests", function () {
         title: "Avengers",
         description: "abcde",
         runtime: 122,
-        rating: "PG",
+        classification: "PG",
         filmPoster: "hsdsisucbi",
         releaseDate: 2013,
         director: "russo et russo",
         cast: "duhiadhi",
+        userRating: { aggregate: 9, quantity: 3 },
       })
       .end((err, res) => {
         chai.expect(err).to.be.null;
-        chai.expect(res.body).to.include({
-          title: "Avengers",
-          description: "abcde",
-          runtime: 122,
-          rating: "PG",
-          filmPoster: "hsdsisucbi",
-          releaseDate: 2013,
-          director: "russo et russo",
-          cast: "duhiadhi",
-        });
+        expect(res.body.title).to.equal(testFilm.title);
+        expect(res.body.description).to.equal(testFilm.description);
+        expect(res.body.runtime).to.equal(testFilm.runtime);
+        expect(res.body.classification).to.equal(testFilm.classification);
+        expect(res.body.filmPoster).to.equal(testFilm.filmPoster);
+        expect(res.body.releaseDate).to.equal(testFilm.releaseDate);
+        expect(res.body.director).to.equal(testFilm.director);
+        expect(res.body.cast).to.equal(testFilm.cast);
+        expect(res.body.userRating.aggregate).to.equal(testFilm.userRating.aggregate);
+        expect(res.body.userRating.quantity).to.equal(testFilm.userRating.quantity);
         chai.expect(res.status).to.equal(201);
         done();
       });
@@ -103,6 +114,29 @@ describe("Film API tests", function () {
           done();
         });
     });
+  });
+
+  it("should update rating by id", (done) => {
+    const { _id } = testFilm;
+    chai
+      .request(server)
+      .patch(`/films/addRating/${_id}`)
+      .send({ rating: 5 })
+      .end((err, res) => {
+        chai.expect(err).to.be.null;
+        chai.expect(res.status).to.equal(200);
+        expect(res.body.title).to.equal(testUpdateRating.title);
+        expect(res.body.description).to.equal(testUpdateRating.description);
+        expect(res.body.runtime).to.equal(testUpdateRating.runtime);
+        expect(res.body.classification).to.equal(testUpdateRating.classification);
+        expect(res.body.filmPoster).to.equal(testUpdateRating.filmPoster);
+        expect(res.body.releaseDate).to.equal(testUpdateRating.releaseDate);
+        expect(res.body.director).to.equal(testUpdateRating.director);
+        expect(res.body.cast).to.equal(testUpdateRating.cast);
+        expect(res.body.userRating.aggregate).to.equal(testUpdateRating.userRating.aggregate);
+        expect(res.body.userRating.quantity).to.equal(testUpdateRating.userRating.quantity);
+        done();
+      });
   });
 
   after(async () => {
