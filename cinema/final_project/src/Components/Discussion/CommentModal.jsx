@@ -3,9 +3,10 @@ import "./Discussion.css";
 import Modal from "react-bootstrap/Modal";
 import ModerationII from "./ModerationII";
 import { addComment } from "../../Services/DiscussionService";
+import { addRating } from "../../Services/filmsCalls";
 import StarRating from "./StarRating";
 
-const CommentModal = ({ show, onHide, disID }) => {
+const CommentModal = ({ show, onHide, disID, filmId }) => {
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [body, setBody] = useState();
@@ -26,6 +27,9 @@ const CommentModal = ({ show, onHide, disID }) => {
           console.log(res, "in add comment res");
         })
         .catch((err) => console.error(err));
+    }
+    if (rating) {
+      addRating(filmId, { rating: rating });
     }
   }, [body]);
 
@@ -53,7 +57,6 @@ const CommentModal = ({ show, onHide, disID }) => {
                 comment: comment,
                 rating: rating,
               });
-              console.log(rating);
             }}
             className="button-4"
             type="submit"

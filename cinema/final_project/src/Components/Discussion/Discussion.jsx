@@ -50,7 +50,8 @@ const Discussion = () => {
       return discussionData.map((discussion, index) => {
         const id = "discussion" + index;
         const [film] = filmData.filter(({ title }) => title === discussion.film);
-        const avgRating = Math.round(film.userRating.aggregate / film.userRating.quantity);
+        const avgRating =
+          film.userRating.quantity === 0 ? 0 : Math.round(film.userRating.aggregate / film.userRating.quantity);
         return (
           <div className="discussion" id={id} key={discussion._id}>
             <h1>{discussion.subject}</h1>
@@ -61,7 +62,12 @@ const Discussion = () => {
             <button className="button-4" id={"comment" + index.toString()} onClick={() => handleShowComment(index)}>
               Reply to this discussion
             </button>
-            <CommentModal show={showComment === index} onHide={handleCloseComment} disID={discussion._id} />
+            <CommentModal
+              show={showComment === index}
+              onHide={handleCloseComment}
+              disID={discussion._id}
+              filmId={discussion.filmId}
+            />
             <br></br>
             <div>
               <table>

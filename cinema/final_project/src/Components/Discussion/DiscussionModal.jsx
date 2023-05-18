@@ -14,7 +14,6 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
   const [body, setBody] = useState();
   const [film, setFilm] = useState();
   const [rating, setRating] = useState(0);
-  // const [filmId, setFilmId] = useState();
 
   useEffect(() => {
     // These are in an if statement so the methods don't call when the body is empty
@@ -33,11 +32,8 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
   }, [body]);
 
   const matchFilmId = (film) => {
-    // debugger;
     for (let i = 0; i < films.length; i++) {
       if (films[i].title === film) {
-        //debugger;
-        // setFilmId
         return films[i]._id;
       }
     }
@@ -76,8 +72,6 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
           <button
             onClick={() => {
               if (film !== "-- Please select a film --") {
-                // debugger;
-                //console.log(filmId);
                 setBody({
                   subject: subject,
                   film: film,
@@ -90,8 +84,6 @@ const DiscussionModal = ({ show, onHide, setDiscussionData, discussionData, film
                     },
                   ],
                 });
-              } else {
-                // do something
               }
             }}
             className="button-4"
