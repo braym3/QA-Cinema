@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import getStripe from "../../../lib/getStripe";
-const Stripe = ({ ticketCount }) => {
+const Stripe = ({ ticketCount, handleSubmit }) => {
   const test = [
     {
       price: "price_1N8L7NEV9ihFovHFY5VCVPs6",
@@ -30,6 +30,15 @@ const Stripe = ({ ticketCount }) => {
     console.log(error.message);
   }
 
-  return <Button onClick={handleCheckout}>Checkout</Button>;
+  return (
+    <Button
+      onClick={() => {
+        handleSubmit();
+        handleCheckout();
+      }}
+    >
+      Checkout
+    </Button>
+  );
 };
 export default Stripe;
