@@ -4,14 +4,13 @@ import GettingHere from './GettingHere/GettingHere';
 import PlacesToGo from './PlacesToGo/PlacesToGo';
 import OpeningTimes from './OpeningTimes/OpeningTimes';
 
-import { ProSidebarProvider, Sidebar, Menu, MenuItem, sidebarClasses, useProSidebar } from 'react-pro-sidebar';
+import { ProSidebarProvider, Sidebar, Menu, MenuItem, sidebarClasses } from 'react-pro-sidebar';
 import {  Link, Navigate } from "react-router-dom";
 import { Routes, Route } from "react-router";
 import Classifications from './Classifications/Classifications';
 import Screens from '../Screens/Screens';
 
 const InfoSidebar = () => {
-    const { collapseSidebar } = useProSidebar();
 
     return (
         <div>
