@@ -79,6 +79,7 @@ const bookingSchema = new Schema({
   date: { type: String, required: true },
   price: { type: Number, required: true },
   title: { type: String, required: true },
+  filmPoster: { type: String, required: true },
   status: { type: String, required: true },
 });
 
