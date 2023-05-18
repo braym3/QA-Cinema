@@ -1,9 +1,13 @@
 import "./Discussion.css";
 import StaticStarRating from "./StaticStarRating";
 import CommentModal from "./CommentModal";
-import React from "react";
+import React, { useState } from "react";
 
-const SingleDiscussion = ({ discussion, index, handleShowComment, handleCloseComment, filmData, showComment }) => {
+const SingleDiscussion = ({ discussion, index, filmData }) => {
+  const [showComment, setShowComment] = useState(-1);
+  const handleCloseComment = () => setShowComment(-1);
+  const handleShowComment = (index) => setShowComment(index);
+
   const printData = (comments) =>
     comments.map((data, index) => {
       const { email, comment, rating } = data;

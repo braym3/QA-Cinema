@@ -6,7 +6,6 @@ import { getFilms } from "../../Services/filmsCalls";
 import SingleDiscussion from "./SingleDiscussion";
 
 const Discussion = () => {
-  const [showComment, setShowComment] = useState(-1);
   const [newDiscussion, setNewDiscussion] = useState(false);
   const [discussionData, setDiscussionData] = useState([]);
   const [filmData, setFilmData] = useState([]);
@@ -24,8 +23,6 @@ const Discussion = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  const handleCloseComment = () => setShowComment(-1);
-  const handleShowComment = (index) => setShowComment(index);
   const handleCloseDiscussion = () => setNewDiscussion(false);
   const handleShowDiscussion = () => setNewDiscussion(true);
 
@@ -47,16 +44,7 @@ const Discussion = () => {
       {!filmData.length
         ? false
         : discussionData.map((discussion, index) => {
-            return (
-              <SingleDiscussion
-                discussion={discussion}
-                index={index}
-                handleShowComment={handleShowComment}
-                handleCloseComment={handleCloseComment}
-                filmData={filmData}
-                showComment={showComment}
-              />
-            );
+            return <SingleDiscussion discussion={discussion} index={index} filmData={filmData} />;
           })}
     </>
   );
