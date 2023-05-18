@@ -69,7 +69,7 @@ const AddTickets = ({ setTicketCount, setTickets, setTicketTotal }) => {
         <p>
           {" "}
           <Button
-            variant='success'
+            variant={adultCount > 0 || childCount > 0 || concessionCount > 0 ? "success" : "primary"}
             onClick={() => {
               setTicketCount({
                 adult: adultCount,

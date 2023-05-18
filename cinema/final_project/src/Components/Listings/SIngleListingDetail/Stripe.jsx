@@ -32,6 +32,7 @@ const Stripe = ({ ticketCount, handleSubmit }) => {
 
   return (
     <Button
+      variant='success'
       onClick={() => {
         handleSubmit();
         handleCheckout();

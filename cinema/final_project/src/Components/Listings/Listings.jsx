@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getFilms } from "../../Services/filmsCalls.js";
+import { getFilms } from "../../Services/filmsService";
 import Spinner from "react-bootstrap/Spinner";
 
 const Listings = () => {
@@ -27,9 +27,8 @@ const Listings = () => {
   } else {
     return (
       <>
-
-        <h1 style={{ textAlign: "center", marginTop: "10px" }} className="listings-title">
-        All Cinema Listings
+        <h1 style={{ textAlign: "center", marginTop: "10px" }} className='listings-title'>
+          All Cinema Listings
         </h1>
 
         <div id='container'>
@@ -37,11 +36,17 @@ const Listings = () => {
             return (
               <Card id='cards' key={film._id}>
                 <div id='singlecard'>
-                  <Card.Title style={{ textAlign: "center", fontSize: "25px" }}>{film.title}</Card.Title>
-                  <div id='data'>
+                  <Card.Title style={{ textAlign: "center", fontSize: "35px" }}>
+                    <img
+                      src={film.classificationURL}
+                      alt={`${film.classification} rating icon`}
+                      style={{ float: "left", height: "30px", marginTop: "10px" }}
+                    />
+                    {film.title}
+                  </Card.Title>
+                  <div id='data' style={{ padding: "10px" }}>
                     <Card.Text>{film.description}</Card.Text>
-                    <Card.Text>Rating: <img src={film.classificationURL} alt={`${film.classification} rating icon`} height={'30px'}/></Card.Text>
-                    <Card.Text>Runtime: {film.runtime} minutes</Card.Text>
+                    <Card.Text>Duration: {film.runtime} minutes</Card.Text>
                     <Card.Text>Cast: {film.cast}</Card.Text>
                     <Card.Text>Director: {film.director}</Card.Text>
                     <Link to={"/purchasetickets/" + film._id}>
