@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
-const AddTickets = ({ setTickets, setTicketCount }) => {
+const AddTickets = ({ setTicketCount, setTickets, setTicketTotal }) => {
   const [adultCount, setAdultCount] = useState(0);
   const [childCount, setChildCount] = useState(0);
   const [concessionCount, setConcessionCount] = useState(0);
@@ -76,7 +76,8 @@ const AddTickets = ({ setTickets, setTicketCount }) => {
                 concession: concessionCount,
                 child: childCount,
               });
-              setTickets(true);
+              setTickets(adultCount + childCount + concessionCount);
+              setTicketTotal(adultCount * 7 + childCount * 5 + concessionCount * 5);
             }}
           >
             Add To Basket

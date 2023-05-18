@@ -9,10 +9,9 @@ import { useParams } from "react-router-dom";
 
 const PurchaseTickets = () => {
   const [time, selectTime] = useState();
-  const [tickets, setTickets] = useState(false);
+  const [tickets, setTickets] = useState(0);
   const [ticketTotal, setTicketTotal] = useState(0);
   const [ticketCount, setTicketCount] = useState({});
-  const [filmData, setFilmData] = useState();
   const { filmID } = useParams();
   const [singleFilmData, setSingleFilmData] = useState();
 
@@ -21,9 +20,6 @@ const PurchaseTickets = () => {
       setSingleFilmData(film);
     });
   }, [filmID]);
-
-  console.log(filmID);
-  console.log(singleFilmData, "data");
 
   if (singleFilmData === undefined) {
     return (
@@ -44,13 +40,13 @@ const PurchaseTickets = () => {
         </div>
         <h2 style={{ textAlign: "center", marginTop: "10px" }}>Purchase Tickets</h2>
         <div id='payments'>
-          <AddTickets setTickets={setTickets} setTicketCount={setTicketCount} />
+          <AddTickets setTicketCount={setTicketCount} setTickets={setTickets} setTicketTotal={setTicketTotal} />
           <BuyTickets
             time={time}
             singleFilmData={singleFilmData}
-            tickets={tickets}
             ticketTotal={ticketTotal}
             ticketCount={ticketCount}
+            tickets={tickets}
           />
         </div>
       </>
