@@ -98,3 +98,24 @@
 #poster {
   grid-column: 2;
 }
+
+#successpage {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#success {
+  grid-column: 1;
+  border-style: solid;
+  border-color: #e67700;
+  border-width: 5px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+}
+
+#postsuccess {
+  grid-column: 2;
+  text-align: center;
+}

@@ -15,6 +15,7 @@ const BuyTickets = ({ time, date, singleFilmData, ticketTotal, ticketCount, tick
     date: date,
     price: ticketTotal,
     title: singleFilmData.title,
+    filmPoster: singleFilmData.filmPoster,
     status: "pending",
   };
 
