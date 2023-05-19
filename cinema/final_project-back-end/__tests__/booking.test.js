@@ -30,6 +30,7 @@ describe("Booking Info API tests", function () {
       price: 14,
       title: "Hot Fuzz",
       status: "pending",
+      filmPoster: "abc",
     });
     testBooking = JSON.parse(JSON.stringify(testBooking));
   });
@@ -47,6 +48,7 @@ describe("Booking Info API tests", function () {
         price: 14,
         title: "Hot Fuzz",
         status: "pending",
+        filmPoster: "abc",
       })
       .end((err, res) => {
         chai.expect(err).to.be.null;
@@ -59,8 +61,22 @@ describe("Booking Info API tests", function () {
           price: 14,
           title: "Hot Fuzz",
           status: "pending",
+          filmPoster: "abc",
         });
         chai.expect(res.status).to.equal(201);
+        done();
+      });
+  });
+
+  it("should return all bookings", (done) => {
+    chai
+      .request(server)
+      .get("/bookings/getBooking")
+      .send()
+      .end((err, res) => {
+        expect(err).to.be.null;
+        expect(res.body).to.deep.include(testBooking);
+        chai.expect(res.status).to.equal(200);
         done();
       });
   });
@@ -79,6 +95,7 @@ describe("Booking Info API tests", function () {
         price: 14,
         title: "Hot Fuzz",
         status: "accepted",
+        filmPoster: "abc",
       })
       .end((err, res) => {
         chai.expect(err).to.be.null;
@@ -94,6 +111,7 @@ describe("Booking Info API tests", function () {
           price: 14,
           title: "Hot Fuzz",
           status: "accepted",
+          filmPoster: "abc",
         });
         done();
       });

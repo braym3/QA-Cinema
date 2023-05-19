@@ -29,11 +29,11 @@ const BuyTickets = ({ time, date, singleFilmData, ticketTotal, ticketCount, tick
     <div id='buytickets'>
       <h3 style={{ color: "white", textAlign: "center" }}>Basket</h3>
       <p style={{ color: "white" }}>
-        Purchase Tickets for {singleFilmData.title} @ {time} on {date}
+        Purchase Tickets for: <u>{singleFilmData.title}</u> @ <u>{time}</u> on <u>{date}</u>
       </p>
       <p>Adult: {ticketCount.adult > 0 ? ticketCount.adult : 0}</p>
-      <p>Concession: {ticketCount.concession > 0 ? ticketCount.concession : 0}</p>
       <p>Child: {ticketCount.child > 0 ? ticketCount.child : 0}</p>
+      <p>Concession: {ticketCount.concession > 0 ? ticketCount.concession : 0}</p>
       <Form>
         <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Label>Email address</Form.Label>

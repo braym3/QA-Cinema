@@ -97,25 +97,58 @@
 
 #poster {
   grid-column: 2;
+  border-radius: 5px;
+  box-shadow: 0px 2.5px 5px 0px white;
 }
 
 #successpage {
   display: grid;
   grid-template-columns: auto auto;
 }
+
 #success {
   grid-column: 1;
-  border-style: solid;
-  border-color: #e67700;
-  border-width: 5px;
-  border-radius: 5px;
-  background-color: whitesmoke;
+  border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  color: black;
+  background: radial-gradient(circle at center, #e67700, #d36d01, #bb6101, #9c5101, #9f5301), 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 10px 0px white;
 }
 
 #postsuccess {
   grid-column: 2;
   text-align: center;
 }
+
+/* body {
+  height: 100vh;
+  width: 100%;
+  background: #e0ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* div {
+  height: 150px;
+  width: 150px;
+  background: #fff;
+  border-radius: 20px;
+  margin: 20px;
+  transition: all ease 0.2s;
+}
+.box {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+.box2 {
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.box2:hover {
+  transform: translateY(5px);
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+} */

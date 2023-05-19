@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ListGroup, Form } from "react-bootstrap";
-import { getFilms } from "../../../Services/filmsCalls";
+import { getFilms } from "../../../Services/filmsService";
 
 const Search = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -20,16 +20,9 @@ const Search = () => {
   const displayResults = () => {
     if (searchInput.length > 0) {
       return filmData
-        .filter((f) =>
-          f?.title?.toLowerCase().startsWith(searchInput.toLowerCase())
-        )
+        .filter((f) => f?.title?.toLowerCase().startsWith(searchInput.toLowerCase()))
         .map((film, i) => (
-          <ListGroup.Item
-            key={i}
-            action
-            href={"/purchasetickets/" + film._id}
-            className="result-item"
-          >
+          <ListGroup.Item key={i} action href={"/purchasetickets/" + film._id} className='result-item'>
             {film.title}
           </ListGroup.Item>
         ));
@@ -37,16 +30,16 @@ const Search = () => {
   };
 
   return (
-    <div className="searchbar-form">
+    <div className='searchbar-form'>
       <Form.Control
-        type="search"
-        placeholder="Search for a film"
-        className="me-2"
-        aria-label="Search"
+        type='search'
+        placeholder='Search for a film'
+        className='me-2'
+        aria-label='Search'
         onChange={handleChange}
         value={searchInput}
       />
-      <ListGroup className="film-results">{displayResults()}</ListGroup>
+      <ListGroup className='film-results'>{displayResults()}</ListGroup>
     </div>
   );
 };

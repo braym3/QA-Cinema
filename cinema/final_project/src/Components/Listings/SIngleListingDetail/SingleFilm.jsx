@@ -7,9 +7,8 @@ const SingleFilm = ({ singleFilmData }) => {
         <Card id='card'>
           <div id='singlecard'>
             <div id='data'>
-              <Card.Text>Synopsis: {singleFilmData.description}</Card.Text>
-              <Card.Text>Rating: <img src={singleFilmData.classificationURL} alt={`${singleFilmData.classification} rating icon`} height={'30px'}/></Card.Text>
-              <Card.Text>Runtime: {singleFilmData.runtime}</Card.Text>
+              <Card.Text>{singleFilmData.description}</Card.Text>
+              <Card.Text>Duration: {singleFilmData.runtime}</Card.Text>
               <Card.Text>Cast: {singleFilmData.cast}</Card.Text>
               <Card.Text>Director: {singleFilmData.director}</Card.Text>
             </div>

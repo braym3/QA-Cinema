@@ -3,7 +3,7 @@ import BuyTickets from "./BuyTickets";
 import SelectTime from "./SelectTime";
 import SingleFilm from "./SingleFilm";
 import { useState, useEffect } from "react";
-import { getFilmByID } from "../../../Services/filmsCalls";
+import { getFilmByID } from "../../../Services/filmsService";
 import Spinner from "react-bootstrap/Spinner";
 import { useParams } from "react-router-dom";
 
@@ -31,7 +31,12 @@ const PurchaseTickets = () => {
   } else {
     return (
       <>
-        <h1 style={{ textAlign: "center", marginTop: "10px" }}>{singleFilmData.title}</h1>
+        <img
+          src={singleFilmData.classificationURL}
+          alt={`${singleFilmData.classification} rating icon`}
+          style={{ float: "left", height: "40px", marginLeft: "20px", marginTop: "10px" }}
+        />
+        <h1 style={{ textAlign: "center", marginTop: "10px", marginLeft: "-20px" }}>{singleFilmData.title}</h1>
         <div>
           <SingleFilm singleFilmData={singleFilmData} />
         </div>

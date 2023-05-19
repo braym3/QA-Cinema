@@ -48,7 +48,11 @@ const PaymentSuccess = () => {
             <p>Here is your Booking ID:{bookingData._id}</p>
           </div>
           <div id='postsuccess'>
-            <img src={bookingData.filmPoster} alt='film poster' />
+            <img
+              style={{ borderRadius: "10px", boxShadow: "0px 5px 10px 0px white" }}
+              src={bookingData.filmPoster}
+              alt='film poster'
+            />
           </div>
         </div>
       </>

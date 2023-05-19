@@ -14,14 +14,14 @@ const SelectTime = ({ selectTime, setDate, date }) => {
 
   return (
     <>
-      <div className='mb-2'>
+      <div>
         <DropdownButton
           key={"down-centered"}
-          id={`dropdown-button-drop-down-centered}`}
+          id={"dropdown-button-drop-down-centered"}
           drop={"down-centered"}
-          style={{ width: "auto" }}
+          style={{ margin: "10px" }}
           title={!date > 0 ? "Please Select a Date" : <p>{date}</p>}
-          variant='primary'
+          variant={date ? "success" : "primary"}
         >
           <Dropdown.Item onClick={(e) => setDate()}>Reset</Dropdown.Item>
           <Dropdown.Item onClick={(e) => setDate("19/05/23")}>19/05/23</Dropdown.Item>
@@ -32,8 +32,7 @@ const SelectTime = ({ selectTime, setDate, date }) => {
           <Dropdown.Item onClick={(e) => setDate("24/05/23")}>24/05/23</Dropdown.Item>
           <Dropdown.Item onClick={(e) => setDate("25/05/23")}>25/05/23</Dropdown.Item>
         </DropdownButton>
-      </div>
-      <div>
+
         <Button
           id='12'
           className='times'
