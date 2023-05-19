@@ -50,3 +50,15 @@ img.nr-img{
         height: 60% !important;
     }
 }
+
+.home-welcome{
+    padding: 5%;
+}
+
+.welcome-title{
+    margin-bottom: 5%;
+}
+
+.welcome-subheading{
+    margin-bottom: 3%;
+}

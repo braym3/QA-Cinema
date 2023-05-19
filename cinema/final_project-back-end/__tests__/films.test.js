@@ -26,6 +26,7 @@ describe("Film API tests", function () {
       description: "abcde",
       runtime: 122,
       classification: "PG",
+      classificationURL: "PG.jpg",
       filmPoster: "hsdsisucbi",
       releaseDate: 2013,
       director: "russo et russo",
@@ -38,6 +39,7 @@ describe("Film API tests", function () {
       description: "abcde",
       runtime: 122,
       classification: "PG",
+      classificationURL: "PG.jpg",
       filmPoster: "hsdsisucbi",
       releaseDate: 2013,
       director: "russo et russo",
@@ -64,6 +66,7 @@ describe("Film API tests", function () {
         description: "abcde",
         runtime: 122,
         classification: "PG",
+        classificationURL: "PG.jpg",
         filmPoster: "hsdsisucbi",
         releaseDate: 2013,
         director: "russo et russo",
@@ -76,6 +79,7 @@ describe("Film API tests", function () {
         expect(res.body.description).to.equal(testFilm.description);
         expect(res.body.runtime).to.equal(testFilm.runtime);
         expect(res.body.classification).to.equal(testFilm.classification);
+        expect(res.body.classificationURL).to.equal(testFilm.classificationURL);
         expect(res.body.filmPoster).to.equal(testFilm.filmPoster);
         expect(res.body.releaseDate).to.equal(testFilm.releaseDate);
         expect(res.body.director).to.equal(testFilm.director);
@@ -129,6 +133,7 @@ describe("Film API tests", function () {
         expect(res.body.description).to.equal(testUpdateRating.description);
         expect(res.body.runtime).to.equal(testUpdateRating.runtime);
         expect(res.body.classification).to.equal(testUpdateRating.classification);
+        expect(res.body.classificationURL).to.equal(testUpdateRating.classificationURL);
         expect(res.body.filmPoster).to.equal(testUpdateRating.filmPoster);
         expect(res.body.releaseDate).to.equal(testUpdateRating.releaseDate);
         expect(res.body.director).to.equal(testUpdateRating.director);

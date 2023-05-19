@@ -41,7 +41,7 @@ const Classifications = () => {
         <>
             <div className='classifications-content'>
                 <Row className='classifications-header'>
-                    <h1 style={{marginBottom: '3%'}}>Film Classifications</h1>
+                    <h1 style={{marginBottom: '3%'}} id='classifications-title'>Film Classifications</h1>
                     <p>Classification is the process of giving age ratings and content advice to films and other audiovisual content to help children and families choose what’s right for them and avoid what’s not.</p>
                     <p>Click a rating icon to learn more.</p>
                 </Row>

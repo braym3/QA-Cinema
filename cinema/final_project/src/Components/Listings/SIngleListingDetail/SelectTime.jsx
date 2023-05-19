@@ -1,19 +1,38 @@
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import { Dropdown } from "react-bootstrap";
 
-const SelectTime = () => {
+const SelectTime = ({ selectTime, setDate, date }) => {
   const [color, setColor] = useState();
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(e.target.id);
     setColor(e.target.id);
+    selectTime(e.target.innerText);
   };
 
   return (
     <>
-      <h2 style={{ marginLeft: "10px" }}>Select times</h2>
       <div>
+        <DropdownButton
+          key={"down-centered"}
+          id={"dropdown-button-drop-down-centered"}
+          drop={"down-centered"}
+          style={{ margin: "10px" }}
+          title={!date > 0 ? "Please Select a Date" : <p>{date}</p>}
+          variant={date ? "success" : "primary"}
+        >
+          <Dropdown.Item onClick={(e) => setDate()}>Reset</Dropdown.Item>
+          <Dropdown.Item onClick={(e) => setDate("19/05/23")}>19/05/23</Dropdown.Item>
+          <Dropdown.Item onClick={(e) => setDate("20/05/23")}>20/05/23</Dropdown.Item>
+          <Dropdown.Item onClick={(e) => setDate("21/05/23")}>21/05/23</Dropdown.Item>
+          <Dropdown.Item onClick={(e) => setDate("22/05/23")}>22/05/23</Dropdown.Item>
+          <Dropdown.Item onClick={(e) => setDate("23/05/23")}>23/05/23</Dropdown.Item>
+          <Dropdown.Item onClick={(e) => setDate("24/05/23")}>24/05/23</Dropdown.Item>
+          <Dropdown.Item onClick={(e) => setDate("25/05/23")}>25/05/23</Dropdown.Item>
+        </DropdownButton>
+
         <Button
           id='12'
           className='times'
