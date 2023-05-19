@@ -10,14 +10,21 @@ const filmSchema = new Schema({
   releaseDate: { type: Number, required: true },
   director: { type: String, required: true },
   cast: { type: String, required: true },
+  userRating: {
+    aggregate: { type: Number, required: true },
+    quantity: { type: Number, required: true },
+  },
 });
 
 const discussionSchema = new Schema({
   subject: { type: String, required: true },
+  film: { type: String, required: true },
+  filmId: { type: String, required: true },
   discussion: [
     {
       email: { type: String, required: true },
       comment: { type: String, required: true },
+      rating: { type: Number, required: false },
     },
   ],
 });

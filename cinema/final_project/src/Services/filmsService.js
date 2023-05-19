@@ -21,3 +21,13 @@ export const getFilmByID = async (filmID) => {
     console.error(err);
   }
 };
+
+export const addRating = async (filmId, rating) => {
+  try {
+    // debugger;
+    const { data } = await filmsAPI.patch("addRating/" + filmId, rating);
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
