@@ -22,7 +22,7 @@ const Screens = () => {
                     <img src={screen.mainImage} alt={screen.mainImageAlt} id="main-standard"></img>
                 </Row>
                 <h2 id="desc">{screen.mainImageDescription}</h2>
-                <Row class="images" id="images">
+                <Row className="images" id="images">
                     {screen.subImages.map(i =>
                         <Col key={i.image}>
                             <img src={i.image} alt={i.alt} ></img>
