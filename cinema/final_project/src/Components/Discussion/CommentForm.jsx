@@ -1,6 +1,6 @@
 import StarRating from "./StarRating";
 import React, { useState, useEffect } from "react";
-import { addComment } from "../../Services/DiscussionService";
+import { addComment } from "../../Services/discussionService";
 import { addRating } from "../../Services/filmsService";
 import ModerationII from "./ModerationII";
 import "./Discussion.css";

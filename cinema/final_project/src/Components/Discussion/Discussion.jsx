@@ -1,7 +1,7 @@
 import DiscussionModal from "./DiscussionModal";
 import "./Discussion.css";
 import React, { useEffect, useState } from "react";
-import { getDiscussions } from "../../Services/DiscussionService";
+import { getDiscussions } from "../../Services/discussionService";
 import { getFilms } from "../../Services/filmsService";
 import SingleDiscussion from "./SingleDiscussion";
 
