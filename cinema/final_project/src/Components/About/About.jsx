@@ -3,9 +3,9 @@ import './/About.css';
 const About = () => {
     return (
         <>
-        <div class="about">
-            <div class="left">
-                <div class="About-Us">
+        <div className="about">
+            <div className="left">
+                <div className="About-Us">
                     <h2 id='about-title'>About QA Cinemas</h2>
                     <p>We are a popular cinema chain hosting films in our 7-screen cinema.
                         This website has been developed by Millie, Sean, Michael and Olivia.
@@ -19,9 +19,9 @@ const About = () => {
                     </p>
                 </div>
 
-                <div class="Contact">
+                <div className="Contact">
                     <h3>Contact</h3>
-                    <div class="c-l">
+                    <div className="c-l">
                         <p>Millie - emelia.bray@qa.com</p>
                         <p>Sean - sean.harris@qa.com</p>
                         <p>Michael - michael.whitham@qa.com</p>
@@ -32,11 +32,11 @@ const About = () => {
 
                 </div>
             </div>
-            <div class="Scrum">
+            <div className="Scrum">
             <h2>What is Scrum</h2>
-                <div class="whatisscrum">
+                <div className="whatisscrum">
                     
-                    <div class="scrum-intro">
+                    <div className="scrum-intro">
 
                         <p>
                             Scrum is called scrum because everyone gets together and pushes
@@ -61,7 +61,7 @@ const About = () => {
                     </div>
 
 
-                    <div class="jira">
+                    <div className="jira">
 
                         <p>
                             <b>Jira</b> is a project management software commonly used to assist with
@@ -84,7 +84,7 @@ const About = () => {
                     <br></br>
 
 
-                    <div class="product-owner">
+                    <div className="product-owner">
 
                         <p>
                             The <b>Product Owner</b>, PO, decides what you're working on per sprint,
@@ -99,7 +99,7 @@ const About = () => {
                     </div>
 
 
-                    <div class="review-retro">
+                    <div className="review-retro">
 
                         <p>
                             The last day of the project, developers will get together and <b>review
@@ -119,10 +119,10 @@ const About = () => {
                 <br></br>
 
                 <h3>Backlog and Sprints</h3>
-                <div class="backlog">
+                <div className="backlog">
                     
 
-                    <div class="project-backlog">
+                    <div className="project-backlog">
 
                         <p>
                             The <b>backlog</b> refers to everything that has to be done for the project
@@ -143,7 +143,7 @@ const About = () => {
                     </div>
 
 
-                    <div class="backlog-tasks">
+                    <div className="backlog-tasks">
 
                         <p>
                             In the backlog, there are a few different names used to refer to
@@ -178,10 +178,10 @@ const About = () => {
                 <br></br>
 
                 <h3>Standards</h3>
-                <div class="standards">
+                <div className="standards">
 
 
-                        <div class="acceptance-criteria">
+                        <div className="acceptance-criteria">
 
                             <p>
                                 <b>Acceptance criteria</b> is criteria that show the product is done.
@@ -206,7 +206,7 @@ const About = () => {
                         </div>
 
 
-                        <div class="moscow">
+                        <div className="moscow">
 
                             <p>
                                 <b>MoSCoW</b> is a commonly used standard for the prioritisation of
@@ -224,7 +224,7 @@ const About = () => {
                         </div>
 
 
-                        <div class="user-stories">
+                        <div className="user-stories">
 
                             <p>
                                 <b>User stories</b> are a standard commonly used within Scrum
@@ -251,7 +251,7 @@ const About = () => {
                         <br></br>
 
 
-                        <div class="story-points">
+                        <div className="story-points">
 
                             <p>
                                 <b>Story points</b> is another scrum standard. Two different
@@ -269,7 +269,7 @@ const About = () => {
                         </div>
 
 
-                        <div class="story-points-2">
+                        <div className="story-points-2">
 
                             <p>
                                 For the first sprint, this isn't commonly used and developers tend to dive
@@ -291,9 +291,9 @@ const About = () => {
 
 
                 <h3>Project Completion Standards</h3>
-                <div class="completion">
+                <div className="completion">
 
-                    <div class="minimum-viable-product">
+                    <div className="minimum-viable-product">
 
                         <p>
                             The <b>Minimum Viable Product</b>, MVP, is the least you can do to meet
@@ -305,7 +305,7 @@ const About = () => {
                     </div>
 
 
-                    <div class="DoR-DoD">
+                    <div className="DoR-DoD">
 
                         <p>
                             <b>Definition of Ready</b>, DoR, refers to setting out when a can
@@ -326,7 +326,7 @@ const About = () => {
                     </div>
 
 
-                    <div class="read-more">
+                    <div className="read-more">
 
                         <p>To read more on Scrum, click the link below to be redirected to their official
                             website.
