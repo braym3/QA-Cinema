@@ -18,13 +18,8 @@ const Classifications = () => {
         <Alert variant='secondary'>
           <Row>
             <Col>
-              <a href={classification.link}>
-                <img
-                  src={classification.image}
-                  alt={`${classification.name} icon`}
-                  className='classification-icon'
-                  target='_blank'
-                />
+              <a href={classification.link} target='_blank' rel='noreferrer'>
+                <img src={classification.image} alt={`${classification.name} icon`} className='classification-icon' />
               </a>
             </Col>
             <Col xs={9}>
@@ -61,7 +56,12 @@ const Classifications = () => {
           <h4 className='class-info-subheading'>What are the standard film classifications?</h4>
           <div className='class-info-section'>{displayClassification()}</div>
         </Row>
-        <Button size='md' className='mx-3 rounded btn-orange' href='https://www.bbfc.co.uk/about-classification'>
+        <Button
+          size='md'
+          className='mx-3 rounded btn-orange'
+          href='https://www.bbfc.co.uk/about-classification'
+          target='_blank'
+        >
           Learn More
         </Button>
       </div>
