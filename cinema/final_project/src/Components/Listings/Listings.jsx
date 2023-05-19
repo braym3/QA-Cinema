@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getFilms } from "../../Services/filmsService";
 import Spinner from "react-bootstrap/Spinner";
+import StaticStarRating from "../Discussion/StaticStarRating";
 
 const Listings = () => {
   const [filmData, setFilmData] = useState([]);
@@ -33,6 +34,7 @@ const Listings = () => {
 
         <div id='container'>
           {filmData.map((film) => {
+            const avgRating = film.userRating.quantity === 0 ? 0 : film.userRating.aggregate / film.userRating.quantity;
             return (
               <Card id='cards' key={film._id}>
                 <div id='singlecard'>
@@ -40,16 +42,19 @@ const Listings = () => {
                     <img
                       src={film.classificationURL}
                       alt={`${film.classification} rating icon`}
-                      style={{ float: "left", height: "30px", marginTop: "10px" }}
+                      style={{ float: "left", height: "30px" }}
                     />
                     {film.title}
                   </Card.Title>
-                  <div id='data' style={{ padding: "10px" }}>
+
+                  <div id='data' style={{ padding: "5px" }}>
                     <Card.Text>{film.description}</Card.Text>
                     <Card.Text>Duration: {film.runtime} minutes</Card.Text>
                     <Card.Text>Cast: {film.cast}</Card.Text>
                     <Card.Text>Director: {film.director}</Card.Text>
-                    {/* <StarRating /> */}
+                    <p>
+                      Audience Rating: <StaticStarRating rating={avgRating} />
+                    </p>
                     <Link to={"/purchasetickets/" + film._id}>
                       <Button className='button'>See all Times and Purchase tickets</Button>
                     </Link>
