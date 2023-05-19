@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./Discussion.css";
 
 const StaticStarRating = ({ rating }) => {
-  let empty = 5 - rating;
+  const roundedRating = Math.round(rating);
+  let empty = 5 - roundedRating;
   return (
     <div className="star-rating">
-      {[...Array(rating)].map((star) => {
+      {[...Array(roundedRating)].map((star) => {
         return <span className="on">&#9733;</span>;
       })}
       {[...Array(empty)].map((star) => {

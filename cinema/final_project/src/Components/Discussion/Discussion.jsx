@@ -18,7 +18,7 @@ const Discussion = () => {
       .catch((err) => console.error(err));
     getDiscussions()
       .then((discussion) => {
-        if (discussion != null) setDiscussionData(discussion);
+        if (discussion != null) setDiscussionData(discussion.reverse());
       })
       .catch((err) => console.error(err));
   }, []);

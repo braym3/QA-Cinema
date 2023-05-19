@@ -20,7 +20,7 @@ const DiscussionForm = ({ setDiscussionData, discussionData, films }) => {
         return alert("This post has been flagged for profanity");
       }
       createDiscussion(body).then((discussion) => {});
-      setDiscussionData([...discussionData, body]);
+      setDiscussionData([body, ...discussionData]);
     }
     if (rating) {
       addRating(body.filmId, { rating: rating });

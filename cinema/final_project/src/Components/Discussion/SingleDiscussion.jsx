@@ -2,30 +2,16 @@ import "./Discussion.css";
 import StaticStarRating from "./StaticStarRating";
 import CommentModal from "./CommentModal";
 import React, { useState } from "react";
+import Comment from "./Comment";
 
 const SingleDiscussion = ({ discussion, index, filmData }) => {
   const [showComment, setShowComment] = useState(-1);
   const handleCloseComment = () => setShowComment(-1);
   const handleShowComment = (index) => setShowComment(index);
 
-  const printData = (comments) =>
-    comments.map((data, index) => {
-      const { email, comment, rating } = data;
-      return (
-        <tr key={index}>
-          <td>{email}</td>
-          <td id="comm">{comment}</td>
-          <td id="rating">
-            <StaticStarRating rating={rating} />
-          </td>
-        </tr>
-      );
-    });
-
   const id = "discussion" + index;
   const [film] = filmData.filter(({ title }) => title === discussion.film);
-  const avgRating =
-    film.userRating.quantity === 0 ? 0 : Math.round(film.userRating.aggregate / film.userRating.quantity);
+  const avgRating = film.userRating.quantity === 0 ? 0 : film.userRating.aggregate / film.userRating.quantity;
 
   return (
     <div className="discussion" id={id} key={discussion._id}>
@@ -53,7 +39,11 @@ const SingleDiscussion = ({ discussion, index, filmData }) => {
               <th id="rating">Rating</th>
             </tr>
           </thead>
-          <tbody>{printData(discussion.discussion)}</tbody>
+          <tbody>
+            {discussion.discussion.map((data, index) => {
+              return <Comment data={data} index={index} />;
+            })}
+          </tbody>
         </table>
       </div>
     </div>
