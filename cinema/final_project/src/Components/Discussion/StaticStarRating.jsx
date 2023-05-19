@@ -1,7 +1,7 @@
 import React from "react";
 import "./Discussion.css";
 
-const StaticStarRating = ({ rating }) => {
+const StaticStarRating = ({ rating, quantity }) => {
   const roundedRating = Math.round(rating);
   let empty = 5 - roundedRating;
   return (
@@ -12,6 +12,7 @@ const StaticStarRating = ({ rating }) => {
       {[...Array(empty)].map((star) => {
         return <span className="off">&#9733;</span>;
       })}
+      {quantity && <small>{"(" + quantity + ")"}</small>}
     </div>
   );
 };

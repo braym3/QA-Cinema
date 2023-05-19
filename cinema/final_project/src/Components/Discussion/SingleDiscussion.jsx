@@ -16,10 +16,8 @@ const SingleDiscussion = ({ discussion, index, filmData }) => {
   return (
     <div className="discussion" id={id} key={discussion._id}>
       <h1>{discussion.subject}</h1>
-      <h4>
-        {discussion.film}
-        {<StaticStarRating rating={avgRating} />}
-      </h4>
+      <h4>{discussion.film}</h4>
+      {<StaticStarRating rating={avgRating} quantity={film.userRating.quantity} />}
       <button className="button-4" id={"comment" + index.toString()} onClick={() => handleShowComment(index)}>
         Reply to this discussion
       </button>
