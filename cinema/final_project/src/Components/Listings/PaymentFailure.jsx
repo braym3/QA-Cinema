@@ -35,13 +35,25 @@ const PaymentFailure = () => {
     );
   } else {
     return (
-      <div style={{ textAlign: "center", margin: "10px" }}>
-        <h1 style={{ color: "red" }}>Payment Failure</h1>
-        <p>If you would like to see {bookingData.title}. Please return to the Listings page an try again</p>
-        <Link to='/listings'>
-          <Button id='redirectbutton'>Go Back to Film Listing</Button>
-        </Link>
-      </div>
+      <>
+        <div style={{ textAlign: "center", margin: "20px" }}>
+          <h1 style={{ color: "red" }}>Payment Failure</h1>
+          <p>If you would like to see {bookingData.title}. Please return to the Listings page and try again.</p>
+          <Link to='/listings'>
+            <Button id='redirectbutton'>Go Back to Film Listing</Button>
+          </Link>
+        </div>
+        <br />
+        <br />
+        <div style={{ textAlign: "center", margin: "20px" }}>
+          <img
+            id='compsaysno'
+            src='https://i.pinimg.com/originals/80/60/af/8060afc95d8c7ffba0665b676ae65d44.gif'
+            alt='computer says no gif'
+          />
+        </div>
+        <br />
+      </>
     );
   }
 };

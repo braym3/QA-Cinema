@@ -7,6 +7,11 @@
   width: 100%;
 }
 
+#pics {
+  width: 100%;
+  height: auto;
+}
+
 #s-i {
   height: auto;
   width: 20vh;
@@ -22,6 +27,12 @@ h2#desc2 {
   text-align: center;
   margin-left: 10%;
 }
+
+/* #images > div:nth-child(1) > img,
+#images > div:nth-child(3) > img {
+  padding-top: 5%;
+  height: auto;
+} */
 
 #main-standard,
 #main-deluxe {

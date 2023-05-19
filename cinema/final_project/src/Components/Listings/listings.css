@@ -122,33 +122,8 @@
   text-align: center;
 }
 
-/* body {
-  height: 100vh;
-  width: 100%;
-  background: #e0ffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-/* div {
-  height: 150px;
-  width: 150px;
-  background: #fff;
-  border-radius: 20px;
-  margin: 20px;
-  transition: all ease 0.2s;
+#compsaysno {
+  height: 50%;
+  width: auto;
+  align-self: center;
 }
-.box {
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-}
-.box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
-}
-.box2 {
-  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-}
-.box2:hover {
-  transform: translateY(5px);
-  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
-} */

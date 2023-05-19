@@ -1,13 +1,12 @@
 import "./Nav.css";
-import {Nav, Navbar, Form, Container, NavDropdown} from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Nav, Navbar, Form, Container, NavDropdown } from "react-bootstrap";
 import Search from "./SearchBar/Search";
 
 const Navi = () => {
 	return (
 		<Navbar id='color-nav' expand="lg" variant='dark' sticky='top'>
 		<Container>
-			<Navbar.Brand href="/" id="">QA Cinema</Navbar.Brand>
+			<Navbar.Brand href="/" id=""><img src="https://i.ibb.co/cNTLzHQ/white-logo.png" height={'30px'}/></Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="me-auto" id=''>
