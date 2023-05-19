@@ -29,7 +29,7 @@ const Screens = () => {
           ))}
         </Row>
 
-        <div class='separator'></div>
+        <div className='separator'></div>
       </Container>
     ));
   };
