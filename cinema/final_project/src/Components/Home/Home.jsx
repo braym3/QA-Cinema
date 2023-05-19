@@ -82,7 +82,7 @@ const Home = () => {
                         <ButtonGroup className='w-100'>
                             <Button size='lg' className='mx-3 rounded btn-orange' href='/listings'>All Listings</Button>
                             <Button size='lg' className='mx-3 rounded btn-orange' href='/discussion'>Discussion</Button>
-                            <Button size='lg' className='mx-3 rounded btn-orange' href='/screens'>Screens</Button>
+                            <Button size='lg' className='mx-3 rounded btn-orange' href='/findus/screens'>Screens</Button>
                         </ButtonGroup>
                     </div>
                 </Row>
