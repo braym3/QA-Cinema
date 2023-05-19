@@ -29,22 +29,18 @@ const CommentForm = ({ disID, filmID }) => {
   }, [body]);
 
   return (
-    <form>
+    <form
+      onSubmit={() => {
+        setBody({ email: email, comment: comment, rating: rating });
+      }}
+    >
       <label name="email">Email</label> <br />
       <input onChange={(e) => setEmail(e.target.value)} name="email" type="email" required /> <br />
       <label>Comment</label> <br />
       <textarea onChange={(e) => setComment(e.target.value)} id="comment" type="text-field" required /> <br />
       <label>Rating</label>
       <StarRating rating={rating} setRating={setRating} />
-      <button
-        onClick={() => {
-          setBody({ email: email, comment: comment, rating: rating });
-        }}
-        className="button-4"
-        type="submit"
-      >
-        Add comment
-      </button>
+      <button>Add comment</button>
     </form>
   );
 };
