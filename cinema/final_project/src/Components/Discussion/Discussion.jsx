@@ -2,7 +2,7 @@ import DiscussionModal from "./DiscussionModal";
 import "./Discussion.css";
 import React, { useEffect, useState } from "react";
 import { getDiscussions } from "../../Services/DiscussionService";
-import { getFilms } from "../../Services/filmsCalls";
+import { getFilms } from "../../Services/filmsService";
 import SingleDiscussion from "./SingleDiscussion";
 
 const Discussion = () => {
