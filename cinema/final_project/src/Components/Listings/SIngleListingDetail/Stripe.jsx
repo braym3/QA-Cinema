@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import getStripe from "../../../lib/getStripe";
-const Stripe = ({ ticketCount, handleSubmit }) => {
+const Stripe = ({ ticketCount, handleSubmit, email }) => {
   const test = [
     {
       price: "price_1N8L7NEV9ihFovHFY5VCVPs6",
@@ -25,7 +25,7 @@ const Stripe = ({ ticketCount, handleSubmit }) => {
       mode: "payment",
       successUrl: `http://localhost:3000/purchasetickets/success`,
       cancelUrl: `http://localhost:3000/purchasetickets/failure`,
-      customerEmail: "customer@email.com",
+      customerEmail: email,
     });
     console.log(error.message);
   }

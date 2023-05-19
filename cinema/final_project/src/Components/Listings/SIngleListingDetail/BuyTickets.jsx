@@ -60,7 +60,7 @@ const BuyTickets = ({ time, date, singleFilmData, ticketTotal, ticketCount, tick
       {!time || email.length === 0 || bookerName.length === 0 || !ticketCount || !ticketTotal || !date ? (
         <p>Please ensure you have completed all neccesary fields.</p>
       ) : (
-        <Stripe ticketCount={ticketCount} ticketTotal={ticketTotal} handleSubmit={handleSubmit} />
+        <Stripe ticketCount={ticketCount} ticketTotal={ticketTotal} handleSubmit={handleSubmit} email={email} />
       )}
     </div>
   );
