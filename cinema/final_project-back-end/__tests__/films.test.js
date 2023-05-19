@@ -4,15 +4,13 @@ const chaiHttp = require("chai-http");
 const { default: mongoose } = require("mongoose");
 
 chai.use(chaiHttp);
-// If there isn't a filepath on the require then it is a node module
 const { connectToDb, disconnect } = require("../db");
 const { filmModel } = require("../models");
 
 const server = require("../server");
 
 describe("Film API tests", function () {
-  //   let server;
-  this.timeout(15_000);
+  this.timeout(3_000);
 
   before(async () => {
     await mongoose.connection.close();
@@ -34,24 +32,11 @@ describe("Film API tests", function () {
       userRating: { aggregate: 9, quantity: 3 },
     });
     testFilm = JSON.parse(JSON.stringify(testFilm));
-    testUpdateRating = await filmModel.create({
-      title: "Avengers",
-      description: "abcde",
-      runtime: 122,
-      classification: "PG",
-      classificationURL: "PG.jpg",
-      filmPoster: "hsdsisucbi",
-      releaseDate: 2013,
-      director: "russo et russo",
-      cast: "duhiadhi",
-      userRating: { aggregate: 14, quantity: 4 },
-    });
   });
 
   before(async () => {
     try {
       await connectToDb();
-      //   server = require('../server');
     } catch (err) {
       console.error(err);
     }
@@ -122,24 +107,25 @@ describe("Film API tests", function () {
 
   it("should update rating by id", (done) => {
     const { _id } = testFilm;
+    const rating = 5;
     chai
       .request(server)
       .patch(`/films/addRating/${_id}`)
-      .send({ rating: 5 })
+      .send({ rating: rating })
       .end((err, res) => {
         chai.expect(err).to.be.null;
         chai.expect(res.status).to.equal(200);
-        expect(res.body.title).to.equal(testUpdateRating.title);
-        expect(res.body.description).to.equal(testUpdateRating.description);
-        expect(res.body.runtime).to.equal(testUpdateRating.runtime);
-        expect(res.body.classification).to.equal(testUpdateRating.classification);
-        expect(res.body.classificationURL).to.equal(testUpdateRating.classificationURL);
-        expect(res.body.filmPoster).to.equal(testUpdateRating.filmPoster);
-        expect(res.body.releaseDate).to.equal(testUpdateRating.releaseDate);
-        expect(res.body.director).to.equal(testUpdateRating.director);
-        expect(res.body.cast).to.equal(testUpdateRating.cast);
-        expect(res.body.userRating.aggregate).to.equal(testUpdateRating.userRating.aggregate);
-        expect(res.body.userRating.quantity).to.equal(testUpdateRating.userRating.quantity);
+        expect(res.body.title).to.equal(testFilm.title);
+        expect(res.body.description).to.equal(testFilm.description);
+        expect(res.body.runtime).to.equal(testFilm.runtime);
+        expect(res.body.classification).to.equal(testFilm.classification);
+        expect(res.body.classificationURL).to.equal(testFilm.classificationURL);
+        expect(res.body.filmPoster).to.equal(testFilm.filmPoster);
+        expect(res.body.releaseDate).to.equal(testFilm.releaseDate);
+        expect(res.body.director).to.equal(testFilm.director);
+        expect(res.body.cast).to.equal(testFilm.cast);
+        expect(res.body.userRating.aggregate).to.equal(testFilm.userRating.aggregate + rating);
+        expect(res.body.userRating.quantity).to.equal(testFilm.userRating.quantity + 1);
         done();
       });
   });
