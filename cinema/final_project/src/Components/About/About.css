@@ -1,0 +1,76 @@
+.about {
+  color: black;
+}
+
+.about h2 {
+  color: black;
+  font-size: 25px;
+}
+
+.about h3 {
+  color: black;
+  font-size: 22px;
+}
+
+.about .left {
+  display: flex;
+}
+
+.about .Scrum .whatisscrum {
+  padding-top: 10px;
+}
+
+.about .Scrum .whatisscrum,
+.about .Scrum .backlog,
+.about .Scrum .standards {
+  background-color: white;
+  height: auto;
+  width: auto;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.about .Scrum .completion {
+  background-color: white;
+  height: auto;
+  width: auto;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.About-Us,
+.Contact {
+  background-color: white;
+  width: 90vh;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.whatisscrum,
+.standards,
+.completion {
+  column-count: 2;
+}
+
+.read-more {
+  padding-top: 10px;
+}
+
+.standards {
+  padding-bottom: 40px;
+}
+
+.Scrum h2,
+.Scrum h3 {
+  color: white;
+  padding-top: 10px;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.about .Contact a:hover {
+  background-color: #b86003;
+}

@@ -1,0 +1,73 @@
+#contact {
+  background: radial-gradient(
+      circle at center,
+      #e67700,
+      #d36d01,
+      #bb6101,
+      #9c5101,
+      #9f5301
+    ),
+    100%;
+  height: 80%;
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#message {
+  height: 50px;
+  overflow: scroll;
+}
+
+#reachus {
+  align-content: center;
+  background: radial-gradient(
+      circle at center,
+      #e67700,
+      #d36d01,
+      #bb6101,
+      #9c5101,
+      #9f5301
+    ),
+    100%;
+  height: 10%;
+  width: 50%;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 5%;
+}
+
+.contact input{
+    padding: 5px;
+    margin-top: 50px;
+    align-self: center;
+}
+
+.contact input[type=text]{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 10px 0;
+    color: white;
+    display: inline-block;
+    border-style: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact button{
+    background-color: white;
+    border-style: none;
+    border-radius: 10%;
+}
+
+.contact button:hover{
+    background-color: whitesmoke;
+    box-shadow: black;
+}
+
+.contact input#message{
+    height: 200px;
+    margin-bottom: 50px;
+}

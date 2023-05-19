@@ -1,0 +1,128 @@
+#container {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#poster-image {
+  height: 240px;
+  width: 160px;
+  float: right;
+}
+
+#cards {
+  margin: 15px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-top: 5px solid #e67700;
+}
+
+#card {
+  margin: 15px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-bottom: 5px solid #e67700;
+  border-top: 5px solid #e67700;
+}
+
+#addticks {
+  margin: 20px;
+  padding: 10px;
+  border-color: #e67700;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  width: auto;
+}
+
+#buytickets {
+  margin: 20px;
+  padding: 10px;
+  border-color: #e67700;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  width: auto;
+}
+
+#payments {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#stripe {
+  height: 100%;
+  width: 100%;
+}
+
+#add {
+  grid-column: 1;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: #e67700;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+#total {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.times {
+  margin: 10px;
+  border-style: solid;
+  border-color: #e67700;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+#singlecard {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#data {
+  grid-column: 1;
+}
+
+#poster {
+  grid-column: 2;
+  border-radius: 5px;
+}
+
+#successpage {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#success {
+  grid-column: 1;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background: radial-gradient(circle at center, #e67700, #d36d01, #bb6101, #9c5101, #9f5301), 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 10px 0px white;
+}
+
+#postsuccess {
+  grid-column: 2;
+  text-align: center;
+}
+
+#compsaysno {
+  height: 50%;
+  width: auto;
+  align-self: center;
+}

@@ -1,0 +1,33 @@
+.getting-here-content{
+    color: rgb(0, 0, 0);
+    margin: 5%;
+}
+
+.getting-here-header p{
+    color: white;
+}
+
+.getting-here-text h3 {
+    color: rgb(0, 0, 0);
+}
+
+.getting-here-text p {
+    color: rgb(0, 0, 0) !important;
+}
+
+.getting-here-header {
+    color: #e67700 !important;
+    padding: 2% !important;
+}
+
+.google-map{
+    margin-bottom: 5%;
+}
+
+.accordion{
+    margin-top: 5%;
+}
+
+.info-row{
+    margin-bottom: 5%;
+}

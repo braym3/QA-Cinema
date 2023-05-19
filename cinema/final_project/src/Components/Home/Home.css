@@ -1,0 +1,66 @@
+.home{
+    margin-top: 20px;
+    position: relative;
+}
+
+.custom-border{
+    border: 3px solid #e67700;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.carousel {
+    width:700px;
+}
+
+.carousel .carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+}
+
+.link-buttons{
+    margin-top: 20%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.release-title{
+    margin: 1%;
+}
+
+.btn-orange{
+    background-color: #e67700 !important; 
+    border-color: #e67700 !important;
+}
+
+.btn-orange:hover{
+    background-color: #8d8c8c !important;
+    border-color: #8d8c8c !important;
+}
+
+img.nr-img{
+    width: 700px !important;
+    height: 380px !important;
+}
+
+@media screen and (max-width: 767.5px){
+    img.nr-img{
+        width: 100% !important;
+        height: 60% !important;
+    }
+}
+
+.home-welcome{
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.welcome-title{
+    margin-bottom: 5%;
+}
+
+.welcome-subheading{
+    margin-bottom: 1%;
+}
