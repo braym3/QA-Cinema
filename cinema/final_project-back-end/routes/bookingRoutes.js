@@ -25,7 +25,6 @@ router.patch("/updateBooking/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const original = await bookingModel.findById(id);
-    if (!original) throw new Error("no booking with that id");
     console.log(req.body.status);
     console.log(original.status);
     original.status = req.body.status;

@@ -30,4 +30,19 @@ router.get("/getFilm/:id", async function (req, res, next) {
   }
 });
 
+router.patch("/addRating/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    let original = await filmModel.findById(id);
+    // if (!original) throw new Error("no film with that id");
+    // if (!req.body.rating) throw new Error("invalid rating");
+    original.userRating.aggregate += req.body.rating;
+    original.userRating.quantity++;
+    await original.save();
+    res.json(original);
+  } catch (err) {
+    return next({ message: err.msg, status: 404 });
+  }
+});
+
 module.exports = router;
