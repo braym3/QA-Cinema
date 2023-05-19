@@ -9,7 +9,7 @@ const DiscussionForm = ({ setDiscussionData, discussionData, films }) => {
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
-  const [film, setFilm] = useState();
+  const [film, setFilm] = useState(films[0].title);
   const [body, setBody] = useState();
   const [rating, setRating] = useState(0);
 
@@ -36,10 +36,24 @@ const DiscussionForm = ({ setDiscussionData, discussionData, films }) => {
   };
 
   return (
-    <form>
+    <form
+      onSubmit={() => {
+        setBody({
+          subject: subject,
+          film: film,
+          filmId: matchFilmId(film),
+          discussion: [
+            {
+              email: email,
+              comment: comment,
+              rating: rating,
+            },
+          ],
+        });
+      }}
+    >
       <label name="film">Please give the name of the film:</label>
       <select onChange={(e) => setFilm(e.target.value)} required>
-        <option value={null}>-- Please select a film --</option>
         {films.map((data) => {
           const { title } = data;
           return <option value={title}>{title}</option>;
@@ -53,26 +67,7 @@ const DiscussionForm = ({ setDiscussionData, discussionData, films }) => {
       <textarea onChange={(e) => setComment(e.target.value)} id="comment" type="text-field" required /> <br />
       <label>Rating</label>
       <StarRating rating={rating} setRating={setRating} />
-      <button
-        onClick={() => {
-          if (film !== "-- Please select a film --") {
-            setBody({
-              subject: subject,
-              film: film,
-              filmId: matchFilmId(film),
-              discussion: [
-                {
-                  email: email,
-                  comment: comment,
-                  rating: rating,
-                },
-              ],
-            });
-          }
-        }}
-        className="button-4"
-        type="submit"
-      >
+      <button className="button-4" type="submit">
         Start Discussion
       </button>
     </form>
