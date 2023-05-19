@@ -1,7 +1,7 @@
 import StarRating from "./StarRating";
 import React, { useState, useEffect } from "react";
 import { addComment } from "../../Services/DiscussionService";
-import { addRating } from "../../Services/filmsCalls";
+import { addRating } from "../../Services/filmsService";
 import ModerationII from "./ModerationII";
 import "./Discussion.css";
 
