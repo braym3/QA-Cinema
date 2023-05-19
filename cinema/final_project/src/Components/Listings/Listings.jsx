@@ -49,6 +49,7 @@ const Listings = () => {
                     <Card.Text>Duration: {film.runtime} minutes</Card.Text>
                     <Card.Text>Cast: {film.cast}</Card.Text>
                     <Card.Text>Director: {film.director}</Card.Text>
+                    {/* <StarRating /> */}
                     <Link to={"/purchasetickets/" + film._id}>
                       <Button className='button'>See all Times and Purchase tickets</Button>
                     </Link>
